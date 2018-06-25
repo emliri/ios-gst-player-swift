@@ -13,6 +13,7 @@
 		DA5E48D020E109D2003F4619 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5E48CF20E109D2003F4619 /* View.swift */; };
 		DA606AEC20E10E1F003C6EFB /* Presenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA606AEB20E10E1F003C6EFB /* Presenter.swift */; };
 		DA606AEE20E10E3C003C6EFB /* Interactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA606AED20E10E3C003C6EFB /* Interactor.swift */; };
+		DA606AF220E1115D003C6EFB /* ViewContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA606AF120E1115D003C6EFB /* ViewContent.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -38,6 +39,7 @@
 		DA5E48CF20E109D2003F4619 /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
 		DA606AEB20E10E1F003C6EFB /* Presenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Presenter.swift; sourceTree = "<group>"; };
 		DA606AED20E10E3C003C6EFB /* Interactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Interactor.swift; sourceTree = "<group>"; };
+		DA606AF120E1115D003C6EFB /* ViewContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewContent.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +85,7 @@
 			children = (
 				DA3E941E20E0FF4800F049AD /* Application.swift */,
 				DA5E48CF20E109D2003F4619 /* View.swift */,
+				DA606AF120E1115D003C6EFB /* ViewContent.swift */,
 				DA606AEB20E10E1F003C6EFB /* Presenter.swift */,
 				DA606AED20E10E3C003C6EFB /* Interactor.swift */,
 			);
@@ -167,6 +170,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA606AF220E1115D003C6EFB /* ViewContent.swift in Sources */,
 				DA606AEC20E10E1F003C6EFB /* Presenter.swift in Sources */,
 				DA5E48D020E109D2003F4619 /* View.swift in Sources */,
 				DA606AEE20E10E3C003C6EFB /* Interactor.swift in Sources */,
