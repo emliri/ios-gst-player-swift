@@ -7,13 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		DA138DF620E0FC4100A47DAE /* AudioPlayer.h in Headers */ = {isa = PBXBuildFile; fileRef = DA138DF420E0FC4100A47DAE /* AudioPlayer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DA3E942C20E1001300F049AD /* AudioPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA138DF120E0FC4100A47DAE /* AudioPlayer.framework */; };
+		DA3E943420E1006300F049AD /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3E943320E1006300F049AD /* AudioPlayer.swift */; };
+		DA3E943620E1007400F049AD /* TestAudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3E943520E1007400F049AD /* TestAudioPlayer.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		DA3E942D20E1001300F049AD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DA138DE820E0FC4100A47DAE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DA138DF020E0FC4100A47DAE;
+			remoteInfo = AudioPlayer;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		DA138DF120E0FC4100A47DAE /* AudioPlayer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AudioPlayer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		DA138DF420E0FC4100A47DAE /* AudioPlayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AudioPlayer.h; sourceTree = "<group>"; };
-		DA138DF520E0FC4100A47DAE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DA3E942020E0FFDC00F049AD /* Configuration */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Configuration; sourceTree = "<group>"; };
+		DA3E942720E1001300F049AD /* Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DA3E943320E1006300F049AD /* AudioPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayer.swift; sourceTree = "<group>"; };
+		DA3E943520E1007400F049AD /* TestAudioPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestAudioPlayer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -24,14 +38,25 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		DA3E942420E1001300F049AD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DA3E942C20E1001300F049AD /* AudioPlayer.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		DA138DE720E0FC4100A47DAE = {
 			isa = PBXGroup;
 			children = (
-				DA138DF320E0FC4100A47DAE /* AudioPlayer */,
+				DA3E942120E0FFE600F049AD /* Source */,
+				DA3E942220E0FFE600F049AD /* Resources */,
+				DA3E943220E1004D00F049AD /* Tests */,
 				DA138DF220E0FC4100A47DAE /* Products */,
+				DA3E942020E0FFDC00F049AD /* Configuration */,
 			);
 			sourceTree = "<group>";
 		};
@@ -39,17 +64,32 @@
 			isa = PBXGroup;
 			children = (
 				DA138DF120E0FC4100A47DAE /* AudioPlayer.framework */,
+				DA3E942720E1001300F049AD /* Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		DA138DF320E0FC4100A47DAE /* AudioPlayer */ = {
+		DA3E942120E0FFE600F049AD /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				DA138DF420E0FC4100A47DAE /* AudioPlayer.h */,
-				DA138DF520E0FC4100A47DAE /* Info.plist */,
+				DA3E943320E1006300F049AD /* AudioPlayer.swift */,
 			);
-			path = AudioPlayer;
+			path = Source;
+			sourceTree = "<group>";
+		};
+		DA3E942220E0FFE600F049AD /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		DA3E943220E1004D00F049AD /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				DA3E943520E1007400F049AD /* TestAudioPlayer.swift */,
+			);
+			path = Tests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -59,7 +99,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DA138DF620E0FC4100A47DAE /* AudioPlayer.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -84,17 +123,41 @@
 			productReference = DA138DF120E0FC4100A47DAE /* AudioPlayer.framework */;
 			productType = "com.apple.product-type.framework";
 		};
+		DA3E942620E1001300F049AD /* Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DA3E942F20E1001300F049AD /* Build configuration list for PBXNativeTarget "Tests" */;
+			buildPhases = (
+				DA3E942320E1001300F049AD /* Sources */,
+				DA3E942420E1001300F049AD /* Frameworks */,
+				DA3E942520E1001300F049AD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DA3E942E20E1001300F049AD /* PBXTargetDependency */,
+			);
+			name = Tests;
+			productName = Tests;
+			productReference = DA3E942720E1001300F049AD /* Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		DA138DE820E0FC4100A47DAE /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0940;
 				LastUpgradeCheck = 0940;
 				ORGANIZATIONNAME = Blinkist;
 				TargetAttributes = {
 					DA138DF020E0FC4100A47DAE = {
 						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = 0940;
+					};
+					DA3E942620E1001300F049AD = {
+						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = 0940;
 					};
 				};
 			};
@@ -111,12 +174,20 @@
 			projectRoot = "";
 			targets = (
 				DA138DF020E0FC4100A47DAE /* AudioPlayer */,
+				DA3E942620E1001300F049AD /* Tests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		DA138DEF20E0FC4100A47DAE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DA3E942520E1001300F049AD /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -130,10 +201,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA3E943420E1006300F049AD /* AudioPlayer.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DA3E942320E1001300F049AD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DA3E943620E1007400F049AD /* TestAudioPlayer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		DA3E942E20E1001300F049AD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DA138DF020E0FC4100A47DAE /* AudioPlayer */;
+			targetProxy = DA3E942D20E1001300F049AD /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		DA138DF720E0FC4100A47DAE /* Debug */ = {
@@ -259,6 +347,7 @@
 		DA138DFA20E0FC4100A47DAE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -276,6 +365,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.blinkist.AudioPlayer;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -284,6 +374,7 @@
 		DA138DFB20E0FC4100A47DAE /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -306,6 +397,47 @@
 			};
 			name = Release;
 		};
+		DA3E943020E1001300F049AD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Y68M8S5N3Q;
+				INFOPLIST_FILE = Tests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.blinkist.AudioPlayer.Tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		DA3E943120E1001300F049AD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Y68M8S5N3Q;
+				INFOPLIST_FILE = Tests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.blinkist.AudioPlayer.Tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -323,6 +455,15 @@
 			buildConfigurations = (
 				DA138DFA20E0FC4100A47DAE /* Debug */,
 				DA138DFB20E0FC4100A47DAE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DA3E942F20E1001300F049AD /* Build configuration list for PBXNativeTarget "Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DA3E943020E1001300F049AD /* Debug */,
+				DA3E943120E1001300F049AD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
