@@ -53,8 +53,8 @@
 			isa = PBXGroup;
 			children = (
 				DA3E942120E0FFE600F049AD /* Source */,
-				DA3E942220E0FFE600F049AD /* Resources */,
 				DA3E943220E1004D00F049AD /* Tests */,
+				DA3E942220E0FFE600F049AD /* Resources */,
 				DA138DF220E0FC4100A47DAE /* Products */,
 				DA3E942020E0FFDC00F049AD /* Configuration */,
 			);
