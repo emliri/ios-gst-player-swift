@@ -371,6 +371,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"\"$(SRCROOT)/Frameworks\"",
 				);
 				INFOPLIST_FILE = Configuration/source.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -400,6 +401,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"\"$(SRCROOT)/Frameworks\"",
 				);
 				INFOPLIST_FILE = Configuration/source.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
