@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		DA3E942C20E1001300F049AD /* AudioPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA138DF120E0FC4100A47DAE /* AudioPlayer.framework */; };
-		DA3E943420E1006300F049AD /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3E943320E1006300F049AD /* AudioPlayer.swift */; };
+		DA3E943420E1006300F049AD /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3E943320E1006300F049AD /* Player.swift */; };
 		DA3E943620E1007400F049AD /* TestAudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3E943520E1007400F049AD /* TestAudioPlayer.swift */; };
 		DA5E48CC20E1092F003F4619 /* GStreamer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA5E48CB20E1092F003F4619 /* GStreamer.framework */; };
 /* End PBXBuildFile section */
@@ -27,7 +27,7 @@
 		DA138DF120E0FC4100A47DAE /* AudioPlayer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AudioPlayer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA3E942020E0FFDC00F049AD /* Configuration */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Configuration; sourceTree = "<group>"; };
 		DA3E942720E1001300F049AD /* Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		DA3E943320E1006300F049AD /* AudioPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayer.swift; sourceTree = "<group>"; };
+		DA3E943320E1006300F049AD /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		DA3E943520E1007400F049AD /* TestAudioPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestAudioPlayer.swift; sourceTree = "<group>"; };
 		DA5E48CB20E1092F003F4619 /* GStreamer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GStreamer.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -76,7 +76,7 @@
 		DA3E942120E0FFE600F049AD /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				DA3E943320E1006300F049AD /* AudioPlayer.swift */,
+				DA3E943320E1006300F049AD /* Player.swift */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -213,7 +213,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DA3E943420E1006300F049AD /* AudioPlayer.swift in Sources */,
+				DA3E943420E1006300F049AD /* Player.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
