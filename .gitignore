@@ -23,6 +23,3 @@ xcdebugger
 timeline.xctimeline
 playground.xcworkspace
 AudioPlayer/Frameworks/
-Frameworks/
-GStreamer.framework
-
