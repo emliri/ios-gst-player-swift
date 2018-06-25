@@ -32,16 +32,17 @@ class View:UIViewController {
     }
     
     private func makeActions() {
-        let actionPlay:UIBarButtonItem = UIBarButtonItem(barButtonSystemItem:UIBarButtonSystemItem.play, target:self,
-                                                         action:#selector(self.selectorPlay(button:)))
-        let actionStop:UIBarButtonItem = UIBarButtonItem(barButtonSystemItem:UIBarButtonSystemItem.stop, target:self,
-                                                         action:#selector(self.selectorPlay(button:)))
-        let actionPause:UIBarButtonItem = UIBarButtonItem(barButtonSystemItem:UIBarButtonSystemItem.pause, target:self,
-                                                         action:#selector(self.selectorPlay(button:)))
-        let actionNext:UIBarButtonItem = UIBarButtonItem(barButtonSystemItem:UIBarButtonSystemItem.fastForward, target:self,
-                                                         action:#selector(self.selectorPlay(button:)))
-        let actionPrevious:UIBarButtonItem = UIBarButtonItem(barButtonSystemItem:UIBarButtonSystemItem.rewind, target:self,
-                                                         action:#selector(self.selectorPlay(button:)))
+        let actionPlay:UIBarButtonItem = UIBarButtonItem(barButtonSystemItem:UIBarButtonSystemItem.play,
+                                                         target:self, action:#selector(self.selectorPlay(button:)))
+        let actionStop:UIBarButtonItem = UIBarButtonItem(barButtonSystemItem:UIBarButtonSystemItem.stop,
+                                                         target:self, action:#selector(self.selectorStop(button:)))
+        let actionPause:UIBarButtonItem = UIBarButtonItem(barButtonSystemItem:UIBarButtonSystemItem.pause,
+                                                          target:self, action:#selector(self.selectorPause(button:)))
+        let actionNext:UIBarButtonItem = UIBarButtonItem(barButtonSystemItem:UIBarButtonSystemItem.fastForward,
+                                                         target:self, action:#selector(self.selectorNext(button:)))
+        let actionPrevious:UIBarButtonItem = UIBarButtonItem(barButtonSystemItem:UIBarButtonSystemItem.rewind,
+                                                             target:self,
+                                                             action:#selector(self.selectorPrevious(button:)))
         let flexibleSpace:UIBarButtonItem = UIBarButtonItem(barButtonSystemItem:UIBarButtonSystemItem.flexibleSpace,
                                                             target:nil, action:nil)
         self.setToolbarItems([actionPrevious, flexibleSpace, actionPause, flexibleSpace, actionStop, flexibleSpace,
