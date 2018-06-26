@@ -1,28 +1,42 @@
 import Foundation
 
 public class Player {
-    private var delegate:PlayerDelegate?
-    private var player:UnsafeMutableRawPointer?
+    public var delegate:PlayerDelegate?
+
+    private var gstPlayer:UnsafeMutableRawPointer?
     
     public init() {
-        GstPlayerInit()
-        ///*
-        self.player = GstPlayerCreate({ (a:UnsafeMutableRawPointer?, time:Int, data:UnsafeMutableRawPointer?) in
+        
+        GstPlayerInit() // Currently MUST only be called once !! See GstPlayerInit implementation
+
+        self.gstPlayer = GstPlayerCreate({
+            (gstPlayer:UnsafeMutableRawPointer?, time:Int, context:UnsafeMutableRawPointer?) in
+
             guard
-                let data:UnsafeMutableRawPointer = data
-            else { return }
-            let player:Player = Unmanaged<Player>.fromOpaque(data).takeRetainedValue()
-            player.delegate?.updated(position:Float(time))
+                let context:UnsafeMutableRawPointer = context
+            else {
+                print("ERROR: Context not set")
+                return
+            }
+
+            print("Time:", time)
+            
+            /*
+            let player:Player = Unmanaged<Player>.fromOpaque(context).takeRetainedValue()
+            
+            if (player.delegate != nil) {
+                player.delegate?.updated(position:Float(time))
+            }
+             */
             
         }, UnsafeMutableRawPointer(Unmanaged.passUnretained(self).toOpaque()))
-        //*/
     }
 
     public func setUri(uri: String) {
-        GstPlayerSetUri(UnsafeMutableRawPointer(Unmanaged.passUnretained(self).toOpaque()), uri)
+        GstPlayerSetUri(self.gstPlayer, uri)
     }
     
     public func play() {
-        GstPlayerPlay(UnsafeMutableRawPointer(Unmanaged.passUnretained(self).toOpaque()))
+        GstPlayerPlay(self.gstPlayer)
     }
 }
