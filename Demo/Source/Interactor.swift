@@ -9,10 +9,25 @@ class Interactor {
     }
     
     func play() {
+        print("play")
+
         let bundle:Bundle = Bundle.main
         let url:URL = bundle.url(forResource:"guitars", withExtension:"m4a")!
-        print("playing ")
         print(url.standardizedFileURL.path)
-        self.player.setUri(uri:url.standardizedFileURL.path)
+        
+        //self.player.setUri(uri:url.standardizedFileURL.path)
+        //self.player.setUri(uri: )
+        //self.player.setUri(uri: )
+        
+        var uri: String;
+        
+        uri = url.standardizedFileURL.path
+        uri = "http://tchakabam.com/test-media/m4a/guitars.m4a"
+        uri = "http://tchakabam.com/test-media/m4a/Theo Katzman - Heartbreak Hits - 08 As the Romans Do.mp3"
+        //uri = "http://tchakabam.com/test-media/m4a/shalafon.mp3"
+        
+        self.player.setUri(uri: uri)
+        
+        self.player.play()
     }
 }
