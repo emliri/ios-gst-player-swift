@@ -11,11 +11,25 @@
 		D42736FF20E2705800B11C31 /* GstPlayerWrapper.c in Sources */ = {isa = PBXBuildFile; fileRef = D42736FD20E2705800B11C31 /* GstPlayerWrapper.c */; };
 		D427370120E2717E00B11C31 /* BridgingHeader.h in Headers */ = {isa = PBXBuildFile; fileRef = D427370020E2717E00B11C31 /* BridgingHeader.h */; };
 		D427370420E27C0A00B11C31 /* PlayerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D427370320E27C0A00B11C31 /* PlayerDelegate.swift */; };
+		D427370720E29B2200B11C31 /* GstIosInit.h in Headers */ = {isa = PBXBuildFile; fileRef = D427370520E29B2200B11C31 /* GstIosInit.h */; };
+		D427370820E29B2200B11C31 /* GstIosInit.m in Sources */ = {isa = PBXBuildFile; fileRef = D427370620E29B2200B11C31 /* GstIosInit.m */; };
+		D427370A20E2A1E800B11C31 /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D427370920E2A1E800B11C31 /* CoreAudio.framework */; };
+		D427370C20E2A1ED00B11C31 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D427370B20E2A1ED00B11C31 /* AVFoundation.framework */; };
+		D427370E20E2A1F400B11C31 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D427370D20E2A1F400B11C31 /* CoreVideo.framework */; };
+		D427371020E2A1FD00B11C31 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D427370F20E2A1FD00B11C31 /* AudioToolbox.framework */; };
+		D427371420E2A21300B11C31 /* libresolv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D427371320E2A21300B11C31 /* libresolv.tbd */; };
+		D427371620E2A27C00B11C31 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D427371520E2A27C00B11C31 /* CoreGraphics.framework */; };
+		D427371820E2A3C700B11C31 /* libstdc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D427371720E2A3C700B11C31 /* libstdc++.tbd */; };
+		D427371A20E2A42500B11C31 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D427371920E2A42500B11C31 /* OpenGLES.framework */; };
+		D427371C20E2A45700B11C31 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D427371B20E2A45700B11C31 /* CoreText.framework */; };
+		D427371E20E2A49600B11C31 /* VideoToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D427371D20E2A49600B11C31 /* VideoToolbox.framework */; };
+		D427372020E2A4AC00B11C31 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D427371F20E2A4AC00B11C31 /* CoreMedia.framework */; };
+		D427372220E2A4F500B11C31 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D427372120E2A4F500B11C31 /* AssetsLibrary.framework */; };
 		DA3E942C20E1001300F049AD /* AudioPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA138DF120E0FC4100A47DAE /* AudioPlayer.framework */; };
 		DA3E943420E1006300F049AD /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3E943320E1006300F049AD /* Player.swift */; };
 		DA3E943620E1007400F049AD /* TestAudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3E943520E1007400F049AD /* TestAudioPlayer.swift */; };
 		DA53E8F720E2627700CE899D /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = DA53E8F620E2627700CE899D /* libiconv.tbd */; };
-		DA606B0220E1321B003C6EFB /* GStreamer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA606AFE20E130D2003C6EFB /* GStreamer.framework */; settings = {ATTRIBUTES = (Required, ); }; };
+		DA606B0220E1321B003C6EFB /* GStreamer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA606AFE20E130D2003C6EFB /* GStreamer.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,6 +47,21 @@
 		D42736FD20E2705800B11C31 /* GstPlayerWrapper.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = GstPlayerWrapper.c; sourceTree = "<group>"; };
 		D427370020E2717E00B11C31 /* BridgingHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BridgingHeader.h; sourceTree = "<group>"; };
 		D427370320E27C0A00B11C31 /* PlayerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerDelegate.swift; sourceTree = "<group>"; };
+		D427370520E29B2200B11C31 /* GstIosInit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GstIosInit.h; sourceTree = "<group>"; };
+		D427370620E29B2200B11C31 /* GstIosInit.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GstIosInit.m; sourceTree = "<group>"; };
+		D427370920E2A1E800B11C31 /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
+		D427370B20E2A1ED00B11C31 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		D427370D20E2A1F400B11C31 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
+		D427370F20E2A1FD00B11C31 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		D427371120E2A20200B11C31 /* AudioUnit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioUnit.framework; path = System/Library/Frameworks/AudioUnit.framework; sourceTree = SDKROOT; };
+		D427371320E2A21300B11C31 /* libresolv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libresolv.tbd; path = usr/lib/libresolv.tbd; sourceTree = SDKROOT; };
+		D427371520E2A27C00B11C31 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		D427371720E2A3C700B11C31 /* libstdc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.tbd"; path = "usr/lib/libstdc++.tbd"; sourceTree = SDKROOT; };
+		D427371920E2A42500B11C31 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		D427371B20E2A45700B11C31 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
+		D427371D20E2A49600B11C31 /* VideoToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VideoToolbox.framework; path = System/Library/Frameworks/VideoToolbox.framework; sourceTree = SDKROOT; };
+		D427371F20E2A4AC00B11C31 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		D427372120E2A4F500B11C31 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
 		DA138DF120E0FC4100A47DAE /* AudioPlayer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AudioPlayer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA3E942020E0FFDC00F049AD /* Configuration */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Configuration; sourceTree = "<group>"; };
 		DA3E942720E1001300F049AD /* Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -47,8 +76,20 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D427372220E2A4F500B11C31 /* AssetsLibrary.framework in Frameworks */,
+				D427372020E2A4AC00B11C31 /* CoreMedia.framework in Frameworks */,
+				D427371E20E2A49600B11C31 /* VideoToolbox.framework in Frameworks */,
+				D427371C20E2A45700B11C31 /* CoreText.framework in Frameworks */,
+				D427371620E2A27C00B11C31 /* CoreGraphics.framework in Frameworks */,
 				DA606B0220E1321B003C6EFB /* GStreamer.framework in Frameworks */,
+				D427371020E2A1FD00B11C31 /* AudioToolbox.framework in Frameworks */,
+				D427370E20E2A1F400B11C31 /* CoreVideo.framework in Frameworks */,
+				D427370C20E2A1ED00B11C31 /* AVFoundation.framework in Frameworks */,
+				D427370A20E2A1E800B11C31 /* CoreAudio.framework in Frameworks */,
+				D427371A20E2A42500B11C31 /* OpenGLES.framework in Frameworks */,
+				D427371420E2A21300B11C31 /* libresolv.tbd in Frameworks */,
 				DA53E8F720E2627700CE899D /* libiconv.tbd in Frameworks */,
+				D427371820E2A3C700B11C31 /* libstdc++.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -92,6 +133,8 @@
 				D42736FC20E2705800B11C31 /* GstPlayerWrapper.h */,
 				D42736FD20E2705800B11C31 /* GstPlayerWrapper.c */,
 				D427370020E2717E00B11C31 /* BridgingHeader.h */,
+				D427370520E29B2200B11C31 /* GstIosInit.h */,
+				D427370620E29B2200B11C31 /* GstIosInit.m */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -114,6 +157,19 @@
 		DA5E48CD20E10934003F4619 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D427372120E2A4F500B11C31 /* AssetsLibrary.framework */,
+				D427371F20E2A4AC00B11C31 /* CoreMedia.framework */,
+				D427371D20E2A49600B11C31 /* VideoToolbox.framework */,
+				D427371B20E2A45700B11C31 /* CoreText.framework */,
+				D427371920E2A42500B11C31 /* OpenGLES.framework */,
+				D427371720E2A3C700B11C31 /* libstdc++.tbd */,
+				D427371520E2A27C00B11C31 /* CoreGraphics.framework */,
+				D427371320E2A21300B11C31 /* libresolv.tbd */,
+				D427371120E2A20200B11C31 /* AudioUnit.framework */,
+				D427370F20E2A1FD00B11C31 /* AudioToolbox.framework */,
+				D427370D20E2A1F400B11C31 /* CoreVideo.framework */,
+				D427370B20E2A1ED00B11C31 /* AVFoundation.framework */,
+				D427370920E2A1E800B11C31 /* CoreAudio.framework */,
 				DA53E8F620E2627700CE899D /* libiconv.tbd */,
 				DA606AFE20E130D2003C6EFB /* GStreamer.framework */,
 			);
@@ -128,6 +184,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D42736FE20E2705800B11C31 /* GstPlayerWrapper.h in Headers */,
+				D427370720E29B2200B11C31 /* GstIosInit.h in Headers */,
 				D427370120E2717E00B11C31 /* BridgingHeader.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -231,6 +288,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D427370820E29B2200B11C31 /* GstIosInit.m in Sources */,
 				DA3E943420E1006300F049AD /* Player.swift in Sources */,
 				D42736FF20E2705800B11C31 /* GstPlayerWrapper.c in Sources */,
 				D427370420E27C0A00B11C31 /* PlayerDelegate.swift in Sources */,
@@ -401,7 +459,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				FRAMEWORK_SEARCH_PATHS = /Users/stephan/Library/Developer/GStreamer/iPhone.sdk;
+				FRAMEWORK_SEARCH_PATHS = (
+					/Users/stephan/Library/Developer/GStreamer/iPhone.sdk,
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
 				HEADER_SEARCH_PATHS = "\"/Users/stephan/Library/Developer/GStreamer/iPhone.sdk/GStreamer.framework/Headers\"";
 				INFOPLIST_FILE = Configuration/source.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -432,7 +493,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				FRAMEWORK_SEARCH_PATHS = /Users/stephan/Library/Developer/GStreamer/iPhone.sdk;
+				FRAMEWORK_SEARCH_PATHS = (
+					/Users/stephan/Library/Developer/GStreamer/iPhone.sdk,
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
 				HEADER_SEARCH_PATHS = "\"/Users/stephan/Library/Developer/GStreamer/iPhone.sdk/GStreamer.framework/Headers\"";
 				INFOPLIST_FILE = Configuration/source.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
