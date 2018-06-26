@@ -8,15 +8,27 @@
 
 #include <gst/player/player.h>
 
-#include "GstPlayerWrapper.h"
+#include <stdio.h>
 
+#include "GstIosInit.h"
+
+/*
+ // TODO: see static gst_init_once
 gpointer GstInit(gpointer data) {
-    gst_init(NULL, NULL);
+    // gst_init(NULL, NULL);
+    GstIosInit();
     return NULL;
 }
+*/
 
 void GstPlayerInit() {
-    gst_init(NULL, NULL);
+    // gst_init(NULL, NULL);
+    
+    gst_println("Initializing GStreamer ...");
+    
+    GstIosInit();
+    
+    gst_println("Initialized GStreamer.");
 }
 
 void* GstPlayerCreate(void

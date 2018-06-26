@@ -9,8 +9,6 @@
 #ifndef GstPlayerWrapper_h
 #define GstPlayerWrapper_h
 
-#include <stdio.h>
-
 void GstPlayerInit();
 
 void* GstPlayerCreate(void
