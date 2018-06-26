@@ -1,6 +1,6 @@
 import Foundation
 
-class Player {
+public class Player {
     private var player:OpaquePointer?
     
     public init() {
