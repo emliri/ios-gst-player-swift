@@ -1,10 +1,14 @@
 import Foundation
 
 public class Player {
-    public init() {
-        
-    }
+    private var player:OpaquePointer?
     
+    init() {
+        gst_init(nil, nil)
+        self.player = gst_player_new(nil, nil)
+        gst_player_play(self.player)
+    }
+
     public func play() {
         
     }
