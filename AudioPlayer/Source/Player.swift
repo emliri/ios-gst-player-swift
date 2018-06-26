@@ -5,6 +5,8 @@ public class Player {
     private var player:UnsafeMutableRawPointer?
     
     public init() {
+        GstPlayerInit()
+        ///*
         self.player = GstPlayerCreate({ (a:UnsafeMutableRawPointer?, time:Int, data:UnsafeMutableRawPointer?) in
             guard
                 let data:UnsafeMutableRawPointer = data
@@ -13,6 +15,7 @@ public class Player {
             player.delegate?.updated(position:Float(time))
             
         }, UnsafeMutableRawPointer(Unmanaged.passUnretained(self).toOpaque()))
+        //*/
     }
 
     public func setUri(uri: String) {

@@ -14,7 +14,7 @@ gpointer GstInit(gpointer data) {
     gst_init(NULL, NULL);
     return NULL;
 }
-    
+
 void GstPlayerInit() {
     gst_init(NULL, NULL);
 }
@@ -25,6 +25,8 @@ void* GstPlayerCreate(void
                                         void *data), void* userData) {
     //static GOnce gst_init_once = G_ONCE_INIT;
     //g_once (&gst_init_once, GstInit, NULL);
+                          
+    gst_debug_set_threshold_for_name("gst-player", GST_LEVEL_TRACE);
     
     GstPlayer* player = gst_player_new(NULL, NULL);
     
