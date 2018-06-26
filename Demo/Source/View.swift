@@ -50,7 +50,7 @@ class View:UIViewController {
     }
     
     @objc private func selectorPlay(button:UIBarButtonItem) {
-        
+        self.presenter.interactor.play()
     }
     
     @objc private func selectorStop(button:UIBarButtonItem) {
