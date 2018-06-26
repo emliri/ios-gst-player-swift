@@ -9,6 +9,10 @@ class Interactor {
     }
     
     func play() {
-//        self.player.play()
+        let bundle:Bundle = Bundle.main
+        let url:URL = bundle.url(forResource:"guitars", withExtension:"m4a")!
+        print("playing ")
+        print(url.standardizedFileURL.path)
+        self.player.setUri(uri:url.standardizedFileURL.path)
     }
 }
