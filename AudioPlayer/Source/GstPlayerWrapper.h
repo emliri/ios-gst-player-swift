@@ -20,4 +20,8 @@ void* GstPlayerCreate(void
 
 void GstPlayerSetUri(void* player, const char *uri);
 
+void GstPlayerPlay(void* player);
+
+void GstPlayerSeek(void* player, int milliseconds);
+
 #endif /* GstPlayerWrapper_h */

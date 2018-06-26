@@ -2,10 +2,10 @@ import Foundation
 
 public class Player {
     private var delegate:PlayerDelegate?
-    private var player:OpaquePointer?
+    private var player:UnsafeMutableRawPointer?
     
     public init() {
-        GstPlayerCreate({ (a:UnsafeMutableRawPointer?, time:Int, data:UnsafeMutableRawPointer?) in
+        self.player = GstPlayerCreate({ (a:UnsafeMutableRawPointer?, time:Int, data:UnsafeMutableRawPointer?) in
             guard
                 let data:UnsafeMutableRawPointer = data
             else { return }
@@ -15,7 +15,11 @@ public class Player {
         }, UnsafeMutableRawPointer(Unmanaged.passUnretained(self).toOpaque()))
     }
 
+    public func setUri(uri: String) {
+        GstPlayerSetUri(UnsafeMutableRawPointer(Unmanaged.passUnretained(self).toOpaque()), uri)
+    }
+    
     public func play() {
-        
+        GstPlayerPlay(UnsafeMutableRawPointer(Unmanaged.passUnretained(self).toOpaque()))
     }
 }
