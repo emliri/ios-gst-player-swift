@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D427370220E2729C00B11C31 /* AudioPlayer.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DA3E943820E1024B00F049AD /* AudioPlayer.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		DA3E941D20E0FF3400F049AD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA3E941B20E0FF3400F049AD /* LaunchScreen.storyboard */; };
 		DA3E941F20E0FF4800F049AD /* Application.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3E941E20E0FF4800F049AD /* Application.swift */; };
-		DA53E8FF20E2697100CE899D /* AudioPlayer.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DA3E943820E1024B00F049AD /* AudioPlayer.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		DA5E48D020E109D2003F4619 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5E48CF20E109D2003F4619 /* View.swift */; };
 		DA606AEC20E10E1F003C6EFB /* Presenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA606AEB20E10E1F003C6EFB /* Presenter.swift */; };
 		DA606AEE20E10E3C003C6EFB /* Interactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA606AED20E10E3C003C6EFB /* Interactor.swift */; };
@@ -26,7 +26,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				DA53E8FF20E2697100CE899D /* AudioPlayer.framework in Embed Frameworks */,
+				D427370220E2729C00B11C31 /* AudioPlayer.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -341,6 +341,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.blinkist.AudioPlayer.Demo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_PRECOMPILE_BRIDGING_HEADER = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -357,6 +358,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.blinkist.AudioPlayer.Demo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_PRECOMPILE_BRIDGING_HEADER = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
