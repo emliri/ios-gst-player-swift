@@ -10,6 +10,7 @@
 		D42736FE20E2705800B11C31 /* GstPlayerWrapper.h in Headers */ = {isa = PBXBuildFile; fileRef = D42736FC20E2705800B11C31 /* GstPlayerWrapper.h */; };
 		D42736FF20E2705800B11C31 /* GstPlayerWrapper.c in Sources */ = {isa = PBXBuildFile; fileRef = D42736FD20E2705800B11C31 /* GstPlayerWrapper.c */; };
 		D427370120E2717E00B11C31 /* BridgingHeader.h in Headers */ = {isa = PBXBuildFile; fileRef = D427370020E2717E00B11C31 /* BridgingHeader.h */; };
+		D427370420E27C0A00B11C31 /* PlayerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D427370320E27C0A00B11C31 /* PlayerDelegate.swift */; };
 		DA3E942C20E1001300F049AD /* AudioPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA138DF120E0FC4100A47DAE /* AudioPlayer.framework */; };
 		DA3E943420E1006300F049AD /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3E943320E1006300F049AD /* Player.swift */; };
 		DA3E943620E1007400F049AD /* TestAudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3E943520E1007400F049AD /* TestAudioPlayer.swift */; };
@@ -31,6 +32,7 @@
 		D42736FC20E2705800B11C31 /* GstPlayerWrapper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GstPlayerWrapper.h; sourceTree = "<group>"; };
 		D42736FD20E2705800B11C31 /* GstPlayerWrapper.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = GstPlayerWrapper.c; sourceTree = "<group>"; };
 		D427370020E2717E00B11C31 /* BridgingHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BridgingHeader.h; sourceTree = "<group>"; };
+		D427370320E27C0A00B11C31 /* PlayerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerDelegate.swift; sourceTree = "<group>"; };
 		DA138DF120E0FC4100A47DAE /* AudioPlayer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AudioPlayer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA3E942020E0FFDC00F049AD /* Configuration */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Configuration; sourceTree = "<group>"; };
 		DA3E942720E1001300F049AD /* Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -86,6 +88,7 @@
 			isa = PBXGroup;
 			children = (
 				DA3E943320E1006300F049AD /* Player.swift */,
+				D427370320E27C0A00B11C31 /* PlayerDelegate.swift */,
 				D42736FC20E2705800B11C31 /* GstPlayerWrapper.h */,
 				D42736FD20E2705800B11C31 /* GstPlayerWrapper.c */,
 				D427370020E2717E00B11C31 /* BridgingHeader.h */,
@@ -230,6 +233,7 @@
 			files = (
 				DA3E943420E1006300F049AD /* Player.swift in Sources */,
 				D42736FF20E2705800B11C31 /* GstPlayerWrapper.c in Sources */,
+				D427370420E27C0A00B11C31 /* PlayerDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
