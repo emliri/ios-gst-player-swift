@@ -21,9 +21,10 @@ class Interactor {
         
         var uri: String;
         
-        uri = url.standardizedFileURL.path
-        uri = "http://tchakabam.com/test-media/m4a/guitars.m4a"
-        uri = "http://tchakabam.com/test-media/m4a/Theo Katzman - Heartbreak Hits - 08 As the Romans Do.mp3"
+        uri = url.standardizedFileURL.absoluteString // NOTE: Need absolute URL string here with 'file://' scheme, not only path !
+        
+        //uri = "http://tchakabam.com/test-media/m4a/guitars.m4a"
+        //uri = "http://tchakabam.com/test-media/m4a/Theo Katzman - Heartbreak Hits - 08 As the Romans Do.mp3"
         //uri = "http://tchakabam.com/test-media/m4a/shalafon.mp3"
         
         self.player.setUri(uri: uri)
