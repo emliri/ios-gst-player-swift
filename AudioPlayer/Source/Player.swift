@@ -16,6 +16,7 @@ public class Player {
                 let context:UnsafeMutableRawPointer = context
             else {
                 print("ERROR: Context not set")
+                assertionFailure("Failed to set context")
                 return
             }
 
