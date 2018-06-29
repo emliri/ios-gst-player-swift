@@ -6,6 +6,7 @@ class Interactor:PlayerDelegate {
     
     init() {
         self.player = Player()
+        self.player.delegate = self
     }
     
     func play() {
