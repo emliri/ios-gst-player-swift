@@ -1,7 +1,7 @@
 import Foundation
 import AudioPlayer
 
-class Interactor {
+class Interactor:PlayerDelegate {
     private let player:Player
     
     init() {
@@ -30,5 +30,9 @@ class Interactor {
         self.player.setUri(uri: uri)
         
         self.player.play()
+    }
+    
+    func updated(position:Float) {
+        print("Player delegate at position: \(position)")
     }
 }
