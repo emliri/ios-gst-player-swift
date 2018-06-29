@@ -20,17 +20,15 @@ public class Player {
                 return
             }
 
-            print("Time:", time)
+            //print("Time:", time)
             
-            /*
-            let player:Player = Unmanaged<Player>.fromOpaque(context).takeRetainedValue()
+            let player:Player = Unmanaged<Player>.fromOpaque(context).takeUnretainedValue()
             
             if (player.delegate != nil) {
                 player.delegate?.updated(position:Float(time))
             }
-             */
             
-        }, UnsafeMutableRawPointer(Unmanaged.passUnretained(self).toOpaque()))
+        }, UnsafeMutableRawPointer(Unmanaged<Player>.passUnretained(self).toOpaque()))
     }
 
     public func setUri(uri: String) {
