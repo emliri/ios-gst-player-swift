@@ -7,7 +7,9 @@ class Player:PlayerProtocol {
     var provider:PlayerProviderProtocol
     
     init() {
+        
         self.provider = PlayerProviderFactory.makeProvider()
+        self.provider.delegate = self
         
         /*
         GstPlayerInit() // Currently MUST only be called once !! See GstPlayerInit implementation
