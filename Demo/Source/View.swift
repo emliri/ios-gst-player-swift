@@ -33,39 +33,38 @@ class View:UIViewController {
     
     private func makeActions() {
         let actionPlay:UIBarButtonItem = UIBarButtonItem(barButtonSystemItem:UIBarButtonSystemItem.play,
-                                                         target:self, action:#selector(self.selectorPlay(button:)))
+                                                         target:self, action:#selector(self.selectorPlay))
         let actionStop:UIBarButtonItem = UIBarButtonItem(barButtonSystemItem:UIBarButtonSystemItem.stop,
-                                                         target:self, action:#selector(self.selectorStop(button:)))
+                                                         target:self, action:#selector(self.selectorStop))
         let actionPause:UIBarButtonItem = UIBarButtonItem(barButtonSystemItem:UIBarButtonSystemItem.pause,
-                                                          target:self, action:#selector(self.selectorPause(button:)))
+                                                          target:self, action:#selector(self.selectorPause))
         let actionNext:UIBarButtonItem = UIBarButtonItem(barButtonSystemItem:UIBarButtonSystemItem.fastForward,
-                                                         target:self, action:#selector(self.selectorNext(button:)))
+                                                         target:self, action:#selector(self.selectorNext))
         let actionPrevious:UIBarButtonItem = UIBarButtonItem(barButtonSystemItem:UIBarButtonSystemItem.rewind,
-                                                             target:self,
-                                                             action:#selector(self.selectorPrevious(button:)))
+                                                             target:self, action:#selector(self.selectorPrevious))
         let flexibleSpace:UIBarButtonItem = UIBarButtonItem(barButtonSystemItem:UIBarButtonSystemItem.flexibleSpace,
                                                             target:nil, action:nil)
         self.setToolbarItems([actionPrevious, flexibleSpace, actionPause, flexibleSpace, actionStop, flexibleSpace,
                               actionPlay, flexibleSpace, actionNext], animated:false)
     }
     
-    @objc private func selectorPlay(button:UIBarButtonItem) {
+    @objc private func selectorPlay() {
         self.presenter.interactor.play()
     }
     
-    @objc private func selectorStop(button:UIBarButtonItem) {
+    @objc private func selectorStop() {
         
     }
     
-    @objc private func selectorPause(button:UIBarButtonItem) {
+    @objc private func selectorPause() {
         
     }
     
-    @objc private func selectorNext(button:UIBarButtonItem) {
+    @objc private func selectorNext() {
         
     }
     
-    @objc private func selectorPrevious(button:UIBarButtonItem) {
+    @objc private func selectorPrevious() {
         
     }
 }
