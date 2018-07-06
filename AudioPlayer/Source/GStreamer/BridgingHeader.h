@@ -1,6 +1,6 @@
 #ifndef BridgingHeader_h
 #define BridgingHeader_h
 
-#include "GStreamerInterface.h"
+#import "Gstreamer.h"
 
 #endif

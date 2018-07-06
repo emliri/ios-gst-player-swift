@@ -4,9 +4,12 @@ class Player:PlayerProtocol {
     weak var delegate:PlayerDelegate?
 
     private var gstPlayer:UnsafeMutableRawPointer?
+    var provider:PlayerProviderProtocol
     
     init() {
+        self.provider = Gstreamer() as! PlayerProviderProtocol
         
+        /*
         GstPlayerInit() // Currently MUST only be called once !! See GstPlayerInit implementation
 
         self.gstPlayer = GstPlayerCreate({
@@ -27,13 +30,16 @@ class Player:PlayerProtocol {
             player.delegate?.playerUpdated(position:Float(time))
             
         }, UnsafeMutableRawPointer(Unmanaged<Player>.passUnretained(self).toOpaque()))
+        */
     }
 
     func setUri(uri: String) {
-        GstPlayerSetUri(self.gstPlayer, uri)
+        self.provider.set(uri:uri)
+//        GstPlayerSetUri(self.gstPlayer, uri)
     }
     
     func play() {
-        GstPlayerPlay(self.gstPlayer)
+        self.provider.play()
+//        GstPlayerPlay(self.gstPlayer)
     }
 }
