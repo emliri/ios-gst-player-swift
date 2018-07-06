@@ -1,5 +1,5 @@
-#ifndef __GStreamerConfiguration_H__
-#define __GStreamerConfiguration_H__
+#ifndef __GstreamerConfiguration_H__
+#define __GstreamerConfiguration_H__
 
 #include <gst/gst.h>
 
@@ -32,7 +32,7 @@ G_PASTE(g_io_module_, G_PASTE(name, _load_static)) ()
 
 #define GST_IOS_GIO_MODULE_GNUTLS
 
-void GStreamerConfiguration ();
+void GstreamerConfiguration ();
 
 G_END_DECLS
 

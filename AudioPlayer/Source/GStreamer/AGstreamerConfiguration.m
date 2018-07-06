@@ -1,10 +1,8 @@
 #import <Foundation/NSString.h>
 #import <Foundation/NSBundle.h>
 #import <Foundation/NSPathUtilities.h>
-
-#include <gst/gst.h>
-
-#include "GStreamerConfiguration.h"
+#import <gst/gst.h>
+#import "GstreamerConfiguration.h"
 
 #if defined(GST_IOS_PLUGIN_NLE) || defined(GST_IOS_PLUGINS_GES)
 GST_PLUGIN_STATIC_DECLARE(nle);
@@ -499,7 +497,7 @@ GST_G_IO_MODULE_DECLARE(gnutls);
 #endif
 
 void
-GStreamerConfiguration (void)
+GstreamerConfiguration (void)
 {
     GstPluginFeature *plugin;
     GstRegistry *reg;
