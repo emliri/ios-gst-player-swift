@@ -7,7 +7,7 @@ class Player:PlayerProtocol {
     var provider:PlayerProviderProtocol
     
     init() {
-        self.provider = Gstreamer() as! PlayerProviderProtocol
+        self.provider = PlayerProviderFactory.makeProvider()
         
         /*
         GstPlayerInit() // Currently MUST only be called once !! See GstPlayerInit implementation

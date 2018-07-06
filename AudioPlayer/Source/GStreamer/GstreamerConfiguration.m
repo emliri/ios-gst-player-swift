@@ -496,8 +496,7 @@ GST_PLUGIN_STATIC_DECLARE(rtspclientsink);
 GST_G_IO_MODULE_DECLARE(gnutls);
 #endif
 
-void
-GstreamerConfiguration (void)
+void GstreamerConfiguration (void)
 {
     GstPluginFeature *plugin;
     GstRegistry *reg;
