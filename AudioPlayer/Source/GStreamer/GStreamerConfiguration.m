@@ -4,7 +4,7 @@
 
 #include <gst/gst.h>
 
-#include "GstIosInit.h"
+#include "GStreamerConfiguration.h"
 
 #if defined(GST_IOS_PLUGIN_NLE) || defined(GST_IOS_PLUGINS_GES)
 GST_PLUGIN_STATIC_DECLARE(nle);
@@ -499,7 +499,7 @@ GST_G_IO_MODULE_DECLARE(gnutls);
 #endif
 
 void
-GstIosInit (void)
+GStreamerConfiguration (void)
 {
     GstPluginFeature *plugin;
     GstRegistry *reg;
