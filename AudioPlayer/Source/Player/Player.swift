@@ -1,11 +1,11 @@
 import Foundation
 
-public class Player {
-    public var delegate:PlayerDelegate?
+class Player:PlayerProtocol {
+    weak var delegate:PlayerDelegate?
 
     private var gstPlayer:UnsafeMutableRawPointer?
     
-    public init() {
+    init() {
         
         GstPlayerInit() // Currently MUST only be called once !! See GstPlayerInit implementation
 
@@ -31,11 +31,11 @@ public class Player {
         }, UnsafeMutableRawPointer(Unmanaged<Player>.passUnretained(self).toOpaque()))
     }
 
-    public func setUri(uri: String) {
+    func setUri(uri: String) {
         GstPlayerSetUri(self.gstPlayer, uri)
     }
     
-    public func play() {
+    func play() {
         GstPlayerPlay(self.gstPlayer)
     }
 }

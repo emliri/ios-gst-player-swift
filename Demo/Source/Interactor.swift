@@ -1,12 +1,12 @@
 import Foundation
 import AudioPlayer
 
-class Interactor:PlayerDelegate {
-    private let player:Player
+class Interactor {
+    let player:PlayerProtocol
     
     init() {
-        self.player = Player()
-        self.player.delegate = self
+        self.player = PlayerFactory.makePlayer()
+//        self.player.delegate = self
     }
     
     func play() {
@@ -28,9 +28,9 @@ class Interactor:PlayerDelegate {
         //uri = "http://tchakabam.com/test-media/m4a/Theo Katzman - Heartbreak Hits - 08 As the Romans Do.mp3"
         //uri = "http://tchakabam.com/test-media/m4a/shalafon.mp3"
         
-        self.player.setUri(uri: uri)
+//        self.player.setUri(uri: uri)
         
-        self.player.play()
+//        self.player.play()
     }
     
     func updated(position:Float) {
