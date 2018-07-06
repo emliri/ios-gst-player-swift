@@ -1,9 +1,8 @@
 import Foundation
 
 public class PlayerFactory {
-    public class func makePlayer() -> PlayerProtocol {
-        return Player()
-    }
+    static var monoStatePlayer:PlayerProtocol = Player()
+    public class func makePlayer() -> PlayerProtocol { return monoStatePlayer }
     
     private init() { }
 }
