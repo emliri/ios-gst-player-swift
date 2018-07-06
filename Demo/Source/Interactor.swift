@@ -6,7 +6,7 @@ class Interactor {
     
     init() {
         self.player = PlayerFactory.makePlayer()
-//        self.player.delegate = self
+        self.player.delegate = self
     }
     
     func play() {
@@ -28,12 +28,8 @@ class Interactor {
         //uri = "http://tchakabam.com/test-media/m4a/Theo Katzman - Heartbreak Hits - 08 As the Romans Do.mp3"
         //uri = "http://tchakabam.com/test-media/m4a/shalafon.mp3"
         
-//        self.player.setUri(uri: uri)
+        self.player.setUri(uri: uri)
         
-//        self.player.play()
-    }
-    
-    func updated(position:Float) {
-        print("Player delegate at position: \(position)")
+        self.player.play()
     }
 }

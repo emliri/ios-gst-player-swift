@@ -1,5 +1,5 @@
 import Foundation
 
 public protocol PlayerDelegate:AnyObject {
-    func updated(position:Float)
+    func playerUpdated(position:Float)
 }

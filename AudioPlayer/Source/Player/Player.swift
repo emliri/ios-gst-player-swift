@@ -24,9 +24,7 @@ class Player:PlayerProtocol {
             
             let player:Player = Unmanaged<Player>.fromOpaque(context).takeUnretainedValue()
             
-            if (player.delegate != nil) {
-                player.delegate?.updated(position:Float(time))
-            }
+            player.delegate?.playerUpdated(position:Float(time))
             
         }, UnsafeMutableRawPointer(Unmanaged<Player>.passUnretained(self).toOpaque()))
     }
