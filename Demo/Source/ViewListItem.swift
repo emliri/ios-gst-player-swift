@@ -16,6 +16,7 @@ class ViewListItem:UIView {
     }
     
     private func configureView() {
+        self.backgroundColor = UIColor.white
         self.translatesAutoresizingMaskIntoConstraints = false
         self.isUserInteractionEnabled = false
     }
@@ -49,7 +50,7 @@ class ViewListItem:UIView {
         label.font = UIFont.systemFont(ofSize:ViewConstants.ListItem.valueFontSize, weight:UIFont.Weight.light)
         label.textColor = UIColor.black
         label.textAlignment = NSTextAlignment.right
-        self.labelTitle = label
+        self.labelValue = label
         self.addSubview(label)
     }
     

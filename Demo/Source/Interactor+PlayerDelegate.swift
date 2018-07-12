@@ -3,6 +3,8 @@ import AudioPlayer
 
 extension Interactor:PlayerDelegate {
     func playerUpdated(position:Float) {
-        print("Player position: \(position)")
+        DispatchQueue.main.async { [weak self] in
+            self?.presenter.update(time:position)
+        }
     }
 }

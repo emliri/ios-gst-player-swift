@@ -2,6 +2,7 @@ import Foundation
 import AudioPlayer
 
 class Interactor {
+    weak var presenter:Presenter!
     let player:PlayerProtocol
     
     init() {

@@ -2,12 +2,14 @@ import UIKit
 
 class View:UIViewController {
     let presenter:Presenter
+    weak var viewContent:ViewContent!
     
     init() {
         self.presenter = Presenter()
         super.init(nibName:nil, bundle:nil)
         self.configureView()
         self.makeActions()
+        self.presenter.view = self
     }
     
     required init?(coder:NSCoder) {
@@ -15,7 +17,9 @@ class View:UIViewController {
     }
     
     override func loadView() {
-        self.view = ViewContent()
+        let view:ViewContent = ViewContent()
+        self.viewContent = view
+        self.view = view
     }
     
     override func viewDidLoad() {
