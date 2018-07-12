@@ -28,6 +28,11 @@ class View:UIViewController {
         self.navigationController?.setToolbarHidden(false, animated:true)
     }
     
+    override func viewDidAppear(_ animated:Bool) {
+        super.viewDidAppear(animated)
+        self.presenter.update(time:0)
+    }
+    
     private func configureView() {
         self.title = NSLocalizedString("View_Title", comment:String())
         if #available(iOS 11.0, *) {

@@ -9,6 +9,9 @@ class Presenter {
         self.interactor = Interactor()
         self.numberFormatter = NumberFormatter()
         self.numberFormatter.numberStyle = NumberFormatter.Style.decimal
+        self.numberFormatter.minimumIntegerDigits = ViewConstants.Time.minIntegers
+        self.numberFormatter.minimumFractionDigits = ViewConstants.Time.decimals
+        self.numberFormatter.maximumFractionDigits = ViewConstants.Time.decimals
         self.interactor.presenter = self
     }
     

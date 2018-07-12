@@ -2,6 +2,13 @@ import Foundation
 
 extension Player:PlayerProviderDelegate {
     func positionCallback(time:Float) {
-        print("time updated: \(time)")
+        let time:Float = self.format(time:time)
+        DispatchQueue.main.async { [weak self] in
+            self?.delegate?.playerUpdated(position:time)
+        }
+    }
+    
+    private func format(time:Float) -> Float {
+        return time / PlayerConstants.timeFormatDivider
     }
 }
