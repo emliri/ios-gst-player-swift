@@ -42,7 +42,7 @@ class View:UIViewController {
     
     override func viewDidAppear(_ animated:Bool) {
         super.viewDidAppear(animated)
-        self.presenter.playerUpdated(position:0)
+        self.presenter.playerUpdated(seconds:0)
     }
     
     private func configureView() {

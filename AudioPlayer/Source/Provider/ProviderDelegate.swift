@@ -1,5 +1,5 @@
 import Foundation
 
-@objc protocol PlayerProviderDelegate:AnyObject {
+@objc protocol ProviderDelegate:AnyObject {
     func positionCallback(time:Float)
 }

@@ -7,7 +7,7 @@ class Presenter {
     let player:PlayerProtocol
     
     init() {
-        self.player = PlayerFactory.makePlayer()
+        self.player = Factory.makePlayer()
         self.viewModel = ViewModel()
         self.player.delegate = self
     }

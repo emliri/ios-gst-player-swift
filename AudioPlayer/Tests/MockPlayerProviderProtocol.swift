@@ -1,8 +1,8 @@
 import Foundation
 @testable import AudioPlayer
 
-class MockPlayerProviderProtocol:PlayerProviderProtocol {
-    var delegate:PlayerProviderDelegate?
+class MockPlayerProviderProtocol:ProviderProtocol {
+    var delegate:ProviderDelegate?
     
     required init() { }
     

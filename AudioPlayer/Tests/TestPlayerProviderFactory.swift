@@ -3,13 +3,13 @@ import XCTest
 
 class TestPlayerProviderFactory:XCTestCase {
     func testMakeNewProviderReturnsNotNil() {
-        let provider:PlayerProviderProtocol? = PlayerProviderFactory.makeProvider()
+        let provider:ProviderProtocol? = ProviderFactory.makeProvider()
         XCTAssertNotNil(provider, "Failed to make a provider")
     }
     
     func testUseTypeFromStaticVar() {
-        PlayerProviderFactory.providerType = MockPlayerProviderProtocol.self
-        let provider:MockPlayerProviderProtocol? = PlayerProviderFactory.makeProvider() as? MockPlayerProviderProtocol
+        ProviderFactory.providerType = MockPlayerProviderProtocol.self
+        let provider:MockPlayerProviderProtocol? = ProviderFactory.makeProvider() as? MockPlayerProviderProtocol
         XCTAssertNotNil(provider, "Invalid provider type")
     }
 }

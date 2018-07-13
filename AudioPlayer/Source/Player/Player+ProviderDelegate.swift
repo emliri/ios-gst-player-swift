@@ -1,14 +1,9 @@
 import Foundation
 
-extension Player:PlayerProviderDelegate {
+extension Player:ProviderDelegate {
     func positionCallback(time:Float) {
-        let time:Float = self.format(time:time)
         DispatchQueue.main.async { [weak self] in
-            self?.delegate?.playerUpdated(position:time)
+            self?.delegate?.playerUpdated(seconds:time / Constants.nanoSecondsToSeconds)
         }
-    }
-    
-    private func format(time:Float) -> Float {
-        return time / PlayerConstants.timeFormatDivider
     }
 }
