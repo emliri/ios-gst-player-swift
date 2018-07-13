@@ -1,4 +1,8 @@
-#include "gst_ios_init.h"
+#import <Foundation/NSString.h>
+#import <Foundation/NSBundle.h>
+#import <Foundation/NSPathUtilities.h>
+#import <gst/gst.h>
+#import "GstreamerConfiguration.h"
 
 #if defined(GST_IOS_PLUGIN_NLE) || defined(GST_IOS_PLUGINS_GES)
 GST_PLUGIN_STATIC_DECLARE(nle);
@@ -98,9 +102,6 @@ GST_PLUGIN_STATIC_DECLARE(dvdsub);
 #endif
 #if defined(GST_IOS_PLUGIN_DVDLPCMDEC) || defined(GST_IOS_PLUGINS_CODECS_RESTRICTED)
 GST_PLUGIN_STATIC_DECLARE(dvdlpcmdec);
-#endif
-#if defined(GST_IOS_PLUGIN_MPEG2DEC) || defined(GST_IOS_PLUGINS_CODECS_RESTRICTED)
-GST_PLUGIN_STATIC_DECLARE(mpeg2dec);
 #endif
 #if defined(GST_IOS_PLUGIN_XINGMUX) || defined(GST_IOS_PLUGINS_CODECS_RESTRICTED)
 GST_PLUGIN_STATIC_DECLARE(xingmux);
@@ -491,46 +492,46 @@ GST_PLUGIN_STATIC_DECLARE(rtspclientsink);
 #endif
 
 #if defined(GST_IOS_GIO_MODULE_GNUTLS)
-  #include <gio/gio.h>
-  GST_G_IO_MODULE_DECLARE(gnutls);
+#include <gio/gio.h>
+GST_G_IO_MODULE_DECLARE(gnutls);
 #endif
 
-void
-gst_ios_init (void)
+void GstreamerConfiguration (void)
 {
-  GstPluginFeature *plugin;
-  GstRegistry *reg;
-  NSString *resources = [[NSBundle mainBundle] resourcePath];
-  NSString *tmp = NSTemporaryDirectory();
-  NSString *cache = [NSHomeDirectory() stringByAppendingPathComponent:@"Library/Caches"];
-  NSString *docs = [NSHomeDirectory() stringByAppendingPathComponent:@"Documents"];
+    GstPluginFeature *plugin;
+    GstRegistry *reg;
     
-  const gchar *resources_dir = [resources UTF8String];
-  const gchar *tmp_dir = [tmp UTF8String];
-  const gchar *cache_dir = [cache UTF8String];
-  const gchar *docs_dir = [docs UTF8String];
-  gchar *ca_certificates;
+    NSString *resources = [[NSBundle mainBundle] resourcePath];
+    NSString *tmp = NSTemporaryDirectory();
+    NSString *cache = [NSHomeDirectory() stringByAppendingPathComponent:@"Library/Caches"];
+    NSString *docs = [NSHomeDirectory() stringByAppendingPathComponent:@"Documents"];
     
-  g_setenv ("TMP", tmp_dir, TRUE);
-  g_setenv ("TEMP", tmp_dir, TRUE);
-  g_setenv ("TMPDIR", tmp_dir, TRUE);
-  g_setenv ("XDG_RUNTIME_DIR", resources_dir, TRUE);
-  g_setenv ("XDG_CACHE_HOME", cache_dir, TRUE);
+    const gchar *resources_dir = [resources UTF8String];
+    const gchar *tmp_dir = [tmp UTF8String];
+    const gchar *cache_dir = [cache UTF8String];
+    const gchar *docs_dir = [docs UTF8String];
+    gchar *ca_certificates;
     
-  g_setenv ("HOME", docs_dir, TRUE);
-  g_setenv ("XDG_DATA_DIRS", resources_dir, TRUE);
-  g_setenv ("XDG_CONFIG_DIRS", resources_dir, TRUE);
-  g_setenv ("XDG_CONFIG_HOME", cache_dir, TRUE);
-  g_setenv ("XDG_DATA_HOME", resources_dir, TRUE);
-  g_setenv ("FONTCONFIG_PATH", resources_dir, TRUE);
-
-  ca_certificates = g_build_filename (resources_dir, "ssl", "certs", "ca-certifcates.crt", NULL);
-  g_setenv ("CA_CERTIFICATES", ca_certificates, TRUE);
-  g_free (ca_certificates);
+    g_setenv ("TMP", tmp_dir, TRUE);
+    g_setenv ("TEMP", tmp_dir, TRUE);
+    g_setenv ("TMPDIR", tmp_dir, TRUE);
+    g_setenv ("XDG_RUNTIME_DIR", resources_dir, TRUE);
+    g_setenv ("XDG_CACHE_HOME", cache_dir, TRUE);
     
-  gst_init (NULL, NULL);
-
-  #if defined(GST_IOS_PLUGIN_NLE) || defined(GST_IOS_PLUGINS_GES)
+    g_setenv ("HOME", docs_dir, TRUE);
+    g_setenv ("XDG_DATA_DIRS", resources_dir, TRUE);
+    g_setenv ("XDG_CONFIG_DIRS", resources_dir, TRUE);
+    g_setenv ("XDG_CONFIG_HOME", cache_dir, TRUE);
+    g_setenv ("XDG_DATA_HOME", resources_dir, TRUE);
+    g_setenv ("FONTCONFIG_PATH", resources_dir, TRUE);
+    
+    ca_certificates = g_build_filename (resources_dir, "ssl", "certs", "ca-certifcates.crt", NULL);
+    g_setenv ("CA_CERTIFICATES", ca_certificates, TRUE);
+    g_free (ca_certificates);
+    
+    gst_init (NULL, NULL);
+    
+#if defined(GST_IOS_PLUGIN_NLE) || defined(GST_IOS_PLUGINS_GES)
     GST_PLUGIN_STATIC_REGISTER(nle);
 #endif
 #if defined(GST_IOS_PLUGIN_COREELEMENTS) || defined(GST_IOS_PLUGINS_CORE)
@@ -628,9 +629,6 @@ gst_ios_init (void)
 #endif
 #if defined(GST_IOS_PLUGIN_DVDLPCMDEC) || defined(GST_IOS_PLUGINS_CODECS_RESTRICTED)
     GST_PLUGIN_STATIC_REGISTER(dvdlpcmdec);
-#endif
-#if defined(GST_IOS_PLUGIN_MPEG2DEC) || defined(GST_IOS_PLUGINS_CODECS_RESTRICTED)
-    GST_PLUGIN_STATIC_REGISTER(mpeg2dec);
 #endif
 #if defined(GST_IOS_PLUGIN_XINGMUX) || defined(GST_IOS_PLUGINS_CODECS_RESTRICTED)
     GST_PLUGIN_STATIC_REGISTER(xingmux);
@@ -1019,18 +1017,18 @@ gst_ios_init (void)
 #if defined(GST_IOS_PLUGIN_RTSPCLIENTSINK) || defined(GST_IOS_PLUGINS_NET)
     GST_PLUGIN_STATIC_REGISTER(rtspclientsink);
 #endif
-
+    
 #if defined(GST_IOS_GIO_MODULE_GNUTLS)
-  GST_G_IO_MODULE_LOAD(gnutls);
+    GST_G_IO_MODULE_LOAD(gnutls);
 #endif
-
-  /* Lower the ranks of filesrc and giosrc so iosavassetsrc is
-   * tried first in gst_element_make_from_uri() for file:// */
-  reg = gst_registry_get();
-  plugin = gst_registry_lookup_feature(reg, "filesrc");
-  if (plugin)
-    gst_plugin_feature_set_rank(plugin, GST_RANK_SECONDARY);
-  plugin = gst_registry_lookup_feature(reg, "giosrc");
-  if (plugin)
-    gst_plugin_feature_set_rank(plugin, GST_RANK_SECONDARY-1);
+    
+    /* Lower the ranks of filesrc and giosrc so iosavassetsrc is
+     * tried first in gst_element_make_from_uri() for file:// */
+    reg = gst_registry_get();
+    plugin = gst_registry_lookup_feature(reg, "filesrc");
+    if (plugin)
+        gst_plugin_feature_set_rank(plugin, GST_RANK_SECONDARY);
+    plugin = gst_registry_lookup_feature(reg, "giosrc");
+    if (plugin)
+        gst_plugin_feature_set_rank(plugin, GST_RANK_SECONDARY-1);
 }
