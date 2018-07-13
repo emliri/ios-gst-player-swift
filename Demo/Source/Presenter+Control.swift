@@ -2,6 +2,13 @@ import Foundation
 
 extension Presenter {
     func play() {
+        do {
+            try self.player.play()
+        } catch let error {
+            
+        }
+        
+        /*
         print("play")
         
         let bundle:Bundle = Bundle.main
@@ -22,6 +29,6 @@ extension Presenter {
         
         self.player.setUri(uri: uri)
         
-        self.player.play()
+        self.player.play()*/
     }
 }

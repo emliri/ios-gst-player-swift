@@ -16,7 +16,7 @@ class Player:PlayerProtocol {
         self.provider.set(uri:uri)
     }
     
-    func play() {
+    func play() throws {
         self.provider.play()
     }
 }
