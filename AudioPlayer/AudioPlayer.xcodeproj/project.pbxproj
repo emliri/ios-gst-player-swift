@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		D427370120E2717E00B11C31 /* BridgingHeader.h in Headers */ = {isa = PBXBuildFile; fileRef = D427370020E2717E00B11C31 /* BridgingHeader.h */; };
 		D427370420E27C0A00B11C31 /* PlayerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D427370320E27C0A00B11C31 /* PlayerDelegate.swift */; };
 		D427370A20E2A1E800B11C31 /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D427370920E2A1E800B11C31 /* CoreAudio.framework */; };
 		D427370C20E2A1ED00B11C31 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D427370B20E2A1ED00B11C31 /* AVFoundation.framework */; };
@@ -21,12 +20,9 @@
 		D427371E20E2A49600B11C31 /* VideoToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D427371D20E2A49600B11C31 /* VideoToolbox.framework */; };
 		D427372020E2A4AC00B11C31 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D427371F20E2A4AC00B11C31 /* CoreMedia.framework */; };
 		D427372220E2A4F500B11C31 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D427372120E2A4F500B11C31 /* AssetsLibrary.framework */; };
-		DA1A894A20EF72AB006EF5CA /* Gstreamer.m in Sources */ = {isa = PBXBuildFile; fileRef = DAFB4E8020EF5EAE00BC9851 /* Gstreamer.m */; };
 		DA25675B20EF7A1700C30F34 /* MockPlayerProviderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA25675A20EF7A1700C30F34 /* MockPlayerProviderProtocol.swift */; };
 		DA25675D20EF7AE100C30F34 /* MockPlayerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA25675C20EF7AE100C30F34 /* MockPlayerDelegate.swift */; };
 		DA25675F20EF7B1600C30F34 /* PlayerDelegate+Default.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA25675E20EF7B1600C30F34 /* PlayerDelegate+Default.swift */; };
-		DA25676220EF7BCC00C30F34 /* GstreamerConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = DA25676020EF7BCC00C30F34 /* GstreamerConfiguration.m */; };
-		DA25676320EF7BCC00C30F34 /* GstreamerConfiguration.h in Headers */ = {isa = PBXBuildFile; fileRef = DA25676120EF7BCC00C30F34 /* GstreamerConfiguration.h */; };
 		DA25676520EF7BFC00C30F34 /* TestPlayerProviderFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA25676420EF7BFC00C30F34 /* TestPlayerProviderFactory.swift */; };
 		DA25676720EF7FDC00C30F34 /* ProviderDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA25676620EF7FDC00C30F34 /* ProviderDelegate.swift */; };
 		DA25676920EF7FF900C30F34 /* Player+ProviderDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA25676820EF7FF900C30F34 /* Player+ProviderDelegate.swift */; };
@@ -38,7 +34,6 @@
 		DA606B0220E1321B003C6EFB /* GStreamer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA606AFE20E130D2003C6EFB /* GStreamer.framework */; };
 		DAFB4E7A20EF55FB00BC9851 /* Factory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAFB4E7920EF55FB00BC9851 /* Factory.swift */; };
 		DAFB4E7C20EF561300BC9851 /* PlayerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAFB4E7B20EF561300BC9851 /* PlayerProtocol.swift */; };
-		DAFB4E8120EF5EAE00BC9851 /* Gstreamer.h in Headers */ = {isa = PBXBuildFile; fileRef = DAFB4E7F20EF5EAE00BC9851 /* Gstreamer.h */; };
 		DAFB4E8420EF6AE300BC9851 /* ProviderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAFB4E8320EF6AE300BC9851 /* ProviderProtocol.swift */; };
 /* End PBXBuildFile section */
 
@@ -53,7 +48,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		D427370020E2717E00B11C31 /* BridgingHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BridgingHeader.h; sourceTree = "<group>"; };
 		D427370320E27C0A00B11C31 /* PlayerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerDelegate.swift; sourceTree = "<group>"; };
 		D427370920E2A1E800B11C31 /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
 		D427370B20E2A1ED00B11C31 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
@@ -72,8 +66,6 @@
 		DA25675A20EF7A1700C30F34 /* MockPlayerProviderProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockPlayerProviderProtocol.swift; sourceTree = "<group>"; };
 		DA25675C20EF7AE100C30F34 /* MockPlayerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockPlayerDelegate.swift; sourceTree = "<group>"; };
 		DA25675E20EF7B1600C30F34 /* PlayerDelegate+Default.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PlayerDelegate+Default.swift"; sourceTree = "<group>"; };
-		DA25676020EF7BCC00C30F34 /* GstreamerConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GstreamerConfiguration.m; sourceTree = "<group>"; };
-		DA25676120EF7BCC00C30F34 /* GstreamerConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GstreamerConfiguration.h; sourceTree = "<group>"; };
 		DA25676420EF7BFC00C30F34 /* TestPlayerProviderFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestPlayerProviderFactory.swift; sourceTree = "<group>"; };
 		DA25676620EF7FDC00C30F34 /* ProviderDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProviderDelegate.swift; sourceTree = "<group>"; };
 		DA25676820EF7FF900C30F34 /* Player+ProviderDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Player+ProviderDelegate.swift"; sourceTree = "<group>"; };
@@ -86,8 +78,6 @@
 		DA606AFE20E130D2003C6EFB /* GStreamer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GStreamer.framework; path = ../../../../Users/zero/Library/Developer/GStreamer/iPhone.sdk/GStreamer.framework; sourceTree = "<group>"; };
 		DAFB4E7920EF55FB00BC9851 /* Factory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Factory.swift; sourceTree = "<group>"; };
 		DAFB4E7B20EF561300BC9851 /* PlayerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerProtocol.swift; sourceTree = "<group>"; };
-		DAFB4E7F20EF5EAE00BC9851 /* Gstreamer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Gstreamer.h; sourceTree = "<group>"; };
-		DAFB4E8020EF5EAE00BC9851 /* Gstreamer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Gstreamer.m; sourceTree = "<group>"; };
 		DAFB4E8320EF6AE300BC9851 /* ProviderProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProviderProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -178,7 +168,6 @@
 				DA2C104B20F8A9C900EDC0D4 /* PlayerDelegate */,
 				DA2C104A20F8A9A400EDC0D4 /* Shared */,
 				DA2C104920F8A96100EDC0D4 /* Provider */,
-				DAFB4E6F20EF51C100BC9851 /* Gstreamer */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -216,18 +205,6 @@
 			path = Frameworks;
 			sourceTree = "<group>";
 		};
-		DAFB4E6F20EF51C100BC9851 /* Gstreamer */ = {
-			isa = PBXGroup;
-			children = (
-				D427370020E2717E00B11C31 /* BridgingHeader.h */,
-				DA25676120EF7BCC00C30F34 /* GstreamerConfiguration.h */,
-				DA25676020EF7BCC00C30F34 /* GstreamerConfiguration.m */,
-				DAFB4E7F20EF5EAE00BC9851 /* Gstreamer.h */,
-				DAFB4E8020EF5EAE00BC9851 /* Gstreamer.m */,
-			);
-			path = Gstreamer;
-			sourceTree = "<group>";
-		};
 		DAFB4E7020EF520100BC9851 /* Player */ = {
 			isa = PBXGroup;
 			children = (
@@ -245,9 +222,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DA25676320EF7BCC00C30F34 /* GstreamerConfiguration.h in Headers */,
-				D427370120E2717E00B11C31 /* BridgingHeader.h in Headers */,
-				DAFB4E8120EF5EAE00BC9851 /* Gstreamer.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -350,8 +324,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DA1A894A20EF72AB006EF5CA /* Gstreamer.m in Sources */,
-				DA25676220EF7BCC00C30F34 /* GstreamerConfiguration.m in Sources */,
 				DA25675F20EF7B1600C30F34 /* PlayerDelegate+Default.swift in Sources */,
 				DAFB4E7A20EF55FB00BC9851 /* Factory.swift in Sources */,
 				DAFB4E8420EF6AE300BC9851 /* ProviderProtocol.swift in Sources */,
