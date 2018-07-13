@@ -5,7 +5,7 @@ extension Presenter {
         do {
             try self.player.play()
         } catch let error {
-            
+            self.showAlert(message:error.localizedDescription)
         }
         
         /*

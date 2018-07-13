@@ -1,9 +1,9 @@
 import Foundation
 
 class StatePlaying:StateProtocol {
-    let state:PlayerState
+    let value:PlayerState
     
     init() {
-        self.state = PlayerState.playing
+        self.value = PlayerState.playing
     }
 }

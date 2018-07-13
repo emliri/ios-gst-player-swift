@@ -17,11 +17,7 @@ static Gstreamer *monostate;
     self = [super init];
     monostate = self;
     GstreamerConfiguration();
-    
-    gst_debug_set_threshold_for_name("gst-player", GST_LEVEL_ERROR);
-    player = gst_player_new(NULL, NULL);
-    g_signal_connect(player, "position-updated", G_CALLBACK(positionCallback), NULL);
-    
+    [self configureGStreamer];
     return self;
 }
 
@@ -29,8 +25,18 @@ static Gstreamer *monostate;
     gst_player_play(player);
 }
 
--(void)setWithUri:(NSString * _Nonnull)uri {
-    gst_player_set_uri(player, [uri cStringUsingEncoding:NSASCIIStringEncoding]);
+-(void)setSourceWithUrl:(NSString * _Nonnull)url {
+    gst_player_set_uri(player, [url cStringUsingEncoding:NSASCIIStringEncoding]);
+}
+
+-(void)configureGStreamer {
+    gst_debug_set_threshold_for_name("gst-player", GST_LEVEL_ERROR);
+    player = gst_player_new(NULL, NULL);
+    [self configureCallBacks];
+}
+
+-(void)configureCallBacks {
+    g_signal_connect(player, "position-updated", G_CALLBACK(positionCallback), NULL);
 }
 
 void positionCallback(void *player, long time, void *data) {

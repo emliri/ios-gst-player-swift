@@ -2,8 +2,8 @@ import Foundation
 
 public protocol PlayerProtocol:AnyObject {
     var delegate:PlayerDelegate? { get set }
-    var state:PlayerState { get }
+    var media:PlayerMedia { get set }
+    var currentState:PlayerState { get }
     
     func play() throws
-    func setUri(uri:String)
 }

@@ -1,9 +1,18 @@
 import Foundation
 
 class StateNone:StateProtocol {
-    let state:PlayerState
+    let value:PlayerState
     
     init() {
-        self.state = PlayerState.none
+        self.value = PlayerState.none
+    }
+    
+    func play(player:Player) throws {
+        guard
+            let url:String = player.media.url
+        else { throw PlayerError.sourceNotSet }
+        player.provider.setSource(url:url)
+        player.provider.play()
+        player.state = State.playing
     }
 }

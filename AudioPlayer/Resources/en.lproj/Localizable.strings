@@ -1,1 +1,1 @@
-PlayerError_sourceNotSet="Player error: Playing not possible as a source has not being set.";
+PlayerError_sourceNotSet="AudioPlayer error: Playing not possible as a source has not been set.";

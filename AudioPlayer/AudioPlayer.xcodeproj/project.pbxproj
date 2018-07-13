@@ -43,6 +43,12 @@
 		DAE8F30E20F8AF6200EE1B0C /* StatePlaying.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE8F30D20F8AF6200EE1B0C /* StatePlaying.swift */; };
 		DAE8F31020F8AFF000EE1B0C /* PlayerError.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE8F30F20F8AFF000EE1B0C /* PlayerError.swift */; };
 		DAE8F31420F8B05B00EE1B0C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = DAE8F31220F8B05B00EE1B0C /* Localizable.strings */; };
+		DAE8F31620F8BE8200EE1B0C /* TestPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE8F31520F8BE8200EE1B0C /* TestPlayer.swift */; };
+		DAE8F31820F8BEDA00EE1B0C /* MockStateProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE8F31720F8BEDA00EE1B0C /* MockStateProtocol.swift */; };
+		DAE8F31B20F8BF5000EE1B0C /* StateProtocol+Default.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE8F31920F8BF2F00EE1B0C /* StateProtocol+Default.swift */; };
+		DAE8F31E20F8C17F00EE1B0C /* PlayerMedia.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE8F31D20F8C17F00EE1B0C /* PlayerMedia.swift */; };
+		DAE8F32220F8C23C00EE1B0C /* TestStateNone.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE8F32120F8C23C00EE1B0C /* TestStateNone.swift */; };
+		DAE8F32520F8C47D00EE1B0C /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE8F32320F8C45200EE1B0C /* State.swift */; };
 		DAFB4E7A20EF55FB00BC9851 /* Factory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAFB4E7920EF55FB00BC9851 /* Factory.swift */; };
 		DAFB4E7C20EF561300BC9851 /* PlayerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAFB4E7B20EF561300BC9851 /* PlayerProtocol.swift */; };
 		DAFB4E8420EF6AE300BC9851 /* ProviderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAFB4E8320EF6AE300BC9851 /* ProviderProtocol.swift */; };
@@ -98,6 +104,12 @@
 		DAE8F30D20F8AF6200EE1B0C /* StatePlaying.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatePlaying.swift; sourceTree = "<group>"; };
 		DAE8F30F20F8AFF000EE1B0C /* PlayerError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerError.swift; sourceTree = "<group>"; };
 		DAE8F31320F8B05B00EE1B0C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		DAE8F31520F8BE8200EE1B0C /* TestPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestPlayer.swift; sourceTree = "<group>"; };
+		DAE8F31720F8BEDA00EE1B0C /* MockStateProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockStateProtocol.swift; sourceTree = "<group>"; };
+		DAE8F31920F8BF2F00EE1B0C /* StateProtocol+Default.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StateProtocol+Default.swift"; sourceTree = "<group>"; };
+		DAE8F31D20F8C17F00EE1B0C /* PlayerMedia.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerMedia.swift; sourceTree = "<group>"; };
+		DAE8F32120F8C23C00EE1B0C /* TestStateNone.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestStateNone.swift; sourceTree = "<group>"; };
+		DAE8F32320F8C45200EE1B0C /* State.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
 		DAFB4E7920EF55FB00BC9851 /* Factory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Factory.swift; sourceTree = "<group>"; };
 		DAFB4E7B20EF561300BC9851 /* PlayerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerProtocol.swift; sourceTree = "<group>"; };
 		DAFB4E8320EF6AE300BC9851 /* ProviderProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProviderProtocol.swift; sourceTree = "<group>"; };
@@ -175,21 +187,22 @@
 			path = Shared;
 			sourceTree = "<group>";
 		};
-		DA2C104B20F8A9C900EDC0D4 /* PlayerDelegate */ = {
+		DA2C104B20F8A9C900EDC0D4 /* Delegate */ = {
 			isa = PBXGroup;
 			children = (
 				D427370320E27C0A00B11C31 /* PlayerDelegate.swift */,
 				DA25675E20EF7B1600C30F34 /* PlayerDelegate+Default.swift */,
 			);
-			path = PlayerDelegate;
+			path = Delegate;
 			sourceTree = "<group>";
 		};
 		DA3E942120E0FFE600F049AD /* Source */ = {
 			isa = PBXGroup;
 			children = (
 				DAFB4E7020EF520100BC9851 /* Player */,
-				DA2C104B20F8A9C900EDC0D4 /* PlayerDelegate */,
+				DA2C104B20F8A9C900EDC0D4 /* Delegate */,
 				DAE8F30620F8ACEC00EE1B0C /* State */,
+				DAE8F31C20F8C16B00EE1B0C /* Media */,
 				DA2C104A20F8A9A400EDC0D4 /* Shared */,
 				DA2C104920F8A96100EDC0D4 /* Provider */,
 				DA50C10F20F8ABF800E2E12C /* Gstreamer */,
@@ -200,10 +213,13 @@
 		DA3E943220E1004D00F049AD /* Tests */ = {
 			isa = PBXGroup;
 			children = (
+				DAE8F31520F8BE8200EE1B0C /* TestPlayer.swift */,
+				DAE8F32120F8C23C00EE1B0C /* TestStateNone.swift */,
 				DA3E943520E1007400F049AD /* TestFactory.swift */,
 				DA25676420EF7BFC00C30F34 /* TestProviderFactory.swift */,
 				DA25675A20EF7A1700C30F34 /* MockProviderProtocol.swift */,
 				DA25675C20EF7AE100C30F34 /* MockPlayerDelegate.swift */,
+				DAE8F31720F8BEDA00EE1B0C /* MockStateProtocol.swift */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -246,7 +262,9 @@
 			isa = PBXGroup;
 			children = (
 				DAE8F30920F8AD3C00EE1B0C /* PlayerState.swift */,
+				DAE8F32320F8C45200EE1B0C /* State.swift */,
 				DAE8F30720F8ACFC00EE1B0C /* StateProtocol.swift */,
+				DAE8F31920F8BF2F00EE1B0C /* StateProtocol+Default.swift */,
 				DAE8F30B20F8ADE300EE1B0C /* StateNone.swift */,
 				DAE8F30D20F8AF6200EE1B0C /* StatePlaying.swift */,
 			);
@@ -259,6 +277,14 @@
 				DAE8F31220F8B05B00EE1B0C /* Localizable.strings */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		DAE8F31C20F8C16B00EE1B0C /* Media */ = {
+			isa = PBXGroup;
+			children = (
+				DAE8F31D20F8C17F00EE1B0C /* PlayerMedia.swift */,
+			);
+			path = Media;
 			sourceTree = "<group>";
 		};
 		DAFB4E7020EF520100BC9851 /* Player */ = {
@@ -387,6 +413,7 @@
 			files = (
 				DA25675F20EF7B1600C30F34 /* PlayerDelegate+Default.swift in Sources */,
 				DAE8F30C20F8ADE300EE1B0C /* StateNone.swift in Sources */,
+				DAE8F31B20F8BF5000EE1B0C /* StateProtocol+Default.swift in Sources */,
 				DAE8F30820F8ACFC00EE1B0C /* StateProtocol.swift in Sources */,
 				DAE8F31020F8AFF000EE1B0C /* PlayerError.swift in Sources */,
 				DAFB4E7A20EF55FB00BC9851 /* Factory.swift in Sources */,
@@ -394,10 +421,12 @@
 				DAFB4E8420EF6AE300BC9851 /* ProviderProtocol.swift in Sources */,
 				DAE8F30A20F8AD3C00EE1B0C /* PlayerState.swift in Sources */,
 				DAFB4E7C20EF561300BC9851 /* PlayerProtocol.swift in Sources */,
+				DAE8F32520F8C47D00EE1B0C /* State.swift in Sources */,
 				DA50C11B20F8ABF800E2E12C /* Gstreamer.m in Sources */,
 				DA4C97FA20F7380A00A5FF30 /* Constants.swift in Sources */,
 				DA25676920EF7FF900C30F34 /* Player+ProviderDelegate.swift in Sources */,
 				DA3E943420E1006300F049AD /* Player.swift in Sources */,
+				DAE8F31E20F8C17F00EE1B0C /* PlayerMedia.swift in Sources */,
 				DA25676720EF7FDC00C30F34 /* ProviderDelegate.swift in Sources */,
 				DAE8F30E20F8AF6200EE1B0C /* StatePlaying.swift in Sources */,
 				D427370420E27C0A00B11C31 /* PlayerDelegate.swift in Sources */,
@@ -410,8 +439,11 @@
 			files = (
 				DA25675D20EF7AE100C30F34 /* MockPlayerDelegate.swift in Sources */,
 				DA25675B20EF7A1700C30F34 /* MockProviderProtocol.swift in Sources */,
+				DAE8F32220F8C23C00EE1B0C /* TestStateNone.swift in Sources */,
 				DA25676520EF7BFC00C30F34 /* TestProviderFactory.swift in Sources */,
 				DA3E943620E1007400F049AD /* TestFactory.swift in Sources */,
+				DAE8F31620F8BE8200EE1B0C /* TestPlayer.swift in Sources */,
+				DAE8F31820F8BEDA00EE1B0C /* MockStateProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -2,21 +2,20 @@ import Foundation
 
 class Player:PlayerProtocol {
     weak var delegate:PlayerDelegate?
-    var state:PlayerState { get { return self.currentState.state } }
+    var media:PlayerMedia
+    var currentState:PlayerState { get { return self.state.value } }
     var provider:ProviderProtocol
-    var currentState:StateProtocol
+    var state:StateProtocol
     
     init() {
-        self.currentState = StateNone()
+        self.media = PlayerMedia()
+        self.state = State.none
         self.provider = Factory.makeProvider()
         self.provider.delegate = self
     }
-
-    func setUri(uri:String) {
-        self.provider.set(uri:uri)
-    }
     
     func play() throws {
-        self.provider.play()
+        try self.state.play(player:self)
+        //self.provider.set(uri:uri)
     }
 }

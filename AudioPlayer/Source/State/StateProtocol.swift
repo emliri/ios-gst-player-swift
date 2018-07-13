@@ -1,5 +1,7 @@
 import Foundation
 
 protocol StateProtocol {
-    var state:PlayerState { get }
+    var value:PlayerState { get }
+    
+    func play(player:Player) throws
 }
