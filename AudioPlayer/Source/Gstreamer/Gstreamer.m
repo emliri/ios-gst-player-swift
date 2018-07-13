@@ -25,6 +25,10 @@ static Gstreamer *monostate;
     gst_player_play(player);
 }
 
+-(void)pause {
+    gst_player_pause(player);
+}
+
 -(void)setSourceWithUrl:(NSString * _Nonnull)url {
     gst_player_set_uri(player, [url cStringUsingEncoding:NSASCIIStringEncoding]);
 }

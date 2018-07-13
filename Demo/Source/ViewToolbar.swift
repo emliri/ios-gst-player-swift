@@ -45,7 +45,7 @@ class ViewToolbar {
     }
     
     @objc private func selectorPause() {
-        
+        self.presenter.pause()
     }
     
     @objc private func selectorNext() {

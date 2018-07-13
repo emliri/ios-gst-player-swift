@@ -5,4 +5,5 @@ import Foundation
 
     func setSource(url:String)
     func play()
+    func pause()
 }

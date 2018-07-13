@@ -16,4 +16,6 @@ class StateNone:StateProtocol {
         player.delegate?.playerStatusPlaying()
         player.state = State.playing
     }
+    
+    func pause(player:Player) throws { throw PlayerError.canNotPause }
 }

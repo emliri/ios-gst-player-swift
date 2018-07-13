@@ -10,6 +10,14 @@ extension Presenter:PlayerDelegate {
         self.viewModel.buttonStopEnabled = true
     }
     
+    func playerStatusPaused() {
+        self.viewModel.buttonPlayEnabled = true
+        self.viewModel.buttonNextEnabled = true
+        self.viewModel.buttonPreviousEnabled = true
+        self.viewModel.buttonPauseEnabled = false
+        self.viewModel.buttonStopEnabled = true
+    }
+    
     func playerUpdated(seconds:Float) {
         let minutes:Int = Int(seconds) / 60 % 60
         let seconds:Float = seconds.truncatingRemainder(dividingBy:60)

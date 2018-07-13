@@ -6,4 +6,5 @@ public protocol PlayerProtocol:AnyObject {
     var currentState:PlayerState { get }
     
     func play() throws
+    func pause() throws
 }

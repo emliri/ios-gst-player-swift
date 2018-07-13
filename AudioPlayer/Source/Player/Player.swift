@@ -16,6 +16,9 @@ class Player:PlayerProtocol {
     
     func play() throws {
         try self.state.play(player:self)
-        //self.provider.set(uri:uri)
+    }
+    
+    func pause() throws {
+        try self.state.pause(player:self)
     }
 }

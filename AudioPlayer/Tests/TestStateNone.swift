@@ -2,7 +2,7 @@ import XCTest
 @testable import AudioPlayer
 
 class TestStateNone:XCTestCase {
-    private var state:StateNone!
+    private var state:StateProtocol!
     private var player:Player!
     private var provider:MockProviderProtocol!
     private var delegate:MockPlayerDelegate!
@@ -13,6 +13,7 @@ class TestStateNone:XCTestCase {
         self.player = Player()
         self.provider = MockProviderProtocol()
         self.delegate = MockPlayerDelegate()
+        self.player.state = self.state
         self.player.provider = self.provider
         self.player.delegate = self.delegate
     }

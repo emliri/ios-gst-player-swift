@@ -1,1 +1,2 @@
 PlayerError_sourceNotSet="AudioPlayer error: Playing not possible as a source has not been set.";
+PlayerError_canNotPause="AudioPlayer error: Player is cannot be paused.";

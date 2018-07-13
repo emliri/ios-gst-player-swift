@@ -36,4 +36,12 @@ extension Presenter {
         
         self.player.play()*/
     }
+    
+    func pause() {
+        do {
+            try self.player.pause()
+        } catch let error {
+            self.showAlert(message:error.localizedDescription)
+        }
+    }
 }
