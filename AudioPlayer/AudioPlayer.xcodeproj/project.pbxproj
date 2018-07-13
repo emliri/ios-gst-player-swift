@@ -20,15 +20,15 @@
 		D427371E20E2A49600B11C31 /* VideoToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D427371D20E2A49600B11C31 /* VideoToolbox.framework */; };
 		D427372020E2A4AC00B11C31 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D427371F20E2A4AC00B11C31 /* CoreMedia.framework */; };
 		D427372220E2A4F500B11C31 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D427372120E2A4F500B11C31 /* AssetsLibrary.framework */; };
-		DA25675B20EF7A1700C30F34 /* MockPlayerProviderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA25675A20EF7A1700C30F34 /* MockPlayerProviderProtocol.swift */; };
+		DA25675B20EF7A1700C30F34 /* MockProviderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA25675A20EF7A1700C30F34 /* MockProviderProtocol.swift */; };
 		DA25675D20EF7AE100C30F34 /* MockPlayerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA25675C20EF7AE100C30F34 /* MockPlayerDelegate.swift */; };
 		DA25675F20EF7B1600C30F34 /* PlayerDelegate+Default.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA25675E20EF7B1600C30F34 /* PlayerDelegate+Default.swift */; };
-		DA25676520EF7BFC00C30F34 /* TestPlayerProviderFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA25676420EF7BFC00C30F34 /* TestPlayerProviderFactory.swift */; };
+		DA25676520EF7BFC00C30F34 /* TestProviderFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA25676420EF7BFC00C30F34 /* TestProviderFactory.swift */; };
 		DA25676720EF7FDC00C30F34 /* ProviderDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA25676620EF7FDC00C30F34 /* ProviderDelegate.swift */; };
 		DA25676920EF7FF900C30F34 /* Player+ProviderDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA25676820EF7FF900C30F34 /* Player+ProviderDelegate.swift */; };
 		DA3E942C20E1001300F049AD /* AudioPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA138DF120E0FC4100A47DAE /* AudioPlayer.framework */; };
 		DA3E943420E1006300F049AD /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3E943320E1006300F049AD /* Player.swift */; };
-		DA3E943620E1007400F049AD /* TestPlayerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3E943520E1007400F049AD /* TestPlayerFactory.swift */; };
+		DA3E943620E1007400F049AD /* TestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3E943520E1007400F049AD /* TestFactory.swift */; };
 		DA4C97FA20F7380A00A5FF30 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4C97F920F7380A00A5FF30 /* Constants.swift */; };
 		DA50C11720F8ABF800E2E12C /* BridgingHeader.h in Headers */ = {isa = PBXBuildFile; fileRef = DA50C11020F8ABF800E2E12C /* BridgingHeader.h */; };
 		DA50C11820F8ABF800E2E12C /* Gstreamer.h in Headers */ = {isa = PBXBuildFile; fileRef = DA50C11120F8ABF800E2E12C /* Gstreamer.h */; };
@@ -38,6 +38,8 @@
 		DA53E8F720E2627700CE899D /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = DA53E8F620E2627700CE899D /* libiconv.tbd */; };
 		DA606B0220E1321B003C6EFB /* GStreamer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA606AFE20E130D2003C6EFB /* GStreamer.framework */; };
 		DAE8F30820F8ACFC00EE1B0C /* StateProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE8F30720F8ACFC00EE1B0C /* StateProtocol.swift */; };
+		DAE8F30A20F8AD3C00EE1B0C /* PlayerState.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE8F30920F8AD3C00EE1B0C /* PlayerState.swift */; };
+		DAE8F30C20F8ADE300EE1B0C /* StateNone.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE8F30B20F8ADE300EE1B0C /* StateNone.swift */; };
 		DAFB4E7A20EF55FB00BC9851 /* Factory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAFB4E7920EF55FB00BC9851 /* Factory.swift */; };
 		DAFB4E7C20EF561300BC9851 /* PlayerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAFB4E7B20EF561300BC9851 /* PlayerProtocol.swift */; };
 		DAFB4E8420EF6AE300BC9851 /* ProviderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAFB4E8320EF6AE300BC9851 /* ProviderProtocol.swift */; };
@@ -69,16 +71,16 @@
 		D427371F20E2A4AC00B11C31 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		D427372120E2A4F500B11C31 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
 		DA138DF120E0FC4100A47DAE /* AudioPlayer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AudioPlayer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		DA25675A20EF7A1700C30F34 /* MockPlayerProviderProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockPlayerProviderProtocol.swift; sourceTree = "<group>"; };
+		DA25675A20EF7A1700C30F34 /* MockProviderProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockProviderProtocol.swift; sourceTree = "<group>"; };
 		DA25675C20EF7AE100C30F34 /* MockPlayerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockPlayerDelegate.swift; sourceTree = "<group>"; };
 		DA25675E20EF7B1600C30F34 /* PlayerDelegate+Default.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PlayerDelegate+Default.swift"; sourceTree = "<group>"; };
-		DA25676420EF7BFC00C30F34 /* TestPlayerProviderFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestPlayerProviderFactory.swift; sourceTree = "<group>"; };
+		DA25676420EF7BFC00C30F34 /* TestProviderFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestProviderFactory.swift; sourceTree = "<group>"; };
 		DA25676620EF7FDC00C30F34 /* ProviderDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProviderDelegate.swift; sourceTree = "<group>"; };
 		DA25676820EF7FF900C30F34 /* Player+ProviderDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Player+ProviderDelegate.swift"; sourceTree = "<group>"; };
 		DA3E942020E0FFDC00F049AD /* Configuration */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Configuration; sourceTree = "<group>"; };
 		DA3E942720E1001300F049AD /* Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA3E943320E1006300F049AD /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
-		DA3E943520E1007400F049AD /* TestPlayerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestPlayerFactory.swift; sourceTree = "<group>"; };
+		DA3E943520E1007400F049AD /* TestFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestFactory.swift; sourceTree = "<group>"; };
 		DA4C97F920F7380A00A5FF30 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		DA50C11020F8ABF800E2E12C /* BridgingHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BridgingHeader.h; sourceTree = "<group>"; };
 		DA50C11120F8ABF800E2E12C /* Gstreamer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Gstreamer.h; sourceTree = "<group>"; };
@@ -88,6 +90,8 @@
 		DA53E8F620E2627700CE899D /* libiconv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.tbd; path = usr/lib/libiconv.tbd; sourceTree = SDKROOT; };
 		DA606AFE20E130D2003C6EFB /* GStreamer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GStreamer.framework; path = ../../../../Users/zero/Library/Developer/GStreamer/iPhone.sdk/GStreamer.framework; sourceTree = "<group>"; };
 		DAE8F30720F8ACFC00EE1B0C /* StateProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateProtocol.swift; sourceTree = "<group>"; };
+		DAE8F30920F8AD3C00EE1B0C /* PlayerState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerState.swift; sourceTree = "<group>"; };
+		DAE8F30B20F8ADE300EE1B0C /* StateNone.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateNone.swift; sourceTree = "<group>"; };
 		DAFB4E7920EF55FB00BC9851 /* Factory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Factory.swift; sourceTree = "<group>"; };
 		DAFB4E7B20EF561300BC9851 /* PlayerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerProtocol.swift; sourceTree = "<group>"; };
 		DAFB4E8320EF6AE300BC9851 /* ProviderProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProviderProtocol.swift; sourceTree = "<group>"; };
@@ -189,9 +193,9 @@
 		DA3E943220E1004D00F049AD /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				DA3E943520E1007400F049AD /* TestPlayerFactory.swift */,
-				DA25676420EF7BFC00C30F34 /* TestPlayerProviderFactory.swift */,
-				DA25675A20EF7A1700C30F34 /* MockPlayerProviderProtocol.swift */,
+				DA3E943520E1007400F049AD /* TestFactory.swift */,
+				DA25676420EF7BFC00C30F34 /* TestProviderFactory.swift */,
+				DA25675A20EF7A1700C30F34 /* MockProviderProtocol.swift */,
 				DA25675C20EF7AE100C30F34 /* MockPlayerDelegate.swift */,
 			);
 			path = Tests;
@@ -234,7 +238,9 @@
 		DAE8F30620F8ACEC00EE1B0C /* State */ = {
 			isa = PBXGroup;
 			children = (
+				DAE8F30920F8AD3C00EE1B0C /* PlayerState.swift */,
 				DAE8F30720F8ACFC00EE1B0C /* StateProtocol.swift */,
+				DAE8F30B20F8ADE300EE1B0C /* StateNone.swift */,
 			);
 			path = State;
 			sourceTree = "<group>";
@@ -362,10 +368,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				DA25675F20EF7B1600C30F34 /* PlayerDelegate+Default.swift in Sources */,
+				DAE8F30C20F8ADE300EE1B0C /* StateNone.swift in Sources */,
 				DAE8F30820F8ACFC00EE1B0C /* StateProtocol.swift in Sources */,
 				DAFB4E7A20EF55FB00BC9851 /* Factory.swift in Sources */,
 				DA50C11C20F8ABF800E2E12C /* GstreamerConfiguration.m in Sources */,
 				DAFB4E8420EF6AE300BC9851 /* ProviderProtocol.swift in Sources */,
+				DAE8F30A20F8AD3C00EE1B0C /* PlayerState.swift in Sources */,
 				DAFB4E7C20EF561300BC9851 /* PlayerProtocol.swift in Sources */,
 				DA50C11B20F8ABF800E2E12C /* Gstreamer.m in Sources */,
 				DA4C97FA20F7380A00A5FF30 /* Constants.swift in Sources */,
@@ -381,9 +389,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				DA25675D20EF7AE100C30F34 /* MockPlayerDelegate.swift in Sources */,
-				DA25675B20EF7A1700C30F34 /* MockPlayerProviderProtocol.swift in Sources */,
-				DA25676520EF7BFC00C30F34 /* TestPlayerProviderFactory.swift in Sources */,
-				DA3E943620E1007400F049AD /* TestPlayerFactory.swift in Sources */,
+				DA25675B20EF7A1700C30F34 /* MockProviderProtocol.swift in Sources */,
+				DA25676520EF7BFC00C30F34 /* TestProviderFactory.swift in Sources */,
+				DA3E943620E1007400F049AD /* TestFactory.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

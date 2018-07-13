@@ -1,7 +1,7 @@
 import XCTest
 @testable import AudioPlayer
 
-class TestPlayerFactory:XCTestCase {
+class TestFactory:XCTestCase {
     func testMakePlayerReturnsNotNil() {
         let player:PlayerProtocol? = Factory.makePlayer()
         XCTAssertNotNil(player, "Failed to return player")
