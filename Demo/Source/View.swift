@@ -16,6 +16,10 @@ class View:UIViewController {
         return nil
     }
     
+    func updateViewModel() {
+        self.viewContent.viewTime.labelValue.text = self.presenter.viewModel.currentTime
+    }
+    
     override func loadView() {
         let view:ViewContent = ViewContent()
         self.viewContent = view

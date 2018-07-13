@@ -6,6 +6,6 @@ extension Presenter:PlayerDelegate {
         guard
             let timeString:String = self.numberFormatter.string(from:NSNumber(value:position))
         else { return }
-        self.view.viewContent.viewTime.labelValue.text = timeString
+        self.viewModel.currentTime = timeString
     }
 }
