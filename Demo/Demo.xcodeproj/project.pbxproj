@@ -20,6 +20,7 @@
 		DA606AF620E1149B003C6EFB /* Navigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA606AF520E1149B003C6EFB /* Navigation.swift */; };
 		DA606AF920E11531003C6EFB /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = DA606AF720E11531003C6EFB /* Localizable.strings */; };
 		DA606AFB20E1299E003C6EFB /* guitars.m4a in Resources */ = {isa = PBXBuildFile; fileRef = DA606AFA20E1299E003C6EFB /* guitars.m4a */; };
+		DAE8F32720F8D07400EE1B0C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE8F32620F8D07400EE1B0C /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -52,6 +53,7 @@
 		DA606AF520E1149B003C6EFB /* Navigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigation.swift; sourceTree = "<group>"; };
 		DA606AF820E11531003C6EFB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		DA606AFA20E1299E003C6EFB /* guitars.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = guitars.m4a; sourceTree = "<group>"; };
+		DAE8F32620F8D07400EE1B0C /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 				DA606AEB20E10E1F003C6EFB /* Presenter.swift */,
 				DA2C104320F88B9600EDC0D4 /* Presenter+Control.swift */,
 				DA2C104120F88B4F00EDC0D4 /* Presenter+PlayerDelegate.swift */,
+				DAE8F32620F8D07400EE1B0C /* Constants.swift */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -195,6 +198,7 @@
 				DA606AF220E1115D003C6EFB /* ViewContent.swift in Sources */,
 				DA2C104420F88B9600EDC0D4 /* Presenter+Control.swift in Sources */,
 				DA606AEC20E10E1F003C6EFB /* Presenter.swift in Sources */,
+				DAE8F32720F8D07400EE1B0C /* Constants.swift in Sources */,
 				DA5E48D020E109D2003F4619 /* View.swift in Sources */,
 				DA606AF620E1149B003C6EFB /* Navigation.swift in Sources */,
 				DA3E941F20E0FF4800F049AD /* Application.swift in Sources */,

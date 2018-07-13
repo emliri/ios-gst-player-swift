@@ -1,2 +1,5 @@
 View_Title="Audio Player";
 Presenter_AlertAccept="Continue";
+ViewContent_SegmentedNone="None";
+ViewContent_SegmentedOnline="Online";
+ViewContent_SegmentedLocal="Local";

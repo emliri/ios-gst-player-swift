@@ -13,6 +13,7 @@ class StateNone:StateProtocol {
         else { throw PlayerError.sourceNotSet }
         player.provider.setSource(url:url)
         player.provider.play()
+        player.delegate?.playerStatusPlaying()
         player.state = State.playing
     }
 }

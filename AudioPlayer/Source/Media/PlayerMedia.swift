@@ -1,5 +1,5 @@
 import Foundation
 
 public struct PlayerMedia {
-    var url:String?
+    public var url:String?
 }

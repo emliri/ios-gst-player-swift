@@ -1,6 +1,11 @@
 import Foundation
 
 extension Presenter {
+    var sourceUrl:String? {
+        get { return self.player.media.url }
+        set(newValue) { self.player.media.url = newValue }
+    }
+    
     func play() {
         do {
             try self.player.play()

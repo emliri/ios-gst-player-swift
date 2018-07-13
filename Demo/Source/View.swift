@@ -30,6 +30,8 @@ class View:UIViewController {
     
     override func loadView() {
         let view:ViewContent = ViewContent()
+        view.backgroundColor = UIColor.white
+        view.segmented.addTarget(self, action:#selector(self.selector(segmented:)), for:UIControlEvents.valueChanged)
         self.viewContent = view
         self.view = view
     }
@@ -50,6 +52,17 @@ class View:UIViewController {
         self.title = NSLocalizedString("View_Title", comment:String())
         if #available(iOS 11.0, *) {
             self.navigationItem.largeTitleDisplayMode = UINavigationItem.LargeTitleDisplayMode.always
+        }
+    }
+    
+    @objc private func selector(segmented:UISegmentedControl) {
+        switch segmented.selectedSegmentIndex {
+        case 1:
+            self.presenter.sourceUrl = Constants.remote
+        case 2:
+            self.presenter.sourceUrl = Bundle.main.url(forResource:Constants.local, withExtension:nil)!.absoluteString
+        default:
+            self.presenter.sourceUrl = nil
         }
     }
 }
