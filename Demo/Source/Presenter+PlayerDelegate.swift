@@ -3,9 +3,8 @@ import AudioPlayer
 
 extension Presenter:PlayerDelegate {
     func playerUpdated(position:Float) {
-        guard
-            let timeString:String = self.numberFormatter.string(from:NSNumber(value:position))
-        else { return }
-        self.viewModel.currentTime = timeString
+        let minutes:Int = Int(position) / 60 % 60
+        let seconds:Float = position.truncatingRemainder(dividingBy:60)
+        self.viewModel.currentTime = String(format:"%02i:%05.2f", minutes, seconds)
     }
 }

@@ -21,6 +21,11 @@ class View:UIViewController {
     
     func updateViewModel() {
         self.viewContent.viewTime.labelValue.text = self.presenter.viewModel.currentTime
+        self.toolbar.buttonPlay.isEnabled = self.presenter.viewModel.buttonPlayEnabled
+        self.toolbar.buttonStop.isEnabled = self.presenter.viewModel.buttonStopEnabled
+        self.toolbar.buttonPause.isEnabled = self.presenter.viewModel.buttonPauseEnabled
+        self.toolbar.buttonNext.isEnabled = self.presenter.viewModel.buttonNextEnabled
+        self.toolbar.buttonPrevious.isEnabled = self.presenter.viewModel.buttonPreviousEnabled
     }
     
     override func loadView() {

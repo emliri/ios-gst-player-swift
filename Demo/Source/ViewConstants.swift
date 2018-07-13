@@ -8,9 +8,4 @@ struct ViewConstants {
         static let margin:CGFloat = 18
         static let top:CGFloat = 2
     }
-    
-    struct Time {
-        static let minIntegers:Int = 1
-        static let decimals:Int = 2
-    }
 }
