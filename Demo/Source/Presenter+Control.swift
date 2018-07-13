@@ -1,18 +1,9 @@
 import Foundation
-import AudioPlayer
 
-class Interactor {
-    weak var presenter:Presenter!
-    let player:PlayerProtocol
-    
-    init() {
-        self.player = PlayerFactory.makePlayer()
-        self.player.delegate = self
-    }
-    
+extension Presenter {
     func play() {
         print("play")
-
+        
         let bundle:Bundle = Bundle.main
         let url:URL = bundle.url(forResource:"guitars", withExtension:"m4a")!
         print(url.standardizedFileURL.path)

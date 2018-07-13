@@ -30,7 +30,7 @@ class View:UIViewController {
     
     override func viewDidAppear(_ animated:Bool) {
         super.viewDidAppear(animated)
-        self.presenter.update(time:0)
+        self.presenter.playerUpdated(position:0)
     }
     
     private func configureView() {
@@ -58,7 +58,7 @@ class View:UIViewController {
     }
     
     @objc private func selectorPlay() {
-        self.presenter.interactor.play()
+        self.presenter.play()
     }
     
     @objc private func selectorStop() {

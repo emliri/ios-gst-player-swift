@@ -1,24 +1,18 @@
 import Foundation
+import AudioPlayer
 
 class Presenter {
     weak var view:View!
-    let interactor:Interactor
-    private let numberFormatter:NumberFormatter
+    let numberFormatter:NumberFormatter
+    let player:PlayerProtocol
     
     init() {
-        self.interactor = Interactor()
+        self.player = PlayerFactory.makePlayer()
         self.numberFormatter = NumberFormatter()
         self.numberFormatter.numberStyle = NumberFormatter.Style.decimal
         self.numberFormatter.minimumIntegerDigits = ViewConstants.Time.minIntegers
         self.numberFormatter.minimumFractionDigits = ViewConstants.Time.decimals
         self.numberFormatter.maximumFractionDigits = ViewConstants.Time.decimals
-        self.interactor.presenter = self
-    }
-    
-    func update(time:Float) {
-        guard
-            let timeString:String = self.numberFormatter.string(from:NSNumber(value:time))
-        else { return }
-        self.view.viewContent.viewTime.labelValue.text = timeString
+        self.player.delegate = self
     }
 }
