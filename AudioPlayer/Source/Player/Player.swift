@@ -12,7 +12,7 @@ class Player:PlayerProtocol {
         self.provider.delegate = self
     }
 
-    func setUri(uri: String) {
+    func setUri(uri:String) {
         self.provider.set(uri:uri)
     }
     

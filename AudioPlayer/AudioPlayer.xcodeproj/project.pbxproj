@@ -40,6 +40,9 @@
 		DAE8F30820F8ACFC00EE1B0C /* StateProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE8F30720F8ACFC00EE1B0C /* StateProtocol.swift */; };
 		DAE8F30A20F8AD3C00EE1B0C /* PlayerState.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE8F30920F8AD3C00EE1B0C /* PlayerState.swift */; };
 		DAE8F30C20F8ADE300EE1B0C /* StateNone.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE8F30B20F8ADE300EE1B0C /* StateNone.swift */; };
+		DAE8F30E20F8AF6200EE1B0C /* StatePlaying.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE8F30D20F8AF6200EE1B0C /* StatePlaying.swift */; };
+		DAE8F31020F8AFF000EE1B0C /* PlayerError.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE8F30F20F8AFF000EE1B0C /* PlayerError.swift */; };
+		DAE8F31420F8B05B00EE1B0C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = DAE8F31220F8B05B00EE1B0C /* Localizable.strings */; };
 		DAFB4E7A20EF55FB00BC9851 /* Factory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAFB4E7920EF55FB00BC9851 /* Factory.swift */; };
 		DAFB4E7C20EF561300BC9851 /* PlayerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAFB4E7B20EF561300BC9851 /* PlayerProtocol.swift */; };
 		DAFB4E8420EF6AE300BC9851 /* ProviderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAFB4E8320EF6AE300BC9851 /* ProviderProtocol.swift */; };
@@ -92,6 +95,9 @@
 		DAE8F30720F8ACFC00EE1B0C /* StateProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateProtocol.swift; sourceTree = "<group>"; };
 		DAE8F30920F8AD3C00EE1B0C /* PlayerState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerState.swift; sourceTree = "<group>"; };
 		DAE8F30B20F8ADE300EE1B0C /* StateNone.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateNone.swift; sourceTree = "<group>"; };
+		DAE8F30D20F8AF6200EE1B0C /* StatePlaying.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatePlaying.swift; sourceTree = "<group>"; };
+		DAE8F30F20F8AFF000EE1B0C /* PlayerError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerError.swift; sourceTree = "<group>"; };
+		DAE8F31320F8B05B00EE1B0C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		DAFB4E7920EF55FB00BC9851 /* Factory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Factory.swift; sourceTree = "<group>"; };
 		DAFB4E7B20EF561300BC9851 /* PlayerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerProtocol.swift; sourceTree = "<group>"; };
 		DAFB4E8320EF6AE300BC9851 /* ProviderProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProviderProtocol.swift; sourceTree = "<group>"; };
@@ -135,6 +141,7 @@
 			children = (
 				DA3E942120E0FFE600F049AD /* Source */,
 				DA3E943220E1004D00F049AD /* Tests */,
+				DAE8F31120F8B03F00EE1B0C /* Resources */,
 				DA138DF220E0FC4100A47DAE /* Products */,
 				DA5E48CD20E10934003F4619 /* Frameworks */,
 				DA3E942020E0FFDC00F049AD /* Configuration */,
@@ -241,8 +248,17 @@
 				DAE8F30920F8AD3C00EE1B0C /* PlayerState.swift */,
 				DAE8F30720F8ACFC00EE1B0C /* StateProtocol.swift */,
 				DAE8F30B20F8ADE300EE1B0C /* StateNone.swift */,
+				DAE8F30D20F8AF6200EE1B0C /* StatePlaying.swift */,
 			);
 			path = State;
+			sourceTree = "<group>";
+		};
+		DAE8F31120F8B03F00EE1B0C /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				DAE8F31220F8B05B00EE1B0C /* Localizable.strings */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		DAFB4E7020EF520100BC9851 /* Player */ = {
@@ -251,6 +267,7 @@
 				DAFB4E7B20EF561300BC9851 /* PlayerProtocol.swift */,
 				DA3E943320E1006300F049AD /* Player.swift */,
 				DA25676820EF7FF900C30F34 /* Player+ProviderDelegate.swift */,
+				DAE8F30F20F8AFF000EE1B0C /* PlayerError.swift */,
 			);
 			path = Player;
 			sourceTree = "<group>";
@@ -350,6 +367,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DAE8F31420F8B05B00EE1B0C /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -370,6 +388,7 @@
 				DA25675F20EF7B1600C30F34 /* PlayerDelegate+Default.swift in Sources */,
 				DAE8F30C20F8ADE300EE1B0C /* StateNone.swift in Sources */,
 				DAE8F30820F8ACFC00EE1B0C /* StateProtocol.swift in Sources */,
+				DAE8F31020F8AFF000EE1B0C /* PlayerError.swift in Sources */,
 				DAFB4E7A20EF55FB00BC9851 /* Factory.swift in Sources */,
 				DA50C11C20F8ABF800E2E12C /* GstreamerConfiguration.m in Sources */,
 				DAFB4E8420EF6AE300BC9851 /* ProviderProtocol.swift in Sources */,
@@ -380,6 +399,7 @@
 				DA25676920EF7FF900C30F34 /* Player+ProviderDelegate.swift in Sources */,
 				DA3E943420E1006300F049AD /* Player.swift in Sources */,
 				DA25676720EF7FDC00C30F34 /* ProviderDelegate.swift in Sources */,
+				DAE8F30E20F8AF6200EE1B0C /* StatePlaying.swift in Sources */,
 				D427370420E27C0A00B11C31 /* PlayerDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -404,6 +424,17 @@
 			targetProxy = DA3E942D20E1001300F049AD /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		DAE8F31220F8B05B00EE1B0C /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DAE8F31320F8B05B00EE1B0C /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		DA138DF720E0FC4100A47DAE /* Debug */ = {
