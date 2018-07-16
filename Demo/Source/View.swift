@@ -21,6 +21,7 @@ class View:UIViewController {
     
     func updateViewModel() {
         self.viewContent.labelTime.text = self.presenter.viewModel.currentTime
+        self.viewContent.labelDuration.text = self.presenter.viewModel.currentDuration
         self.toolbar.buttonPlay.isEnabled = self.presenter.viewModel.buttonPlayEnabled
         self.toolbar.buttonStop.isEnabled = self.presenter.viewModel.buttonStopEnabled
         self.toolbar.buttonPause.isEnabled = self.presenter.viewModel.buttonPauseEnabled
@@ -44,7 +45,6 @@ class View:UIViewController {
     
     override func viewDidAppear(_ animated:Bool) {
         super.viewDidAppear(animated)
-        self.presenter.playerUpdated(seconds:0)
         self.presenter.viewModel.buttonPlayEnabled = true
     }
     

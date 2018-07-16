@@ -41,10 +41,15 @@ static Gstreamer *monostate;
 
 -(void)configureCallBacks {
     g_signal_connect(player, "position-updated", G_CALLBACK(positionCallback), NULL);
+    g_signal_connect(player, "duration-changed", G_CALLBACK(durationCallback), NULL);
 }
 
 void positionCallback(void *player, long time, void *data) {
     [[monostate delegate] positionCallbackWithTime:time];
+}
+
+void durationCallback(void *player, long time, void *data) {
+    [[monostate delegate] durationCallbackWithTime:time];
 }
 
 @end

@@ -2,6 +2,7 @@ import UIKit
 
 class ViewContent:UIView {
     weak var labelTime:UILabel!
+    weak var labelDuration:UILabel!
     weak var segmented:UISegmentedControl!
     
     init() {
@@ -17,11 +18,13 @@ class ViewContent:UIView {
     private func makeOutlets() {
         self.makeSegmented()
         self.makeTime()
+        self.makeDuration()
     }
     
     private func layoutOutlets() {
         self.layoutSegmented()
         self.layoutTime()
+        self.layoutDuration()
     }
     
     private func makeSegmented() {
@@ -47,6 +50,18 @@ class ViewContent:UIView {
         self.addSubview(labelTime)
     }
     
+    private func makeDuration() {
+        let labelDuration:UILabel = UILabel()
+        labelDuration.isUserInteractionEnabled = false
+        labelDuration.translatesAutoresizingMaskIntoConstraints = false
+        labelDuration.backgroundColor = UIColor.clear
+        labelDuration.font = UIFont.systemFont(ofSize:20, weight:UIFont.Weight.light)
+        labelDuration.textColor = UIColor.black
+        labelDuration.textAlignment = NSTextAlignment.center
+        self.labelDuration = labelDuration
+        self.addSubview(labelDuration)
+    }
+    
     private func layoutSegmented() {
         self.segmented.centerXAnchor.constraint(equalTo:self.centerXAnchor).isActive = true
         self.segmented.topAnchor.constraint(equalTo:self.topAnchor, constant:30).isActive = true
@@ -59,5 +74,12 @@ class ViewContent:UIView {
         self.labelTime.centerYAnchor.constraint(equalTo:self.centerYAnchor).isActive = true
         self.labelTime.heightAnchor.constraint(greaterThanOrEqualToConstant:0).isActive = true
         self.labelTime.widthAnchor.constraint(greaterThanOrEqualToConstant:0).isActive = true
+    }
+    
+    private func layoutDuration() {
+        self.labelDuration.centerXAnchor.constraint(equalTo:self.centerXAnchor).isActive = true
+        self.labelDuration.topAnchor.constraint(equalTo:self.labelTime.bottomAnchor).isActive = true
+        self.labelDuration.heightAnchor.constraint(greaterThanOrEqualToConstant:0).isActive = true
+        self.labelDuration.widthAnchor.constraint(greaterThanOrEqualToConstant:0).isActive = true
     }
 }

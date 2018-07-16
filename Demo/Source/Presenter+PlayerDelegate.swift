@@ -18,9 +18,17 @@ extension Presenter:PlayerDelegate {
         self.viewModel.buttonStopEnabled = true
     }
     
-    func playerUpdated(seconds:Float) {
+    func playerUpdatedPosition(seconds:Float) {
+        self.viewModel.currentTime = self.timeFrom(seconds:seconds)
+    }
+    
+    func playerUpdatedDuration(seconds:Float) {
+        self.viewModel.currentDuration = self.timeFrom(seconds:seconds)
+    }
+    
+    private func timeFrom(seconds:Float) -> String {
         let minutes:Int = Int(seconds) / 60 % 60
         let seconds:Float = seconds.truncatingRemainder(dividingBy:60)
-        self.viewModel.currentTime = String(format:"%02i:%05.2f", minutes, seconds)
+        return String(format:"%02i:%05.2f", minutes, seconds)
     }
 }

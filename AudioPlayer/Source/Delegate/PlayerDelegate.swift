@@ -4,5 +4,6 @@ public protocol PlayerDelegate:AnyObject {
     func playerStatusPlaying()
     func playerStatusPaused()
     
-    func playerUpdated(seconds:Float)
+    func playerUpdatedPosition(seconds:Float)
+    func playerUpdatedDuration(seconds:Float)
 }
