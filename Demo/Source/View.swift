@@ -58,11 +58,11 @@ class View:UIViewController {
     @objc private func selector(segmented:UISegmentedControl) {
         switch segmented.selectedSegmentIndex {
         case 1:
-            self.presenter.sourceUrl = Constants.remote
+            self.presenter.setSource(url:Constants.remote)
         case 2:
-            self.presenter.sourceUrl = Bundle.main.url(forResource:Constants.local, withExtension:nil)!.absoluteString
+            self.presenter.setSource(url:Bundle.main.url(forResource:Constants.local, withExtension:nil)!.absoluteString)
         default:
-            self.presenter.sourceUrl = nil
+            self.presenter.removeSource()
         }
     }
 }

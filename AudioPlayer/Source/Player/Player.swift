@@ -14,6 +14,14 @@ class Player:PlayerProtocol {
         self.provider.delegate = self
     }
     
+    func setSource(url:String) throws {
+        try self.state.setSource(player:self, url:url)
+    }
+    
+    func removeSource() {
+        self.state.removeSource(player:self)
+    }
+    
     func play() throws {
         try self.state.play(player:self)
     }

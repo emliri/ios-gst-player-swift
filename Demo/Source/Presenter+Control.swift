@@ -1,9 +1,16 @@
 import Foundation
 
 extension Presenter {
-    var sourceUrl:String? {
-        get { return self.player.media.url }
-        set(newValue) { self.player.media.url = newValue }
+    func setSource(url:String) {
+        do {
+            try self.player.setSource(url:url)
+        } catch let error {
+            self.showAlert(message:error.localizedDescription)
+        }
+    }
+    
+    func removeSource() {
+        self.player.removeSource()
     }
     
     func play() {

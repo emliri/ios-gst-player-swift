@@ -7,6 +7,10 @@ class StateNone:StateProtocol {
         self.value = PlayerState.none
     }
     
+    func removeSource(player:Player) {
+        player.removeSource()
+    }
+    
     func play(player:Player) throws {
         guard
             let url:String = player.media.url

@@ -33,6 +33,10 @@ static Gstreamer *monostate;
     gst_player_set_uri(player, [url cStringUsingEncoding:NSASCIIStringEncoding]);
 }
 
+-(void)removeSource {
+    gst_player_set_uri(player, NULL);
+}
+
 -(void)configureGStreamer {
     gst_debug_set_threshold_for_name("gst-player", GST_LEVEL_ERROR);
     player = gst_player_new(NULL, NULL);
