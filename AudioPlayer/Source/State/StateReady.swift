@@ -1,26 +1,23 @@
 import Foundation
 
-class StatePaused:StateProtocol {
+class StateReady:StateProtocol {
     let value:State
     
     init() {
-        self.value = State.paused
+        self.value = State.ready
     }
     
     func setSource(player:Player, url:String) {
-        player.provider.stop()
         player.provider.setSource(url:url)
-        player.delegate?.playerStatusReady()
-        player.state = States.ready
     }
+    
+    func pause(player:Player) throws { throw PlayerError.canNotPause }
     
     func play(player:Player) throws {
         player.provider.play()
         player.delegate?.playerStatusPlaying()
         player.state = States.playing
     }
-    
-    func pause(player:Player) throws { throw PlayerError.canNotPause }
     
     func stop(player:Player) throws {
         player.provider.stop()

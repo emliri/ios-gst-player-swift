@@ -3,10 +3,10 @@ import Foundation
 
 class MockStateProtocol:StateProtocol {
     var error:Error?
-    let value:PlayerState
+    let value:State
     
     init() {
-        self.value  = PlayerState.none
+        self.value  = State.stopped
     }
     
     func play(player:Player) throws {

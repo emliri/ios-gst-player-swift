@@ -2,15 +2,11 @@ import Foundation
 
 extension Presenter {
     func setSource(url:String) {
-        do {
-            try self.player.setSource(url:url)
-        } catch let error {
-            self.showAlert(message:error.localizedDescription)
-        }
+        self.player.setSource(url:url)
     }
     
     func removeSource() {
-        self.player.removeSource()
+        self.stop()
     }
     
     func play() {
@@ -19,34 +15,19 @@ extension Presenter {
         } catch let error {
             self.showAlert(message:error.localizedDescription)
         }
-        
-        /*
-        print("play")
-        
-        let bundle:Bundle = Bundle.main
-        let url:URL = bundle.url(forResource:"guitars", withExtension:"m4a")!
-        print(url.standardizedFileURL.path)
-        
-        //self.player.setUri(uri:url.standardizedFileURL.path)
-        //self.player.setUri(uri: )
-        //self.player.setUri(uri: )
-        
-        var uri: String;
-        
-        uri = url.standardizedFileURL.absoluteString // NOTE: Need absolute URL string here with 'file://' scheme, not only path !
-        
-        //uri = "http://tchakabam.com/test-media/m4a/guitars.m4a"
-        //uri = "http://tchakabam.com/test-media/m4a/Theo Katzman - Heartbreak Hits - 08 As the Romans Do.mp3"
-        //uri = "http://tchakabam.com/test-media/m4a/shalafon.mp3"
-        
-        self.player.setUri(uri: uri)
-        
-        self.player.play()*/
     }
     
     func pause() {
         do {
             try self.player.pause()
+        } catch let error {
+            self.showAlert(message:error.localizedDescription)
+        }
+    }
+    
+    func stop() {
+        do {
+            try self.player.stop()
         } catch let error {
             self.showAlert(message:error.localizedDescription)
         }

@@ -1,10 +1,10 @@
 import Foundation
 
 protocol StateProtocol {
-    var value:PlayerState { get }
+    var value:State { get }
     
-    func setSource(player:Player, url:String) throws
-    func removeSource(player:Player)
+    func setSource(player:Player, url:String)
     func play(player:Player) throws
     func pause(player:Player) throws
+    func stop(player:Player) throws
 }

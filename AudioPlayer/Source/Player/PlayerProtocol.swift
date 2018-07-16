@@ -2,11 +2,10 @@ import Foundation
 
 public protocol PlayerProtocol:AnyObject {
     var delegate:PlayerDelegate? { get set }
-    var media:PlayerMedia { get }
-    var currentState:PlayerState { get }
+    var currentState:State { get }
     
-    func setSource(url:String) throws
-    func removeSource()
+    func setSource(url:String)
     func play() throws
     func pause() throws
+    func stop() throws
 }

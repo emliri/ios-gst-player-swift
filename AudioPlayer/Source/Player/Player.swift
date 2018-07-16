@@ -2,24 +2,18 @@ import Foundation
 
 class Player:PlayerProtocol {
     weak var delegate:PlayerDelegate?
-    var media:PlayerMedia
-    var currentState:PlayerState { get { return self.state.value } }
+    var currentState:State { get { return self.state.value } }
     var provider:ProviderProtocol
     var state:StateProtocol
     
     init() {
-        self.media = PlayerMedia()
-        self.state = State.none
+        self.state = States.stopped
         self.provider = Factory.makeProvider()
         self.provider.delegate = self
     }
     
-    func setSource(url:String) throws {
-        try self.state.setSource(player:self, url:url)
-    }
-    
-    func removeSource() {
-        self.state.removeSource(player:self)
+    func setSource(url:String) {
+        self.state.setSource(player:self, url:url)
     }
     
     func play() throws {
@@ -28,5 +22,9 @@ class Player:PlayerProtocol {
     
     func pause() throws {
         try self.state.pause(player:self)
+    }
+    
+    func stop() throws {
+        try self.state.stop(player:self)
     }
 }

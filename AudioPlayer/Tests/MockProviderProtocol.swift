@@ -4,6 +4,7 @@ import Foundation
 class MockProviderProtocol:ProviderProtocol {
     var onPlay:(() -> Void)?
     var onPause:(() -> Void)?
+    var onStop:(() -> Void)?
     var delegate:ProviderDelegate?
     var url:String?
     
@@ -19,5 +20,9 @@ class MockProviderProtocol:ProviderProtocol {
     
     func pause() {
         self.onPause?()
+    }
+    
+    func stop() {
+        self.onStop?()
     }
 }

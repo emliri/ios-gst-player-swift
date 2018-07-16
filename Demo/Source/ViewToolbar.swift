@@ -12,28 +12,22 @@ class ViewToolbar {
     init() {
         let play:UIBarButtonItem = UIBarButtonItem(barButtonSystemItem:UIBarButtonSystemItem.play, target:self,
                                                    action:#selector(self.selectorPlay))
-        self.buttonPlay = play
-        
         let stop:UIBarButtonItem = UIBarButtonItem(barButtonSystemItem:UIBarButtonSystemItem.stop, target:self,
                                                    action:#selector(self.selectorStop))
-        self.buttonStop = stop
-        
         let pause:UIBarButtonItem = UIBarButtonItem(barButtonSystemItem:UIBarButtonSystemItem.pause, target:self,
                                                     action:#selector(self.selectorPause))
-        self.buttonPause = pause
-        
         let next:UIBarButtonItem = UIBarButtonItem(barButtonSystemItem:UIBarButtonSystemItem.fastForward, target:self,
                                                    action:#selector(self.selectorNext))
-        self.buttonNext = next
         let previous:UIBarButtonItem = UIBarButtonItem(barButtonSystemItem:UIBarButtonSystemItem.rewind, target:self,
                                                        action:#selector(self.selectorPrevious))
-        self.buttonPrevious = previous
-        
-        let flexibleSpace:UIBarButtonItem = UIBarButtonItem(barButtonSystemItem:UIBarButtonSystemItem.flexibleSpace,
+        let space:UIBarButtonItem = UIBarButtonItem(barButtonSystemItem:UIBarButtonSystemItem.flexibleSpace,
                                                             target:nil, action:nil)
-        
-        self.items = [previous, flexibleSpace, pause, flexibleSpace, stop, flexibleSpace, play, flexibleSpace,
-                      self.buttonNext]
+        self.items = [previous, space, pause, space, stop, space, play, space, next]
+        self.buttonPlay = play
+        self.buttonStop = stop
+        self.buttonPause = pause
+        self.buttonNext = next
+        self.buttonPrevious = previous
     }
     
     @objc private func selectorPlay() {
@@ -41,18 +35,13 @@ class ViewToolbar {
     }
     
     @objc private func selectorStop() {
-        
+        self.presenter.stop()
     }
     
     @objc private func selectorPause() {
         self.presenter.pause()
     }
     
-    @objc private func selectorNext() {
-        
-    }
-    
-    @objc private func selectorPrevious() {
-        
-    }
+    @objc private func selectorNext() { }
+    @objc private func selectorPrevious() { }
 }

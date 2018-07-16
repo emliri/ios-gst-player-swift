@@ -4,7 +4,7 @@ import Foundation
     var delegate:ProviderDelegate? { get set }
 
     func setSource(url:String)
-    func removeSource()
     func play()
     func pause()
+    func stop()
 }

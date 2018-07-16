@@ -13,11 +13,16 @@ class TestPlayer:XCTestCase {
     }
     
     func testInitialStateIsNone() {
-        XCTAssertEqual(self.player.state.value, PlayerState.none, "Invalid state")
+        XCTAssertEqual(self.player.state.value, State.stopped, "Invalid state")
     }
     
     func testRethrowIfStateThrows() {
         self.state.error = NSError()
         XCTAssertThrowsError(try self.player.play(), "Failed to throw error")
+    }
+    
+    func testNotRetainingDelegate() {
+        self.player.delegate = MockPlayerDelegate()
+        XCTAssertNil(self.player.delegate, "Retains delegate")
     }
 }

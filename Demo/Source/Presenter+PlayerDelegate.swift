@@ -18,6 +18,22 @@ extension Presenter:PlayerDelegate {
         self.viewModel.buttonStopEnabled = true
     }
     
+    func playerStatusStopped() {
+        self.viewModel.buttonPlayEnabled = false
+        self.viewModel.buttonNextEnabled = false
+        self.viewModel.buttonPreviousEnabled = false
+        self.viewModel.buttonPauseEnabled = false
+        self.viewModel.buttonStopEnabled = false
+    }
+    
+    func playerStatusReady() {
+        self.viewModel.buttonPlayEnabled = true
+        self.viewModel.buttonNextEnabled = false
+        self.viewModel.buttonPreviousEnabled = false
+        self.viewModel.buttonPauseEnabled = false
+        self.viewModel.buttonStopEnabled = true
+    }
+    
     func playerUpdatedPosition(seconds:Float) {
         self.viewModel.currentTime = self.timeFrom(seconds:seconds)
     }
