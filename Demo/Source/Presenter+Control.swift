@@ -26,6 +26,7 @@ extension Presenter {
     }
     
     func stop() {
+        self.view?.viewContent.segmented.selectedSegmentIndex = 0
         do {
             try self.player.stop()
         } catch let error {
