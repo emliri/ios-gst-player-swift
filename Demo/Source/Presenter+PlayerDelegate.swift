@@ -34,6 +34,8 @@ extension Presenter:PlayerDelegate {
         self.viewModel.buttonPreviousEnabled = false
         self.viewModel.buttonPauseEnabled = false
         self.viewModel.buttonStopEnabled = true
+        self.viewModel.currentTime = String()
+        self.viewModel.currentDuration = String()
     }
     
     func playerUpdatedPosition(seconds:Float) {
