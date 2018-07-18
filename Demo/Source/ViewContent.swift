@@ -4,6 +4,7 @@ class ViewContent:UIView {
     weak var labelTime:UILabel!
     weak var labelDuration:UILabel!
     weak var segmented:UISegmentedControl!
+    weak var slider:UISlider!
     
     init() {
         super.init(frame:CGRect.zero)
@@ -19,12 +20,14 @@ class ViewContent:UIView {
         self.makeSegmented()
         self.makeTime()
         self.makeDuration()
+        self.makeSlider()
     }
     
     private func layoutOutlets() {
         self.layoutSegmented()
         self.layoutTime()
         self.layoutDuration()
+        self.layoutSlider()
     }
     
     private func makeSegmented() {
@@ -62,6 +65,13 @@ class ViewContent:UIView {
         self.addSubview(labelDuration)
     }
     
+    private func makeSlider() {
+        let slider:UISlider = UISlider()
+        slider.translatesAutoresizingMaskIntoConstraints = false
+        self.slider = slider
+        self.addSubview(slider)
+    }
+    
     private func layoutSegmented() {
         self.segmented.centerXAnchor.constraint(equalTo:self.centerXAnchor).isActive = true
         self.segmented.topAnchor.constraint(equalTo:self.topAnchor, constant:30).isActive = true
@@ -81,5 +91,11 @@ class ViewContent:UIView {
         self.labelDuration.topAnchor.constraint(equalTo:self.labelTime.bottomAnchor).isActive = true
         self.labelDuration.heightAnchor.constraint(greaterThanOrEqualToConstant:0).isActive = true
         self.labelDuration.widthAnchor.constraint(greaterThanOrEqualToConstant:0).isActive = true
+    }
+    
+    private func layoutSlider() {
+        self.slider.leftAnchor.constraint(equalTo:self.leftAnchor, constant:30).isActive = true
+        self.slider.rightAnchor.constraint(equalTo:self.rightAnchor, constant:-30).isActive = true
+        self.slider.bottomAnchor.constraint(equalTo:self.bottomAnchor, constant:-30).isActive = true
     }
 }
