@@ -22,6 +22,9 @@ class View:UIViewController {
     func updateViewModel() {
         self.viewContent.labelTime.text = self.presenter.viewModel.currentTime
         self.viewContent.labelDuration.text = self.presenter.viewModel.currentDuration
+        self.viewContent.slider.isHidden = self.presenter.viewModel.sliderHidden
+        self.viewContent.slider.value = self.presenter.viewModel.sliderValue
+        self.viewContent.slider.maximumValue = self.presenter.viewModel.sliderMaxValue
         self.toolbar.buttonPlay.isEnabled = self.presenter.viewModel.buttonPlayEnabled
         self.toolbar.buttonStop.isEnabled = self.presenter.viewModel.buttonStopEnabled
         self.toolbar.buttonPause.isEnabled = self.presenter.viewModel.buttonPauseEnabled

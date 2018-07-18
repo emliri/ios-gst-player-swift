@@ -3,6 +3,7 @@ import AudioPlayer
 
 extension Presenter:PlayerDelegate {
     func playerStatusPlaying() {
+        self.viewModel.sliderHidden = false
         self.viewModel.buttonPlayEnabled = false
         self.viewModel.buttonNextEnabled = true
         self.viewModel.buttonPreviousEnabled = true
@@ -11,6 +12,7 @@ extension Presenter:PlayerDelegate {
     }
     
     func playerStatusPaused() {
+        self.viewModel.sliderHidden = false
         self.viewModel.buttonPlayEnabled = true
         self.viewModel.buttonNextEnabled = true
         self.viewModel.buttonPreviousEnabled = true
@@ -19,6 +21,7 @@ extension Presenter:PlayerDelegate {
     }
     
     func playerStatusStopped() {
+        self.viewModel.sliderHidden = true
         self.viewModel.buttonPlayEnabled = false
         self.viewModel.buttonNextEnabled = false
         self.viewModel.buttonPreviousEnabled = false
@@ -29,6 +32,7 @@ extension Presenter:PlayerDelegate {
     }
     
     func playerStatusReady() {
+        self.viewModel.sliderHidden = true
         self.viewModel.buttonPlayEnabled = true
         self.viewModel.buttonNextEnabled = false
         self.viewModel.buttonPreviousEnabled = false
@@ -39,10 +43,12 @@ extension Presenter:PlayerDelegate {
     }
     
     func playerUpdatedPosition(seconds:Float) {
+        self.viewModel.sliderValue = seconds
         self.viewModel.currentTime = self.timeFrom(seconds:seconds)
     }
     
     func playerUpdatedDuration(seconds:Float) {
+        self.viewModel.sliderMaxValue = seconds
         self.viewModel.currentDuration = self.timeFrom(seconds:seconds)
     }
     
