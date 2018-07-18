@@ -17,7 +17,7 @@ struct ViewModel {
         self.currentDuration = String()
         self.sliderValue = 0
         self.sliderMaxValue = 0
-        self.sliderHidden = false
+        self.sliderHidden = true
         self.buttonPlayEnabled = false
         self.buttonStopEnabled = false
         self.buttonPauseEnabled = false
