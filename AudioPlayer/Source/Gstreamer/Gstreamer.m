@@ -37,6 +37,10 @@ static Gstreamer *monostate;
     gst_player_stop(player);
 }
 
+-(void)seekWithSeconds:(float)seconds {
+    gst_player_seek(player, seconds);
+}
+
 -(void)configureGStreamer {
     gst_debug_set_threshold_for_name(kGstPlayer, GST_LEVEL_ERROR);
     player = gst_player_new(NULL, NULL);
