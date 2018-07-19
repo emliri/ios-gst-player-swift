@@ -27,7 +27,7 @@ class StatePaused:StateProtocol {
     }
     
     func seek(player:Player, seconds:Float) throws {
-        player.provider.seek(seconds:seconds)
+        player.provider.seek(seconds:0)
     }
     
     func pause(player:Player) throws { throw PlayerError.canNotPause }

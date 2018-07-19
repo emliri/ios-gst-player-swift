@@ -37,7 +37,7 @@ static Gstreamer *monostate;
     gst_player_stop(player);
 }
 
--(void)seekWithSeconds:(float)seconds {
+-(void)seekWithSeconds:(long)seconds {
     gst_player_seek(player, seconds);
 }
 
@@ -54,6 +54,10 @@ static Gstreamer *monostate;
 
 void positionCallback(void *player, long time, void *data) {
     [[monostate delegate] positionCallbackWithTime:time];
+}
+
+void durationCallback(void *player, long time, void *data) {
+    [[monostate delegate] durationCallbackWithTime:time];
 }
 
 void durationCallback(void *player, long time, void *data) {

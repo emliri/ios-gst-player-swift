@@ -36,6 +36,7 @@ class View:UIViewController {
         let view:ViewContent = ViewContent()
         view.backgroundColor = UIColor.white
         view.segmented.addTarget(self, action:#selector(self.selector(segmented:)), for:UIControlEvents.valueChanged)
+        view.slider.addTarget(self, action:#selector(self.selector(slider:)), for:UIControlEvents.valueChanged)
         self.viewContent = view
         self.view = view
     }
@@ -67,5 +68,9 @@ class View:UIViewController {
         default:
             self.presenter.removeSource()
         }
+    }
+    
+    @objc private func selector(slider:UISlider) {
+        self.presenter.seek(seconds:slider.value)
     }
 }

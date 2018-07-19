@@ -33,4 +33,12 @@ extension Presenter {
             self.showAlert(message:error.localizedDescription)
         }
     }
+    
+    func seek(seconds:Float) {
+        do {
+            try self.player.seek(seconds:seconds)
+        } catch let error {
+            self.showAlert(message:error.localizedDescription)
+        }
+    }
 }

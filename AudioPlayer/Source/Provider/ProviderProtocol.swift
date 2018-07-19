@@ -7,5 +7,5 @@ import Foundation
     func play()
     func pause()
     func stop()
-    func seek(seconds:Float)
+    func seek(seconds:CLong)
 }

@@ -29,6 +29,6 @@ class Player:PlayerProtocol {
     }
     
     func seek(seconds:Float) throws {
-        try self.state.seek(player:self, seconds:seconds)
+        try self.state.seek(player:self, seconds:seconds * Constants.nanoSecondsToSeconds)
     }
 }
