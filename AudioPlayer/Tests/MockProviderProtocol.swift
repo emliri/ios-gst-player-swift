@@ -5,6 +5,7 @@ class MockProviderProtocol:ProviderProtocol {
     var onPlay:(() -> Void)?
     var onPause:(() -> Void)?
     var onStop:(() -> Void)?
+    var onSeek:(() -> Void)?
     var delegate:ProviderDelegate?
     var url:String?
     
@@ -24,5 +25,9 @@ class MockProviderProtocol:ProviderProtocol {
     
     func stop() {
         self.onStop?()
+    }
+    
+    func seek(seconds:Float) {
+        self.onSeek?()
     }
 }

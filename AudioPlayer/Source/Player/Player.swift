@@ -27,4 +27,8 @@ class Player:PlayerProtocol {
     func stop() throws {
         try self.state.stop(player:self)
     }
+    
+    func seek(seconds:Float) throws {
+        try self.state.seek(player:self, seconds:seconds)
+    }
 }

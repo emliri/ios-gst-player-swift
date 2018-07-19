@@ -83,4 +83,11 @@ class TestStatePaused:XCTestCase {
         self.player.setSource(url:"hello world")
         self.waitForExpectations(timeout:0.3, handler:nil)
     }
+    
+    func testSeekCallsProviderSeek() {
+        let expect:XCTestExpectation = self.expectation(description:"Play not called")
+        self.provider.onSeek = { expect.fulfill() }
+        XCTAssertNoThrow(try self.player.seek(seconds:0), "Failed to seek")
+        self.waitForExpectations(timeout:0.3, handler:nil)
+    }
 }

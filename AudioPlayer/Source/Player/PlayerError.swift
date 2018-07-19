@@ -9,6 +9,9 @@ struct PlayerError:LocalizedError {
         "PlayerError_canNotPause", tableName:nil, bundle:Bundle(for:Player.self), comment:String()))
     static let canNotStop:PlayerError = PlayerError(errorDescription:NSLocalizedString(
         "PlayerError_canNotStop", tableName:nil, bundle:Bundle(for:Player.self), comment:String()))
+    static let canNotSeek:PlayerError = PlayerError(errorDescription:NSLocalizedString(
+        "PlayerError_canNotSeek", tableName:nil, bundle:Bundle(for:Player.self), comment:String()))
     static let alreadyPlaying:PlayerError = PlayerError(errorDescription:NSLocalizedString(
         "PlayerError_alreadyPlaying", tableName:nil, bundle:Bundle(for:Player.self), comment:String()))
+    
 }

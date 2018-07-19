@@ -8,4 +8,5 @@ public protocol PlayerProtocol:AnyObject {
     func play() throws
     func pause() throws
     func stop() throws
+    func seek(seconds:Float) throws
 }

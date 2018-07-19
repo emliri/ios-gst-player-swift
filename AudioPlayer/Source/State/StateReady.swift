@@ -11,8 +11,6 @@ class StateReady:StateProtocol {
         player.provider.setSource(url:url)
     }
     
-    func pause(player:Player) throws { throw PlayerError.canNotPause }
-    
     func play(player:Player) throws {
         player.provider.play()
         player.delegate?.playerStatusPlaying()
@@ -24,4 +22,7 @@ class StateReady:StateProtocol {
         player.delegate?.playerStatusStopped()
         player.state = States.stopped
     }
+    
+    func pause(player:Player) throws { throw PlayerError.canNotPause }
+    func seek(player:Player, seconds:Float) throws { throw PlayerError.canNotSeek }
 }
