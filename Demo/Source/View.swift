@@ -71,6 +71,7 @@ class View:UIViewController {
     }
     
     @objc private func selector(slider:UISlider) {
+        slider.isEnabled = false
         self.presenter.seek(seconds:slider.value)
     }
 }
