@@ -62,8 +62,8 @@ void durationCallback(void *player, long time, void *data) {
     [[monostate delegate] durationCallbackWithTime:time];
 }
 
-void errorCallback(void *player, NSString *error, void *data) {
-    [[monostate delegate] foundErrorWithMessage:error];
+void errorCallback(void *player, GError *error, void *data) {
+    [[monostate delegate] foundErrorWithMessage:[[NSString alloc] initWithUTF8String:error->message] code:error->code];
 }
 
 static char *const kGstPlayer = "gst-player";

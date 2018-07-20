@@ -13,7 +13,8 @@ extension Player:ProviderDelegate {
         }
     }
     
-    func foundError(message:String) {
+    func foundError(message:String, code:Int) {
+        print("error code \(code)")
         DispatchQueue.main.async { [weak self] in
             self?.delegate?.playerError(message:message)
         }

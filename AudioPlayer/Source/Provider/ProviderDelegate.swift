@@ -3,5 +3,5 @@ import Foundation
 @objc protocol ProviderDelegate:AnyObject {
     func positionCallback(time:Float)
     func durationCallback(time:Float)
-    func foundError(message:String)
+    func foundError(message:String, code:Int)
 }
