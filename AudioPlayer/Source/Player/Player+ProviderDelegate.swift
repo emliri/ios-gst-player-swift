@@ -12,4 +12,10 @@ extension Player:ProviderDelegate {
             self?.delegate?.playerUpdatedDuration(seconds:time / Constants.nanoSecondsToSeconds)
         }
     }
+    
+    func foundError(message:String) {
+        DispatchQueue.main.async { [weak self] in
+            self?.delegate?.playerError(message:message)
+        }
+    }
 }

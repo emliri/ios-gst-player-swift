@@ -43,7 +43,7 @@ static Gstreamer *monostate;
 }
 
 -(void)configureGStreamer {
-    gst_debug_set_threshold_for_name(kGstPlayer, GST_LEVEL_MAX);
+    gst_debug_set_threshold_for_name(kGstPlayer, GST_LEVEL_ERROR);
     player = gst_player_new(NULL, NULL);
     [self configureCallBacks];
 }
@@ -51,7 +51,7 @@ static Gstreamer *monostate;
 -(void)configureCallBacks {
     g_signal_connect(player, kPositionUpdated, G_CALLBACK(positionCallback), NULL);
     g_signal_connect(player, kDurationChanged, G_CALLBACK(durationCallback), NULL);
-    g_signal_connect(player, "error", G_CALLBACK(errorCallback), NULL);
+    g_signal_connect(player, kError, G_CALLBACK(errorCallback), NULL);
 }
 
 void positionCallback(void *player, long time, void *data) {
@@ -62,13 +62,13 @@ void durationCallback(void *player, long time, void *data) {
     [[monostate delegate] durationCallbackWithTime:time];
 }
 
-void errorCallback(void *player, const char* error, void *data) {
-    NSLog(@"error");
-    printf(error);
+void errorCallback(void *player, NSString *error, void *data) {
+    [[monostate delegate] foundErrorWithMessage:error];
 }
 
 static char *const kGstPlayer = "gst-player";
 static char *const kPositionUpdated = "position-updated";
 static char *const kDurationChanged = "duration-changed";
+static char *const kError = "error";
 
 @end

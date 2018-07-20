@@ -2,6 +2,10 @@ import Foundation
 import AudioPlayer
 
 extension Presenter:PlayerDelegate {
+    func playerError(message:String) {
+        self.showAlert(message:message)
+    }
+    
     func playerStatusPlaying() {
         self.viewModel.sliderHidden = false
         self.viewModel.buttonPlayEnabled = false

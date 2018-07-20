@@ -8,4 +8,5 @@ public protocol PlayerDelegate:AnyObject {
     
     func playerUpdatedPosition(seconds:Float)
     func playerUpdatedDuration(seconds:Float)
+    func playerError(message:String)
 }
