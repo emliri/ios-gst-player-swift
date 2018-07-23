@@ -68,6 +68,7 @@ class ViewContent:UIView {
     private func makeSlider() {
         let slider:UISlider = UISlider()
         slider.translatesAutoresizingMaskIntoConstraints = false
+        slider.isContinuous = false
         self.slider = slider
         self.addSubview(slider)
     }
