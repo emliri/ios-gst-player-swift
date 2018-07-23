@@ -72,7 +72,8 @@ void bufferingCallback(void *player, int value, void *data) {
 }
 
 void errorCallback(void *player, GError *error, void *data) {
-    [[monostate delegate] foundErrorWithMessage:[[NSString alloc] initWithUTF8String:error->message] code:error->code];
+    [[monostate delegate] foundErrorWithMessage:
+     [[NSString alloc] initWithUTF8String:error->message] code:(long)(error->code)];
 }
 
 static char *const kGstPlayer = "gst-player";
