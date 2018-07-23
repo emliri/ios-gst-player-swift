@@ -50,6 +50,7 @@ static Gstreamer *monostate;
 -(void)configureCallBacks {
     g_signal_connect(player, kPositionUpdated, G_CALLBACK(positionCallback), NULL);
     g_signal_connect(player, kDurationChanged, G_CALLBACK(durationCallback), NULL);
+    g_signal_connect(player, kBuffering, G_CALLBACK(bufferingCallback), NULL);
     g_signal_connect(player, kSeekDone, G_CALLBACK(seekDoneCallback), NULL);
     g_signal_connect(player, kError, G_CALLBACK(errorCallback), NULL);
 }
@@ -62,8 +63,12 @@ void durationCallback(void *player, long time, void *data) {
     [[monostate delegate] durationCallbackWithTime:time];
 }
 
-void seekDoneCallback(void *player, long time, void *data) {
+void seekDoneCallback(void *player, long value, void *data) {
     NSLog(@"seek done!");
+}
+
+void bufferingCallback(void *player, int value, void *data) {
+    NSLog(@"buffering!");
 }
 
 void errorCallback(void *player, GError *error, void *data) {
@@ -73,6 +78,7 @@ void errorCallback(void *player, GError *error, void *data) {
 static char *const kGstPlayer = "gst-player";
 static char *const kPositionUpdated = "position-updated";
 static char *const kDurationChanged = "duration-changed";
+static char *const kBuffering = "buffering";
 static char *const kSeekDone = "seek-done";
 static char *const kError = "error";
 

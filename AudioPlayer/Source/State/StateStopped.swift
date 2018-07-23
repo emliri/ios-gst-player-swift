@@ -16,5 +16,5 @@ class StateStopped:StateProtocol {
     func play(player:Player) throws { throw PlayerError.sourceNotSet }
     func pause(player:Player) throws { throw PlayerError.canNotPause }
     func stop(player:Player) throws { throw PlayerError.canNotStop }
-    func seek(player:Player, seconds:Float) throws { throw PlayerError.canNotSeek }
+    func seek(player:Player, seconds:Int) throws { throw PlayerError.canNotSeek }
 }

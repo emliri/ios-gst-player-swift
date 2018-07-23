@@ -7,5 +7,5 @@ protocol StateProtocol {
     func play(player:Player) throws
     func pause(player:Player) throws
     func stop(player:Player) throws
-    func seek(player:Player, seconds:Float) throws
+    func seek(player:Player, seconds:Int) throws
 }

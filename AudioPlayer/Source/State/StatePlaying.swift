@@ -26,8 +26,8 @@ class StatePlaying:StateProtocol {
         player.state = States.stopped
     }
     
-    func seek(player:Player, seconds:Float) throws {
-        player.provider.seek(seconds:Int(seconds))
+    func seek(player:Player, seconds:Int) throws {
+        player.provider.seek(seconds:seconds)
     }
     
     func play(player:Player) throws { throw PlayerError.alreadyPlaying }

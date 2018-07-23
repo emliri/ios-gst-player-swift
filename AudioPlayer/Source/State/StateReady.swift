@@ -24,5 +24,5 @@ class StateReady:StateProtocol {
     }
     
     func pause(player:Player) throws { throw PlayerError.canNotPause }
-    func seek(player:Player, seconds:Float) throws { throw PlayerError.canNotSeek }
+    func seek(player:Player, seconds:Int) throws { throw PlayerError.canNotSeek }
 }
