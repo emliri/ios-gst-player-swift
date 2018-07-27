@@ -20,6 +20,9 @@
 		DA606AF620E1149B003C6EFB /* Navigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA606AF520E1149B003C6EFB /* Navigation.swift */; };
 		DA606AF920E11531003C6EFB /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = DA606AF720E11531003C6EFB /* Localizable.strings */; };
 		DA606AFB20E1299E003C6EFB /* guitars.m4a in Resources */ = {isa = PBXBuildFile; fileRef = DA606AFA20E1299E003C6EFB /* guitars.m4a */; };
+		DADA3C17210B3D4800AE98A9 /* Black_Acid_Prophecy_-_14_-_Servant_of_the_Storm.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DADA3C14210B3D4800AE98A9 /* Black_Acid_Prophecy_-_14_-_Servant_of_the_Storm.mp3 */; };
+		DADA3C18210B3D4800AE98A9 /* Medusah_Black_-_07_-_Guilty_Pleasure.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DADA3C15210B3D4800AE98A9 /* Medusah_Black_-_07_-_Guilty_Pleasure.mp3 */; };
+		DADA3C19210B3D4800AE98A9 /* Space_Heater_-_04_-_Mode_7.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DADA3C16210B3D4800AE98A9 /* Space_Heater_-_04_-_Mode_7.mp3 */; };
 		DAE8F32720F8D07400EE1B0C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE8F32620F8D07400EE1B0C /* Constants.swift */; };
 /* End PBXBuildFile section */
 
@@ -53,6 +56,9 @@
 		DA606AF520E1149B003C6EFB /* Navigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigation.swift; sourceTree = "<group>"; };
 		DA606AF820E11531003C6EFB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		DA606AFA20E1299E003C6EFB /* guitars.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = guitars.m4a; sourceTree = "<group>"; };
+		DADA3C14210B3D4800AE98A9 /* Black_Acid_Prophecy_-_14_-_Servant_of_the_Storm.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Black_Acid_Prophecy_-_14_-_Servant_of_the_Storm.mp3"; sourceTree = "<group>"; };
+		DADA3C15210B3D4800AE98A9 /* Medusah_Black_-_07_-_Guilty_Pleasure.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Medusah_Black_-_07_-_Guilty_Pleasure.mp3"; sourceTree = "<group>"; };
+		DADA3C16210B3D4800AE98A9 /* Space_Heater_-_04_-_Mode_7.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Space_Heater_-_04_-_Mode_7.mp3"; sourceTree = "<group>"; };
 		DAE8F32620F8D07400EE1B0C /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -89,6 +95,9 @@
 		DA3E941A20E0FF3400F049AD /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				DADA3C14210B3D4800AE98A9 /* Black_Acid_Prophecy_-_14_-_Servant_of_the_Storm.mp3 */,
+				DADA3C15210B3D4800AE98A9 /* Medusah_Black_-_07_-_Guilty_Pleasure.mp3 */,
+				DADA3C16210B3D4800AE98A9 /* Space_Heater_-_04_-_Mode_7.mp3 */,
 				DA606AFA20E1299E003C6EFB /* guitars.m4a */,
 				DA3E941B20E0FF3400F049AD /* LaunchScreen.storyboard */,
 				DA606AF720E11531003C6EFB /* Localizable.strings */,
@@ -181,8 +190,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				DA3E941D20E0FF3400F049AD /* LaunchScreen.storyboard in Resources */,
+				DADA3C17210B3D4800AE98A9 /* Black_Acid_Prophecy_-_14_-_Servant_of_the_Storm.mp3 in Resources */,
+				DADA3C18210B3D4800AE98A9 /* Medusah_Black_-_07_-_Guilty_Pleasure.mp3 in Resources */,
 				DA606AFB20E1299E003C6EFB /* guitars.m4a in Resources */,
 				DA606AF920E11531003C6EFB /* Localizable.strings in Resources */,
+				DADA3C19210B3D4800AE98A9 /* Space_Heater_-_04_-_Mode_7.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
