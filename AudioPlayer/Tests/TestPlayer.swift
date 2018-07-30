@@ -25,4 +25,9 @@ class TestPlayer:XCTestCase {
         self.player.delegate = MockPlayerDelegate()
         XCTAssertNil(self.player.delegate, "Retains delegate")
     }
+    
+    func testMonostateOnProvider() {
+        let provider:ProviderProtocol = Factory.makeProvider()
+        XCTAssertTrue(provider.delegate === self.player, "Providers not sharing delegate")
+    }
 }

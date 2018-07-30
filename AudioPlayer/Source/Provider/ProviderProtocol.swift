@@ -1,6 +1,6 @@
 import Foundation
 
-@objc protocol ProviderProtocol {
+@objc protocol ProviderProtocol:AnyObject {
     var delegate:ProviderDelegate? { get set }
 
     func setSource(url:String)

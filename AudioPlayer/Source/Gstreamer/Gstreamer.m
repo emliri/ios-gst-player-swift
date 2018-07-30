@@ -7,66 +7,73 @@
 
 @implementation Gstreamer
 
-static GstPlayer *player;
-static id<ProviderDelegate> delegate;
-@synthesize delegate;
+static GstPlayer *monoPlayer;
+static id<ProviderDelegate> monoDelegate;
 
 -(instancetype)init {
     self = [super init];
-    if (!player) {
+    if (!monoPlayer) {
         [self configurePlayer];
     }
     return self;
 }
 
+-(void)setDelegate:(id<ProviderDelegate>)delegate {
+    monoDelegate = delegate;
+}
+
+-(id<ProviderDelegate>)delegate {
+    return monoDelegate;
+}
+
 -(void)play {
-    gst_player_play(player);
+    gst_player_play(monoPlayer);
 }
 
 -(void)pause {
-    gst_player_pause(player);
+    gst_player_pause(monoPlayer);
 }
 
 -(void)setSourceWithUrl:(NSString * _Nonnull)url {
-    gst_player_set_uri(player, [url cStringUsingEncoding:NSASCIIStringEncoding]);
+    gst_player_set_uri(monoPlayer, [url cStringUsingEncoding:NSASCIIStringEncoding]);
 }
 
 -(void)stop {
-    gst_player_stop(player);
+    gst_player_stop(monoPlayer);
 }
 
 -(void)seekWithSeconds:(long)seconds {
-    gst_player_seek(player, seconds);
+    gst_player_seek(monoPlayer, seconds);
 }
 
 -(void)configurePlayer {
     GstreamerConfiguration();
     gst_debug_set_threshold_for_name(kGstPlayer, GST_LEVEL_ERROR);
-    player = gst_player_new(NULL, NULL);
+    monoPlayer = gst_player_new(NULL, NULL);
     [self configureCallBacks];
 }
 
 -(void)configureCallBacks {
-    g_signal_connect(player, kPositionUpdated, G_CALLBACK(positionCallback), NULL);
-    g_signal_connect(player, kDurationChanged, G_CALLBACK(durationCallback), NULL);
-    g_signal_connect(player, kEndOfStream, G_CALLBACK(endOfStreamCallback), NULL);
-    g_signal_connect(player, kError, G_CALLBACK(errorCallback), NULL);
+    g_signal_connect(monoPlayer, kPositionUpdated, G_CALLBACK(positionCallback), NULL);
+    g_signal_connect(monoPlayer, kDurationChanged, G_CALLBACK(durationCallback), NULL);
+    g_signal_connect(monoPlayer, kEndOfStream, G_CALLBACK(endOfStreamCallback), NULL);
+    g_signal_connect(monoPlayer, kError, G_CALLBACK(errorCallback), NULL);
 }
 
 void positionCallback(void *player, long time, void *data) {
-    [delegate positionCallbackWithTime:time];
+    [monoDelegate positionCallbackWithTime:time];
 }
 
 void durationCallback(void *player, long time, void *data) {
-    [delegate durationCallbackWithTime:time];
+    [monoDelegate durationCallbackWithTime:time];
 }
 
 void endOfStreamCallback(void *player, void *data) {
-    [delegate endOfStream];
+    [monoDelegate endOfStream];
 }
 
 void errorCallback(void *player, GError *error, void *data) {
-    [delegate foundErrorWithMessage:[[NSString alloc] initWithUTF8String:error->message] code:(long)(error->code)];
+    [monoDelegate foundErrorWithMessage:[[NSString alloc] initWithUTF8String:error->message] code:(long)(error->code)];
 }
 
 static char *const kGstPlayer = "gst-player";
