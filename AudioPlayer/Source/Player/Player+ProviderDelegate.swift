@@ -13,8 +13,11 @@ extension Player:ProviderDelegate {
         }
     }
     
+    func endOfStream() {
+        print("end of stream")
+    }
+    
     func foundError(message:String, code:Int) {
-        print("error code \(code)")
         DispatchQueue.main.async { [weak self] in
             self?.delegate?.playerError(message:message)
         }

@@ -27,7 +27,7 @@ class MockProviderProtocol:ProviderProtocol {
         self.onStop?()
     }
     
-    func seek(seconds:Float) {
+    func seek(seconds:CLong) {
         self.onSeek?()
     }
 }

@@ -49,6 +49,7 @@ static id<ProviderDelegate> delegate;
 -(void)configureCallBacks {
     g_signal_connect(player, kPositionUpdated, G_CALLBACK(positionCallback), NULL);
     g_signal_connect(player, kDurationChanged, G_CALLBACK(durationCallback), NULL);
+    g_signal_connect(player, kEndOfStream, G_CALLBACK(endOfStreamCallback), NULL);
     g_signal_connect(player, kError, G_CALLBACK(errorCallback), NULL);
 }
 
@@ -60,6 +61,10 @@ void durationCallback(void *player, long time, void *data) {
     [delegate durationCallbackWithTime:time];
 }
 
+void endOfStreamCallback(void *player, void *data) {
+    [delegate endOfStream];
+}
+
 void errorCallback(void *player, GError *error, void *data) {
     [delegate foundErrorWithMessage:[[NSString alloc] initWithUTF8String:error->message] code:(long)(error->code)];
 }
@@ -67,6 +72,7 @@ void errorCallback(void *player, GError *error, void *data) {
 static char *const kGstPlayer = "gst-player";
 static char *const kPositionUpdated = "position-updated";
 static char *const kDurationChanged = "duration-changed";
+static char *const kEndOfStream = "end-of-stream";
 static char *const kError = "error";
 
 @end
