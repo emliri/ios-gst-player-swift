@@ -5,19 +5,17 @@
 
 @interface Gstreamer () <ProviderProtocol> @end
 
-@implementation Gstreamer {
-    GstPlayer *player;
-    id<ProviderDelegate> delegate;
-}
+@implementation Gstreamer
 
-static Gstreamer *monostate;
+static GstPlayer *player;
+static id<ProviderDelegate> delegate;
 @synthesize delegate;
 
 -(instancetype)init {
     self = [super init];
-    monostate = self;
-    GstreamerConfiguration();
-    [self configureGStreamer];
+    if (!player) {
+        [self configurePlayer];
+    }
     return self;
 }
 
@@ -41,7 +39,8 @@ static Gstreamer *monostate;
     gst_player_seek(player, seconds);
 }
 
--(void)configureGStreamer {
+-(void)configurePlayer {
+    GstreamerConfiguration();
     gst_debug_set_threshold_for_name(kGstPlayer, GST_LEVEL_ERROR);
     player = gst_player_new(NULL, NULL);
     [self configureCallBacks];
@@ -56,11 +55,11 @@ static Gstreamer *monostate;
 }
 
 void positionCallback(void *player, long time, void *data) {
-    [[monostate delegate] positionCallbackWithTime:time];
+    [delegate positionCallbackWithTime:time];
 }
 
 void durationCallback(void *player, long time, void *data) {
-    [[monostate delegate] durationCallbackWithTime:time];
+    [delegate durationCallbackWithTime:time];
 }
 
 void seekDoneCallback(void *player, long value, void *data) {
@@ -72,8 +71,7 @@ void bufferingCallback(void *player, int value, void *data) {
 }
 
 void errorCallback(void *player, GError *error, void *data) {
-    [[monostate delegate] foundErrorWithMessage:
-     [[NSString alloc] initWithUTF8String:error->message] code:(long)(error->code)];
+    [delegate foundErrorWithMessage:[[NSString alloc] initWithUTF8String:error->message] code:(long)(error->code)];
 }
 
 static char *const kGstPlayer = "gst-player";
