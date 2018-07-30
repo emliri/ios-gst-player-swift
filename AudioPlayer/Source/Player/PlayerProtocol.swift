@@ -5,6 +5,8 @@ public protocol PlayerProtocol:AnyObject {
     var currentState:State { get }
     
     func setSource(url:String)
+    func addToPlay(list:[String])
+    func clearList()
     func play() throws
     func pause() throws
     func stop() throws

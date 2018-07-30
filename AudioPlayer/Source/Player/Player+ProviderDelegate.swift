@@ -14,7 +14,10 @@ extension Player:ProviderDelegate {
     }
     
     func endOfStream() {
-        print("end of stream")
+        DispatchQueue.main.async { [weak self] in
+            guard let player:Player = self else { return }
+            self?.state.endOfStream(context:player)
+        }
     }
     
     func foundError(message:String, code:Int) {

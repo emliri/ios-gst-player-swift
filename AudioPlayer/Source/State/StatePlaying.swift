@@ -7,28 +7,34 @@ class StatePlaying:StateProtocol {
         self.value = State.playing
     }
     
-    func setSource(player:Player, url:String) {
-        player.provider.stop()
-        player.provider.setSource(url:url)
-        player.delegate?.playerStatusReady()
-        player.state = States.ready
+    func setSource(context:Player, url:String) {
+        context.provider.stop()
+        context.provider.setSource(url:url)
+        context.delegate?.playerStatusReady()
+        context.state = States.ready
     }
     
-    func pause(player:Player) throws {
-        player.provider.pause()
-        player.delegate?.playerStatusPaused()
-        player.state = States.paused
+    func pause(context:Player) throws {
+        context.provider.pause()
+        context.delegate?.playerStatusPaused()
+        context.state = States.paused
     }
     
-    func stop(player:Player) throws {
-        player.provider.stop()
-        player.delegate?.playerStatusStopped()
-        player.state = States.stopped
+    func stop(context:Player) throws {
+        context.provider.stop()
+        context.delegate?.playerStatusStopped()
+        context.state = States.stopped
     }
     
-    func seek(player:Player, seconds:Int) throws {
-        player.provider.seek(seconds:seconds)
+    func seek(context:Player, seconds:Int) throws {
+        context.provider.seek(seconds:seconds)
     }
     
-    func play(player:Player) throws { throw PlayerError.alreadyPlaying }
+    func play(context:Player) throws { throw PlayerError.alreadyPlaying }
+    
+    func endOfStream(context:Player) {
+        context.provider.stop()
+        context.delegate?.playerStatusStopped()
+        context.state = States.stopped
+    }
 }

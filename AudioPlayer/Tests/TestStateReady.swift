@@ -19,11 +19,11 @@ class TestStateReady:XCTestCase {
     }
     
     func testPauseThrows() {
-        XCTAssertThrowsError(try self.state.pause(player:self.player), "Failed to throw")
+        XCTAssertThrowsError(try self.state.pause(context:self.player), "Failed to throw")
     }
     
     func testSeekThrows() {
-        XCTAssertThrowsError(try self.state.seek(player:self.player, seconds:0), "Failed to throw")
+        XCTAssertThrowsError(try self.state.seek(context:self.player, seconds:0), "Failed to throw")
     }
     
     func testPlayChangesStateToPlaying() {
@@ -60,7 +60,7 @@ class TestStateReady:XCTestCase {
     func testStopCallsStateOnDelegate() {
         let expect:XCTestExpectation = self.expectation(description:"Delegate not called")
         self.delegate.onStatusStopped = { expect.fulfill() }
-        XCTAssertNoThrow(try self.player.stop(), "Failed to play")
+        XCTAssertNoThrow(try self.player.stop(), "Failed to stop")
         self.waitForExpectations(timeout:0.3, handler:nil)
     }
     

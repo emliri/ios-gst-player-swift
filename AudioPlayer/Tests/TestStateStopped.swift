@@ -19,19 +19,19 @@ class TestStateStopped:XCTestCase {
     }
     
     func testPlayThrows() {
-        XCTAssertThrowsError(try self.state.play(player:self.player), "Failed to throw")
+        XCTAssertThrowsError(try self.state.play(context:self.player), "Failed to throw")
     }
     
     func testStopThrows() {
-        XCTAssertThrowsError(try self.state.stop(player:self.player), "Failed to throw")
+        XCTAssertThrowsError(try self.state.stop(context:self.player), "Failed to throw")
     }
     
     func testPauseThrows() {
-        XCTAssertThrowsError(try self.state.pause(player:self.player), "Failed to throw")
+        XCTAssertThrowsError(try self.state.pause(context:self.player), "Failed to throw")
     }
     
     func testSeekThrows() {
-        XCTAssertThrowsError(try self.state.seek(player:self.player, seconds:0), "Failed to throw")
+        XCTAssertThrowsError(try self.state.seek(context:self.player, seconds:0), "Failed to throw")
     }
     
     func testSetSourceChangesStateToReady() {

@@ -7,14 +7,14 @@ class StateStopped:StateProtocol {
         self.value = State.stopped
     }
     
-    func setSource(player:Player, url:String) {
-        player.provider.setSource(url:url)
-        player.delegate?.playerStatusReady()
-        player.state = States.ready
+    func setSource(context:Player, url:String) {
+        context.provider.setSource(url:url)
+        context.delegate?.playerStatusReady()
+        context.state = States.ready
     }
     
-    func play(player:Player) throws { throw PlayerError.sourceNotSet }
-    func pause(player:Player) throws { throw PlayerError.canNotPause }
-    func stop(player:Player) throws { throw PlayerError.canNotStop }
-    func seek(player:Player, seconds:Int) throws { throw PlayerError.canNotSeek }
+    func play(context:Player) throws { throw PlayerError.sourceNotSet }
+    func pause(context:Player) throws { throw PlayerError.canNotPause }
+    func stop(context:Player) throws { throw PlayerError.canNotStop }
+    func seek(context:Player, seconds:Int) throws { throw PlayerError.canNotSeek }
 }

@@ -6,8 +6,9 @@ class MockPlayerDelegate:PlayerDelegate {
     var onStatusPaused:(() -> Void)?
     var onStatusStopped:(() -> Void)?
     var onStatusReady:(() -> Void)?
-    var onUpdatedPosition:(() -> Void)?
-    var onUpdatedDuration:(() -> Void)?
+    var onUpdatedPosition:((Float) -> Void)?
+    var onUpdatedDuration:((Float) -> Void)?
+    var onError:(() -> Void)?
     
     func playerStatusPlaying() {
         self.onStatusPlaying?()
@@ -25,10 +26,14 @@ class MockPlayerDelegate:PlayerDelegate {
     }
     
     func playerUpdatedPosition(seconds:Float) {
-        self.onUpdatedPosition?()
+        self.onUpdatedPosition?(seconds)
     }
     
     func playerUpdatedDuration(seconds:Float) {
-        self.onUpdatedDuration?()
+        self.onUpdatedDuration?(seconds)
+    }
+    
+    func playerError(message:String) {
+        self.onError?()
     }
 }
