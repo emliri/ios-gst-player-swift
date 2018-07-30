@@ -49,8 +49,6 @@ static id<ProviderDelegate> delegate;
 -(void)configureCallBacks {
     g_signal_connect(player, kPositionUpdated, G_CALLBACK(positionCallback), NULL);
     g_signal_connect(player, kDurationChanged, G_CALLBACK(durationCallback), NULL);
-    g_signal_connect(player, kBuffering, G_CALLBACK(bufferingCallback), NULL);
-    g_signal_connect(player, kSeekDone, G_CALLBACK(seekDoneCallback), NULL);
     g_signal_connect(player, kError, G_CALLBACK(errorCallback), NULL);
 }
 
@@ -60,14 +58,6 @@ void positionCallback(void *player, long time, void *data) {
 
 void durationCallback(void *player, long time, void *data) {
     [delegate durationCallbackWithTime:time];
-}
-
-void seekDoneCallback(void *player, long value, void *data) {
-    NSLog(@"seek done!");
-}
-
-void bufferingCallback(void *player, int value, void *data) {
-    NSLog(@"buffering!");
 }
 
 void errorCallback(void *player, GError *error, void *data) {
