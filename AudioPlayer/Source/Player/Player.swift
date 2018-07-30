@@ -13,22 +13,30 @@ class Player:PlayerProtocol {
     }
     
     func setSource(url:String) {
-        self.state.setSource(player:self, url:url)
+        self.state.setSource(context:self, url:url)
+    }
+    
+    func addToPlay(list:[String]) {
+        
+    }
+    
+    func clearList() {
+        
     }
     
     func play() throws {
-        try self.state.play(player:self)
+        try self.state.play(context:self)
     }
     
     func pause() throws {
-        try self.state.pause(player:self)
+        try self.state.pause(context:self)
     }
     
     func stop() throws {
-        try self.state.stop(player:self)
+        try self.state.stop(context:self)
     }
     
     func seek(seconds:Float) throws {
-        try self.state.seek(player:self, seconds:Int(seconds * Constants.nanoSecondsToSeconds))
+        try self.state.seek(context:self, seconds:Int(seconds * Constants.nanoSecondsToSeconds))
     }
 }

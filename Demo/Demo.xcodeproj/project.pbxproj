@@ -114,8 +114,8 @@
 				DA2C104720F8936100EDC0D4 /* ViewToolbar.swift */,
 				DA606AF120E1115D003C6EFB /* ViewContent.swift */,
 				DA2C104520F88F2000EDC0D4 /* ViewModel.swift */,
-				DA606AEB20E10E1F003C6EFB /* Presenter.swift */,
 				DA2C104320F88B9600EDC0D4 /* Presenter+Control.swift */,
+				DA606AEB20E10E1F003C6EFB /* Presenter.swift */,
 				DA2C104120F88B4F00EDC0D4 /* Presenter+PlayerDelegate.swift */,
 				DAE8F32620F8D07400EE1B0C /* Constants.swift */,
 			);
