@@ -67,8 +67,6 @@ void errorCallback(void *player, GError *error, void *data) {
 static char *const kGstPlayer = "gst-player";
 static char *const kPositionUpdated = "position-updated";
 static char *const kDurationChanged = "duration-changed";
-static char *const kBuffering = "buffering";
-static char *const kSeekDone = "seek-done";
 static char *const kError = "error";
 
 @end
