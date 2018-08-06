@@ -34,20 +34,15 @@ class TestStateStopped:XCTestCase {
         XCTAssertThrowsError(try self.state.seek(context:self.player, seconds:0), "Failed to throw")
     }
     
-    func testSetSourceChangesStateToReady() {
-        self.player.setSource(url:"hello world")
+    func testAddToPlaylistChangesStateToReady() {
+        self.player.addToPlay(list:[String()])
         XCTAssertEqual(self.player.currentState, State.ready)
     }
     
-    func testSetSourceSendsSourceToProvider() {
-        self.player.setSource(url:"hello world")
-        XCTAssertNotNil(self.provider.url, "Failed to assign source")
-    }
-    
-    func testSetSourceCallsStateOnDelegate() {
+    func testAddToPlaylistCallsStateOnDelegate() {
         let expect:XCTestExpectation = self.expectation(description:"Delegate not called")
         self.delegate.onStatusReady = { expect.fulfill() }
-        self.player.setSource(url:"hello world")
+        self.player.addToPlay(list:[String()])
         self.waitForExpectations(timeout:0.3, handler:nil)
     }
 }

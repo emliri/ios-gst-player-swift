@@ -41,27 +41,22 @@ class TestStatePlaying:XCTestCase {
         self.waitForExpectations(timeout:0.3, handler:nil)
     }
     
-    func testSetSourceChangesStateToReady() {
-        self.player.setSource(url:"hello world")
+    func testAddToPlaylistChangesStateToReady() {
+        self.player.addToPlay(list:[String()])
         XCTAssertEqual(self.player.currentState, State.ready)
     }
     
-    func testSetSourceCallsProviderStop() {
+    func testAddToPlaylistCallsProviderStop() {
         let expect:XCTestExpectation = self.expectation(description:"Stop not called")
         self.provider.onStop = { expect.fulfill() }
-        self.player.setSource(url:"hello world")
+        self.player.addToPlay(list:[String()])
         self.waitForExpectations(timeout:0.3, handler:nil)
     }
     
-    func testSetSourceSendsSourceToProvider() {
-        self.player.setSource(url:"hello world")
-        XCTAssertNotNil(self.provider.url, "Failed to assign source")
-    }
-    
-    func testSetSourceCallsStateOnDelegate() {
+    func testAddToPlaylistCallsStateOnDelegate() {
         let expect:XCTestExpectation = self.expectation(description:"Delegate not called")
         self.delegate.onStatusReady = { expect.fulfill() }
-        self.player.setSource(url:"hello world")
+        self.player.addToPlay(list:[String()])
         self.waitForExpectations(timeout:0.3, handler:nil)
     }
     

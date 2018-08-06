@@ -64,13 +64,13 @@ class TestStateReady:XCTestCase {
         self.waitForExpectations(timeout:0.3, handler:nil)
     }
     
-    func testSetSourceKeepsState() {
-        self.player.setSource(url:"hello world")
+    func testAddToPlaylistKeepsState() {
+        self.player.addToPlay(list:[String()])
         XCTAssertEqual(self.player.currentState, State.ready)
     }
     
-    func testSetSourceUpdatesSourceToProvider() {
-        self.player.setSource(url:"hello world")
+    func testAddToPlaylistUpdatesSourceToProvider() {
+        self.player.addToPlay(list:[String()])
         XCTAssertNotNil(self.provider.url, "Failed to assign source")
     }
 }
