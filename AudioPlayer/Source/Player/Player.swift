@@ -67,6 +67,7 @@ class Player:PlayerProtocol {
     func playerNext() throws {
         if self.current < self.list.count - 1 {
             self.current += 1
+            self.playerPlay()
         } else {
             throw PlayerError.noNext
         }
@@ -75,6 +76,7 @@ class Player:PlayerProtocol {
     func playerPrevious() throws {
         if self.current > 0 {
             self.current -= 1
+            self.playerPlay()
         } else {
             throw PlayerError.noPrevious
         }

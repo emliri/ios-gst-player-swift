@@ -37,15 +37,7 @@ class StatePlaying:StateProtocol {
         }
     }
     
-    func next(context:Player) throws {
-        try context.playerNext()
-        context.playerPlay()
-    }
-    
-    func previous(context:Player) throws {
-        try context.playerPrevious()
-        context.playerPlay()
-    }
-    
+    func next(context:Player) throws { try context.playerNext() }
+    func previous(context:Player) throws { try context.playerPrevious() }
     func play(context:Player) throws { throw PlayerError.alreadyPlaying }
 }

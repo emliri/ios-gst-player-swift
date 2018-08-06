@@ -1,6 +1,7 @@
 import UIKit
 
 class ViewContent:UIView {
+    weak var labelPlaying:UILabel!
     weak var labelTime:UILabel!
     weak var labelDuration:UILabel!
     weak var segmented:UISegmentedControl!
@@ -41,6 +42,18 @@ class ViewContent:UIView {
         self.addSubview(segmented)
     }
     
+    private func makePlaying() {
+        let labelPlaying:UILabel = UILabel()
+        labelPlaying.isUserInteractionEnabled = false
+        labelPlaying.translatesAutoresizingMaskIntoConstraints = false
+        labelPlaying.backgroundColor = UIColor.clear
+        labelPlaying.font = UIFont.systemFont(ofSize:12, weight:UIFont.Weight.light)
+        labelPlaying.textColor = UIColor.black
+        labelPlaying.numberOfLines = 0
+        self.labelPlaying = labelPlaying
+        self.addSubview(labelPlaying)
+    }
+    
     private func makeTime() {
         let labelTime:UILabel = UILabel()
         labelTime.isUserInteractionEnabled = false
@@ -78,6 +91,13 @@ class ViewContent:UIView {
         self.segmented.topAnchor.constraint(equalTo:self.topAnchor, constant:30).isActive = true
         self.segmented.heightAnchor.constraint(greaterThanOrEqualToConstant:0).isActive = true
         self.segmented.widthAnchor.constraint(equalToConstant:280).isActive = true
+    }
+    
+    private func layoutPlaying() {
+        self.labelPlaying.leftAnchor.constraint(equalTo:self.leftAnchor, constant:20).isActive = true
+        self.labelPlaying.rightAnchor.constraint(equalTo:self.rightAnchor, constant:20).isActive = true
+        self.labelPlaying.bottomAnchor.constraint(equalTo:self.labelTime.topAnchor, constant:-20).isActive = true
+        self.labelPlaying.heightAnchor.constraint(greaterThanOrEqualToConstant:0).isActive = true
     }
     
     private func layoutTime() {
