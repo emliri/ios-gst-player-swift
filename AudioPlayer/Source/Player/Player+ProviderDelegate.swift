@@ -20,6 +20,12 @@ extension Player:ProviderDelegate {
         }
     }
     
+    func playingUpdated(url:String) {
+        DispatchQueue.main.async { [weak self] in
+            self?.delegate?.playerUpdatedPlaying(url:url)
+        }
+    }
+    
     func foundError(message:String, code:Int) {
         DispatchQueue.main.async { [weak self] in
             self?.delegate?.playerError(message:message)

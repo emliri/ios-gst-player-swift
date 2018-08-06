@@ -17,6 +17,7 @@ class View:UIViewController {
     required init?(coder:NSCoder) { return nil }
     
     func updateViewModel() {
+        self.viewContent.labelPlaying.text = self.presenter.viewModel.playing
         self.viewContent.labelTime.text = self.presenter.viewModel.currentTime
         self.viewContent.labelDuration.text = self.presenter.viewModel.currentDuration
         self.viewContent.slider.isHidden = self.presenter.viewModel.sliderHidden

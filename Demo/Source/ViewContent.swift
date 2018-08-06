@@ -18,6 +18,7 @@ class ViewContent:UIView {
     }
     
     private func makeOutlets() {
+        self.makePlaying()
         self.makeSegmented()
         self.makeTime()
         self.makeDuration()
@@ -25,6 +26,7 @@ class ViewContent:UIView {
     }
     
     private func layoutOutlets() {
+        self.layoutPlaying()
         self.layoutSegmented()
         self.layoutTime()
         self.layoutDuration()
