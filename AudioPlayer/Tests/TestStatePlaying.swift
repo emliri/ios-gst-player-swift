@@ -91,9 +91,9 @@ class TestStatePlaying:XCTestCase {
         self.waitForExpectations(timeout:0.3, handler:nil)
     }
     
-    func testEndStopsAndChangesStateToStopped() {
+    func testEndStopsAndChangesStateToReady() {
         self.state.endOfStream(context:self.player)
-        XCTAssertEqual(self.player.currentState, State.stopped)
+        XCTAssertEqual(self.player.currentState, State.ready)
     }
     
     func testEndStopsAndCallsProviderStop() {
@@ -105,7 +105,7 @@ class TestStatePlaying:XCTestCase {
     
     func testEndStopsAndCallsStateOnDelegate() {
         let expect:XCTestExpectation = self.expectation(description:"Delegate not called")
-        self.delegate.onStatusStopped = { expect.fulfill() }
+        self.delegate.onStatusReady = { expect.fulfill() }
         self.player.endOfStream()
         self.waitForExpectations(timeout:0.3, handler:nil)
     }

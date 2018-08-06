@@ -34,7 +34,7 @@ class StatePlaying:StateProtocol {
     
     func endOfStream(context:Player) {
         context.provider.stop()
-        context.delegate?.playerStatusStopped()
-        context.state = States.stopped
+        context.delegate?.playerStatusReady()
+        context.state = States.ready
     }
 }
