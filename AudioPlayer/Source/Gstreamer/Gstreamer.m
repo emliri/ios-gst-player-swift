@@ -49,6 +49,7 @@ static id<ProviderDelegate> monoDelegate;
 -(void)configurePlayer {
     GstreamerConfiguration();
     gst_debug_set_threshold_for_name(kGstPlayer, GST_LEVEL_ERROR);
+    gst_debug_set_threshold_from_string("play*:9,decodebin:9,filescrc:9", YES);
     monoPlayer = gst_player_new(NULL, NULL);
     [self configureCallBacks];
 }
