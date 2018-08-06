@@ -7,22 +7,23 @@ class StateReady:StateProtocol {
         self.value = State.ready
     }
     
-    func setSource(context:Player, url:String) {
-        context.provider.setSource(url:url)
+    func addToPlay(context:Player, list:[String]) {
+        context.list.append(contentsOf:list)
+    }
+    
+    func clearList(context:Player) {
+        context.playerStop()
     }
     
     func play(context:Player) throws {
-        context.provider.play()
-        context.delegate?.playerStatusPlaying()
-        context.state = States.playing
+        context.playerPlay()
     }
     
     func stop(context:Player) throws {
-        context.provider.stop()
-        context.delegate?.playerStatusStopped()
-        context.state = States.stopped
+        context.playerStop()
     }
     
     func pause(context:Player) throws { throw PlayerError.canNotPause }
     func seek(context:Player, seconds:Int) throws { throw PlayerError.canNotSeek }
+    func endOfStream(context:Player) { }
 }

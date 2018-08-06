@@ -48,7 +48,6 @@
 		DAE8F31420F8B05B00EE1B0C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = DAE8F31220F8B05B00EE1B0C /* Localizable.strings */; };
 		DAE8F31620F8BE8200EE1B0C /* TestPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE8F31520F8BE8200EE1B0C /* TestPlayer.swift */; };
 		DAE8F31820F8BEDA00EE1B0C /* MockStateProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE8F31720F8BEDA00EE1B0C /* MockStateProtocol.swift */; };
-		DAE8F31B20F8BF5000EE1B0C /* StateProtocol+Default.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE8F31920F8BF2F00EE1B0C /* StateProtocol+Default.swift */; };
 		DAE8F32220F8C23C00EE1B0C /* TestStateStopped.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE8F32120F8C23C00EE1B0C /* TestStateStopped.swift */; };
 		DAE8F32520F8C47D00EE1B0C /* States.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE8F32320F8C45200EE1B0C /* States.swift */; };
 		DAE8F32A20F8D88100EE1B0C /* StatePaused.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE8F32820F8D85900EE1B0C /* StatePaused.swift */; };
@@ -114,7 +113,6 @@
 		DAE8F31320F8B05B00EE1B0C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		DAE8F31520F8BE8200EE1B0C /* TestPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestPlayer.swift; sourceTree = "<group>"; };
 		DAE8F31720F8BEDA00EE1B0C /* MockStateProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockStateProtocol.swift; sourceTree = "<group>"; };
-		DAE8F31920F8BF2F00EE1B0C /* StateProtocol+Default.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StateProtocol+Default.swift"; sourceTree = "<group>"; };
 		DAE8F32120F8C23C00EE1B0C /* TestStateStopped.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestStateStopped.swift; sourceTree = "<group>"; };
 		DAE8F32320F8C45200EE1B0C /* States.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = States.swift; sourceTree = "<group>"; };
 		DAE8F32820F8D85900EE1B0C /* StatePaused.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatePaused.swift; sourceTree = "<group>"; };
@@ -277,7 +275,6 @@
 				DAE8F30920F8AD3C00EE1B0C /* State.swift */,
 				DAE8F32320F8C45200EE1B0C /* States.swift */,
 				DAE8F30720F8ACFC00EE1B0C /* StateProtocol.swift */,
-				DAE8F31920F8BF2F00EE1B0C /* StateProtocol+Default.swift */,
 				DAE8F30B20F8ADE300EE1B0C /* StateStopped.swift */,
 				DA4F929B20FCBB060022EEA9 /* StateReady.swift */,
 				DAE8F30D20F8AF6200EE1B0C /* StatePlaying.swift */,
@@ -420,7 +417,6 @@
 			files = (
 				DA25675F20EF7B1600C30F34 /* PlayerDelegate+Default.swift in Sources */,
 				DAE8F30C20F8ADE300EE1B0C /* StateStopped.swift in Sources */,
-				DAE8F31B20F8BF5000EE1B0C /* StateProtocol+Default.swift in Sources */,
 				DAE8F30820F8ACFC00EE1B0C /* StateProtocol.swift in Sources */,
 				DAE8F31020F8AFF000EE1B0C /* PlayerError.swift in Sources */,
 				DAFB4E7A20EF55FB00BC9851 /* Factory.swift in Sources */,

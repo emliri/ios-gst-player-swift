@@ -3,8 +3,8 @@ import Foundation
 public protocol PlayerProtocol:AnyObject {
     var delegate:PlayerDelegate? { get set }
     var currentState:State { get }
+    var list:[String] { get }
     
-    func setSource(url:String)
     func addToPlay(list:[String])
     func clearList()
     func play() throws

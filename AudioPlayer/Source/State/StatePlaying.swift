@@ -7,11 +7,12 @@ class StatePlaying:StateProtocol {
         self.value = State.playing
     }
     
-    func setSource(context:Player, url:String) {
-        context.provider.stop()
-        context.provider.setSource(url:url)
-        context.delegate?.playerStatusReady()
-        context.state = States.ready
+    func addToPlay(context:Player, list:[String]) {
+        context.list.append(contentsOf:list)
+    }
+    
+    func clearList(context:Player) {
+        context.playerStop()
     }
     
     func pause(context:Player) throws {
@@ -21,9 +22,7 @@ class StatePlaying:StateProtocol {
     }
     
     func stop(context:Player) throws {
-        context.provider.stop()
-        context.delegate?.playerStatusStopped()
-        context.state = States.stopped
+        context.playerStop()
     }
     
     func seek(context:Player, seconds:Int) throws {

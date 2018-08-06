@@ -62,9 +62,12 @@ class View:UIViewController {
     @objc private func selector(segmented:UISegmentedControl) {
         switch segmented.selectedSegmentIndex {
         case 1:
-            self.presenter.setSource(url:Constants.remote)
+            self.presenter.setPlay(list:[Constants.remote])
         case 2:
-            self.presenter.setSource(url:Bundle.main.url(forResource:Constants.local, withExtension:nil)!.absoluteString)
+            let list:[String] = Constants.list.map { (item:String) -> String in
+                return Bundle.main.url(forResource:item, withExtension:nil)!.absoluteString
+            }
+            self.presenter.setPlay(list:list)
         default:
             self.presenter.removeSource()
         }

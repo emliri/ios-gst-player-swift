@@ -1,8 +1,8 @@
 import Foundation
 
 extension Presenter {
-    func setSource(url:String) {
-        self.player.setSource(url:url)
+    func setPlay(list:[String]) {
+        self.player.addToPlay(list:list)
     }
     
     func removeSource() {
