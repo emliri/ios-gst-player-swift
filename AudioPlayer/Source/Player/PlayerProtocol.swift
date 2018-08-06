@@ -11,4 +11,6 @@ public protocol PlayerProtocol:AnyObject {
     func pause() throws
     func stop() throws
     func seek(seconds:Float) throws
+    func next() throws
+    func previous() throws
 }

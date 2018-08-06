@@ -7,17 +7,14 @@ class View:UIViewController {
     
     init() {
         self.presenter = Presenter()
-        self.toolbar = ViewToolbar()
+        self.toolbar = ViewToolbar(presenter:self.presenter)
         super.init(nibName:nil, bundle:nil)
         self.configureView()
         self.presenter.view = self
-        self.toolbar.presenter = self.presenter
         self.setToolbarItems(self.toolbar.items, animated:false)
     }
     
-    required init?(coder:NSCoder) {
-        return nil
-    }
+    required init?(coder:NSCoder) { return nil }
     
     func updateViewModel() {
         self.viewContent.labelTime.text = self.presenter.viewModel.currentTime
@@ -63,14 +60,13 @@ class View:UIViewController {
         self.presenter.clearPlayList()
         switch segmented.selectedSegmentIndex {
         case 1:
-            self.presenter.setPlay(list:[Constants.remote])
+            self.presenter.setPlay(list:Constants.remote)
         case 2:
-            let list:[String] = Constants.list.map { (item:String) -> String in
+            let list:[String] = Constants.localList.map { (item:String) -> String in
                 return Bundle.main.url(forResource:item, withExtension:nil)!.absoluteString
             }
             self.presenter.setPlay(list:list)
-        default:
-            self.presenter.removeSource()
+        default:break
         }
     }
     

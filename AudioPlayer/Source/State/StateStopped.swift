@@ -17,6 +17,8 @@ class StateStopped:StateProtocol {
     func pause(context:Player) throws { throw PlayerError.canNotPause }
     func stop(context:Player) throws { throw PlayerError.canNotStop }
     func seek(context:Player, seconds:Int) throws { throw PlayerError.canNotSeek }
+    func next(context:Player) throws { throw PlayerError.noList }
+    func previous(context:Player) throws { throw PlayerError.noList }
     func clearList(context:Player) { }
     func endOfStream(context:Player) { }
 }

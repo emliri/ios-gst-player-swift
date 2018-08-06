@@ -40,6 +40,14 @@ class Player:PlayerProtocol {
         try self.state.seek(context:self, seconds:Int(seconds * Constants.nanoSecondsToSeconds))
     }
     
+    func next() throws {
+        try self.state.next(context:self)
+    }
+    
+    func previous() throws {
+        try self.state.previous(context:self)
+    }
+    
     func playerPlay() {
         self.provider.stop()
         self.provider.setSource(url:self.list[self.current])
@@ -54,5 +62,21 @@ class Player:PlayerProtocol {
         self.provider.stop()
         self.delegate?.playerStatusStopped()
         self.state = States.stopped
+    }
+    
+    func playerNext() throws {
+        if self.current < self.list.count - 1 {
+            self.current += 1
+        } else {
+            throw PlayerError.noNext
+        }
+    }
+    
+    func playerPrevious() throws {
+        if self.current > 0 {
+            self.current -= 1
+        } else {
+            throw PlayerError.noPrevious
+        }
     }
 }

@@ -9,5 +9,7 @@ protocol StateProtocol {
     func pause(context:Player) throws
     func stop(context:Player) throws
     func seek(context:Player, seconds:Int) throws
+    func next(context:Player) throws
+    func previous(context:Player) throws
     func endOfStream(context:Player)
 }

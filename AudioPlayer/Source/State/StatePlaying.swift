@@ -29,14 +29,23 @@ class StatePlaying:StateProtocol {
         context.provider.seek(seconds:seconds)
     }
     
-    func play(context:Player) throws { throw PlayerError.alreadyPlaying }
-    
     func endOfStream(context:Player) {
-        if context.current < context.list.count - 1 {
-            context.current += 1
-            context.playerPlay()
-        } else {
+        do {
+            try self.next(context:context)
+        } catch {
             context.playerStop()
         }
     }
+    
+    func next(context:Player) throws {
+        try context.playerNext()
+        context.playerPlay()
+    }
+    
+    func previous(context:Player) throws {
+        try context.playerPrevious()
+        context.playerPlay()
+    }
+    
+    func play(context:Player) throws { throw PlayerError.alreadyPlaying }
 }

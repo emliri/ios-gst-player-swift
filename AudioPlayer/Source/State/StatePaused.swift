@@ -29,6 +29,8 @@ class StatePaused:StateProtocol {
         context.provider.seek(seconds:seconds)
     }
     
+    func next(context:Player) throws { try context.playerNext() }
+    func previous(context:Player) throws { try context.playerPrevious() }
     func pause(context:Player) throws { throw PlayerError.canNotPause }
     func endOfStream(context:Player) { }
 }
