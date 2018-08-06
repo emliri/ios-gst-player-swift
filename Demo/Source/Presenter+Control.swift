@@ -5,6 +5,10 @@ extension Presenter {
         self.player.addToPlay(list:list)
     }
     
+    func clearPlayList() {
+        self.player.clearList()
+    }
+    
     func removeSource() {
         self.stop()
     }

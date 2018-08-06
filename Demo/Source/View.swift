@@ -60,6 +60,7 @@ class View:UIViewController {
     }
     
     @objc private func selector(segmented:UISegmentedControl) {
+        self.presenter.clearPlayList()
         switch segmented.selectedSegmentIndex {
         case 1:
             self.presenter.setPlay(list:[Constants.remote])

@@ -32,8 +32,11 @@ class StatePlaying:StateProtocol {
     func play(context:Player) throws { throw PlayerError.alreadyPlaying }
     
     func endOfStream(context:Player) {
-        context.provider.stop()
-        context.delegate?.playerStatusReady()
-        context.state = States.ready
+        if context.current < context.list.count - 1 {
+            context.current += 1
+            context.playerPlay()
+        } else {
+            context.playerStop()
+        }
     }
 }
