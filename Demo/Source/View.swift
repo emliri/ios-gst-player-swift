@@ -62,7 +62,7 @@ class View:UIViewController {
     @objc private func selector(segmented:UISegmentedControl) {
         switch segmented.selectedSegmentIndex {
         case 1:
-            self.presenter.setSource(url:Constants.remote)
+            self.presenter.setSource(url:Constants.remoteSsl)
         case 2:
             self.presenter.setSource(url:Bundle.main.url(forResource:Constants.local, withExtension:nil)!.absoluteString)
         default:
