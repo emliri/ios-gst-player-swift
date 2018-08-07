@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B646212D2119A196009B3693 /* ca-certificates.crt in Resources */ = {isa = PBXBuildFile; fileRef = B646212C2119A196009B3693 /* ca-certificates.crt */; };
 		D427370420E27C0A00B11C31 /* PlayerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D427370320E27C0A00B11C31 /* PlayerDelegate.swift */; };
 		D427370A20E2A1E800B11C31 /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D427370920E2A1E800B11C31 /* CoreAudio.framework */; };
 		D427370C20E2A1ED00B11C31 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D427370B20E2A1ED00B11C31 /* AVFoundation.framework */; };
@@ -70,6 +71,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B646212C2119A196009B3693 /* ca-certificates.crt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "ca-certificates.crt"; sourceTree = "<group>"; };
 		D427370320E27C0A00B11C31 /* PlayerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerDelegate.swift; sourceTree = "<group>"; };
 		D427370920E2A1E800B11C31 /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
 		D427370B20E2A1ED00B11C31 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
@@ -289,6 +291,7 @@
 		DAE8F31120F8B03F00EE1B0C /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				B646212C2119A196009B3693 /* ca-certificates.crt */,
 				DAE8F31220F8B05B00EE1B0C /* Localizable.strings */,
 			);
 			path = Resources;
@@ -401,6 +404,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DAE8F31420F8B05B00EE1B0C /* Localizable.strings in Resources */,
+				B646212D2119A196009B3693 /* ca-certificates.crt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
