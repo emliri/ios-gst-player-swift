@@ -1022,6 +1022,7 @@ void GstreamerConfiguration (void)
     GST_G_IO_MODULE_LOAD(gnutls);
 #endif
     
+#if USE_AVFASSETSRC
     /* Lower the ranks of filesrc and giosrc so iosavassetsrc is
      * tried first in gst_element_make_from_uri() for file:// */
     reg = gst_registry_get();
@@ -1031,4 +1032,5 @@ void GstreamerConfiguration (void)
     plugin = gst_registry_lookup_feature(reg, "giosrc");
     if (plugin)
         gst_plugin_feature_set_rank(plugin, GST_RANK_SECONDARY-1);
+#endif
 }
