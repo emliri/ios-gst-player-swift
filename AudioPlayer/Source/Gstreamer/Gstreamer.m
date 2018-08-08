@@ -59,6 +59,7 @@ static id<ProviderDelegate> monoDelegate;
     g_signal_connect(monoPlayer, kDurationChanged, G_CALLBACK(durationCallback), NULL);
     g_signal_connect(monoPlayer, kEndOfStream, G_CALLBACK(endOfStreamCallback), NULL);
     g_signal_connect(monoPlayer, kInfoUpdated, G_CALLBACK(infoUpdatedCallback), NULL);
+    g_signal_connect(monoPlayer, kStateChanged, G_CALLBACK(stateChangedCallback), NULL);
     g_signal_connect(monoPlayer, kError, G_CALLBACK(errorCallback), NULL);
 }
 
@@ -78,6 +79,10 @@ void infoUpdatedCallback(void *player, GstPlayerMediaInfo *info, void *data) {
     [monoDelegate playingUpdatedWithUrl:[[NSString alloc] initWithUTF8String:gst_player_media_info_get_uri(info)]];
 }
 
+void stateChangedCallback(void *player, GstPlayerState state, void *data) {
+    
+}
+
 void errorCallback(void *player, GError *error, void *data) {
     [monoDelegate foundErrorWithMessage:[[NSString alloc] initWithUTF8String:error->message] code:(long)(error->code)];
 }
@@ -87,6 +92,7 @@ static char *const kPositionUpdated = "position-updated";
 static char *const kDurationChanged = "duration-changed";
 static char *const kEndOfStream = "end-of-stream";
 static char *const kInfoUpdated = "media-info-updated";
+static char *const kStateChanged = "state-changed";
 static char *const kError = "error";
 
 @end
