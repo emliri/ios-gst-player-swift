@@ -41,25 +41,6 @@ class TestStatePlaying:XCTestCase {
         self.waitForExpectations(timeout:0.3, handler:nil)
     }
     
-    func testAddToPlaylistChangesStateToReady() {
-        self.player.addToPlay(list:[String()])
-        XCTAssertEqual(self.player.currentState, State.ready)
-    }
-    
-    func testAddToPlaylistCallsProviderStop() {
-        let expect:XCTestExpectation = self.expectation(description:"Stop not called")
-        self.provider.onStop = { expect.fulfill() }
-        self.player.addToPlay(list:[String()])
-        self.waitForExpectations(timeout:0.3, handler:nil)
-    }
-    
-    func testAddToPlaylistCallsStateOnDelegate() {
-        let expect:XCTestExpectation = self.expectation(description:"Delegate not called")
-        self.delegate.onStatusReady = { expect.fulfill() }
-        self.player.addToPlay(list:[String()])
-        self.waitForExpectations(timeout:0.3, handler:nil)
-    }
-    
     func testStopChangesStateToStopped() {
         XCTAssertNoThrow(try self.player.stop(), "Failed to stop")
         XCTAssertEqual(self.player.currentState, State.stopped)
@@ -86,21 +67,9 @@ class TestStatePlaying:XCTestCase {
         self.waitForExpectations(timeout:0.3, handler:nil)
     }
     
-    func testEndStopsAndChangesStateToReady() {
-        self.state.endOfStream(context:self.player)
-        XCTAssertEqual(self.player.currentState, State.ready)
-    }
-    
     func testEndStopsAndCallsProviderStop() {
         let expect:XCTestExpectation = self.expectation(description:"Play not called")
         self.provider.onStop = { expect.fulfill() }
-        self.player.endOfStream()
-        self.waitForExpectations(timeout:0.3, handler:nil)
-    }
-    
-    func testEndStopsAndCallsStateOnDelegate() {
-        let expect:XCTestExpectation = self.expectation(description:"Delegate not called")
-        self.delegate.onStatusReady = { expect.fulfill() }
         self.player.endOfStream()
         self.waitForExpectations(timeout:0.3, handler:nil)
     }
