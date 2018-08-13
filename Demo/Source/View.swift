@@ -7,19 +7,17 @@ class View:UIViewController {
     
     init() {
         self.presenter = Presenter()
-        self.toolbar = ViewToolbar()
+        self.toolbar = ViewToolbar(presenter:self.presenter)
         super.init(nibName:nil, bundle:nil)
         self.configureView()
         self.presenter.view = self
-        self.toolbar.presenter = self.presenter
         self.setToolbarItems(self.toolbar.items, animated:false)
     }
     
-    required init?(coder:NSCoder) {
-        return nil
-    }
+    required init?(coder:NSCoder) { return nil }
     
     func updateViewModel() {
+        self.viewContent.labelPlaying.text = self.presenter.viewModel.playing
         self.viewContent.labelTime.text = self.presenter.viewModel.currentTime
         self.viewContent.labelDuration.text = self.presenter.viewModel.currentDuration
         self.viewContent.slider.isHidden = self.presenter.viewModel.sliderHidden
@@ -60,13 +58,16 @@ class View:UIViewController {
     }
     
     @objc private func selector(segmented:UISegmentedControl) {
+        self.presenter.clearPlayList()
         switch segmented.selectedSegmentIndex {
         case 1:
-            self.presenter.setSource(url:Constants.remoteSsl)
+            self.presenter.setPlay(list:Constants.remote)
         case 2:
-            self.presenter.setSource(url:Bundle.main.url(forResource:Constants.local, withExtension:nil)!.absoluteString)
-        default:
-            self.presenter.removeSource()
+            let list:[String] = Constants.localList.map { (item:String) -> String in
+                return Bundle.main.url(forResource:item, withExtension:nil)!.absoluteString
+            }
+            self.presenter.setPlay(list:list)
+        default:break
         }
     }
     

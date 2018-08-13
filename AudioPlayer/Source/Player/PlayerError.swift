@@ -13,5 +13,10 @@ struct PlayerError:LocalizedError {
         "PlayerError_canNotSeek", tableName:nil, bundle:Bundle(for:Player.self), comment:String()))
     static let alreadyPlaying:PlayerError = PlayerError(errorDescription:NSLocalizedString(
         "PlayerError_alreadyPlaying", tableName:nil, bundle:Bundle(for:Player.self), comment:String()))
-    
+    static let noList:PlayerError = PlayerError(errorDescription:NSLocalizedString(
+        "PlayerError_noList", tableName:nil, bundle:Bundle(for:Player.self), comment:String()))
+    static let noPrevious:PlayerError = PlayerError(errorDescription:NSLocalizedString(
+        "PlayerError_noPrevious", tableName:nil, bundle:Bundle(for:Player.self), comment:String()))
+    static let noNext:PlayerError = PlayerError(errorDescription:NSLocalizedString(
+        "PlayerError_noNext", tableName:nil, bundle:Bundle(for:Player.self), comment:String()))
 }

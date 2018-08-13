@@ -27,6 +27,7 @@ class TestStateReady:XCTestCase {
     }
     
     func testPlayChangesStateToPlaying() {
+        self.player.addToPlay(list:["hello world"])
         XCTAssertNoThrow(try self.player.play(), "Failed to play")
         XCTAssertEqual(self.player.currentState, State.playing)
     }
@@ -34,6 +35,7 @@ class TestStateReady:XCTestCase {
     func testPlayCallsProviderPlay() {
         let expect:XCTestExpectation = self.expectation(description:"Play not called")
         self.provider.onPlay = { expect.fulfill() }
+        self.player.addToPlay(list:["hello world"])
         XCTAssertNoThrow(try self.player.play(), "Failed to play")
         self.waitForExpectations(timeout:0.3, handler:nil)
     }
@@ -41,6 +43,7 @@ class TestStateReady:XCTestCase {
     func testPlayCallsStateOnDelegate() {
         let expect:XCTestExpectation = self.expectation(description:"Delegate not called")
         self.delegate.onStatusPlaying = { expect.fulfill() }
+        self.player.addToPlay(list:["hello world"])
         XCTAssertNoThrow(try self.player.play(), "Failed to play")
         self.waitForExpectations(timeout:0.3, handler:nil)
     }
@@ -64,13 +67,8 @@ class TestStateReady:XCTestCase {
         self.waitForExpectations(timeout:0.3, handler:nil)
     }
     
-    func testSetSourceKeepsState() {
-        self.player.setSource(url:"hello world")
+    func testAddToPlaylistKeepsState() {
+        self.player.addToPlay(list:[String()])
         XCTAssertEqual(self.player.currentState, State.ready)
-    }
-    
-    func testSetSourceUpdatesSourceToProvider() {
-        self.player.setSource(url:"hello world")
-        XCTAssertNotNil(self.provider.url, "Failed to assign source")
     }
 }

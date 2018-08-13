@@ -1,6 +1,7 @@
 import Foundation
 
 struct ViewModel {
+    var playing:String
     var currentTime:String
     var currentDuration:String
     var sliderValue:Float
@@ -13,6 +14,7 @@ struct ViewModel {
     var buttonPreviousEnabled:Bool
     
     init() {
+        self.playing = String()
         self.currentTime = String()
         self.currentDuration = String()
         self.sliderValue = 0

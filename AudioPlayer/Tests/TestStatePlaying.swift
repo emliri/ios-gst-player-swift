@@ -41,30 +41,6 @@ class TestStatePlaying:XCTestCase {
         self.waitForExpectations(timeout:0.3, handler:nil)
     }
     
-    func testSetSourceChangesStateToReady() {
-        self.player.setSource(url:"hello world")
-        XCTAssertEqual(self.player.currentState, State.ready)
-    }
-    
-    func testSetSourceCallsProviderStop() {
-        let expect:XCTestExpectation = self.expectation(description:"Stop not called")
-        self.provider.onStop = { expect.fulfill() }
-        self.player.setSource(url:"hello world")
-        self.waitForExpectations(timeout:0.3, handler:nil)
-    }
-    
-    func testSetSourceSendsSourceToProvider() {
-        self.player.setSource(url:"hello world")
-        XCTAssertNotNil(self.provider.url, "Failed to assign source")
-    }
-    
-    func testSetSourceCallsStateOnDelegate() {
-        let expect:XCTestExpectation = self.expectation(description:"Delegate not called")
-        self.delegate.onStatusReady = { expect.fulfill() }
-        self.player.setSource(url:"hello world")
-        self.waitForExpectations(timeout:0.3, handler:nil)
-    }
-    
     func testStopChangesStateToStopped() {
         XCTAssertNoThrow(try self.player.stop(), "Failed to stop")
         XCTAssertEqual(self.player.currentState, State.stopped)
@@ -91,21 +67,9 @@ class TestStatePlaying:XCTestCase {
         self.waitForExpectations(timeout:0.3, handler:nil)
     }
     
-    func testEndStopsAndChangesStateToStopped() {
-        self.state.endOfStream(context:self.player)
-        XCTAssertEqual(self.player.currentState, State.stopped)
-    }
-    
     func testEndStopsAndCallsProviderStop() {
         let expect:XCTestExpectation = self.expectation(description:"Play not called")
         self.provider.onStop = { expect.fulfill() }
-        self.player.endOfStream()
-        self.waitForExpectations(timeout:0.3, handler:nil)
-    }
-    
-    func testEndStopsAndCallsStateOnDelegate() {
-        let expect:XCTestExpectation = self.expectation(description:"Delegate not called")
-        self.delegate.onStatusStopped = { expect.fulfill() }
         self.player.endOfStream()
         self.waitForExpectations(timeout:0.3, handler:nil)
     }

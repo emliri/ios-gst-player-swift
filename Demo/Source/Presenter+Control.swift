@@ -1,15 +1,15 @@
 import Foundation
 
 extension Presenter {
-    func setSource(url:String) {
-        self.player.setSource(url:url)
+    func setPlay(list:[String]) {
+        self.player.addToPlay(list:list)
     }
     
-    func removeSource() {
-        self.stop()
+    func clearPlayList() {
+        self.player.clearList()
     }
     
-    func play() {
+    @objc func play() {
         do {
             try self.player.play()
         } catch let error {
@@ -17,7 +17,7 @@ extension Presenter {
         }
     }
     
-    func pause() {
+    @objc func pause() {
         do {
             try self.player.pause()
         } catch let error {
@@ -25,10 +25,26 @@ extension Presenter {
         }
     }
     
-    func stop() {
+    @objc func stop() {
         self.view?.viewContent.segmented.selectedSegmentIndex = 0
         do {
             try self.player.stop()
+        } catch let error {
+            self.showAlert(message:error.localizedDescription)
+        }
+    }
+    
+    @objc func next() {
+        do {
+            try self.player.next()
+        } catch let error {
+            self.showAlert(message:error.localizedDescription)
+        }
+    }
+    
+    @objc func previous() {
+        do {
+            try self.player.previous()
         } catch let error {
             self.showAlert(message:error.localizedDescription)
         }

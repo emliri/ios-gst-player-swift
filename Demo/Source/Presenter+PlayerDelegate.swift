@@ -6,6 +6,10 @@ extension Presenter:PlayerDelegate {
         self.showAlert(message:message)
     }
     
+    func playerUpdatedPlaying(url:String) {
+        self.viewModel.playing = url
+    }
+    
     func playerStatusPlaying() {
         self.viewModel.sliderHidden = false
         self.viewModel.buttonPlayEnabled = false

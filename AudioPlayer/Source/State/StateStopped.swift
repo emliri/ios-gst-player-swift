@@ -7,8 +7,8 @@ class StateStopped:StateProtocol {
         self.value = State.stopped
     }
     
-    func setSource(context:Player, url:String) {
-        context.provider.setSource(url:url)
+    func addToPlay(context:Player, list:[String]) {
+        context.list.append(contentsOf:list)
         context.delegate?.playerStatusReady()
         context.state = States.ready
     }
@@ -17,4 +17,8 @@ class StateStopped:StateProtocol {
     func pause(context:Player) throws { throw PlayerError.canNotPause }
     func stop(context:Player) throws { throw PlayerError.canNotStop }
     func seek(context:Player, seconds:Int) throws { throw PlayerError.canNotSeek }
+    func next(context:Player) throws { throw PlayerError.noList }
+    func previous(context:Player) throws { throw PlayerError.noList }
+    func clearList(context:Player) { }
+    func endOfStream(context:Player) { }
 }

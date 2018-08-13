@@ -60,30 +60,6 @@ class TestStatePaused:XCTestCase {
         self.waitForExpectations(timeout:0.3, handler:nil)
     }
     
-    func testSetSourceChangesStateToReady() {
-        self.player.setSource(url:"hello world")
-        XCTAssertEqual(self.player.currentState, State.ready)
-    }
-    
-    func testSetSourceCallsProviderStop() {
-        let expect:XCTestExpectation = self.expectation(description:"Stop not called")
-        self.provider.onStop = { expect.fulfill() }
-        self.player.setSource(url:"hello world")
-        self.waitForExpectations(timeout:0.3, handler:nil)
-    }
-    
-    func testSetSourceSendsSourceToProvider() {
-        self.player.setSource(url:"hello world")
-        XCTAssertNotNil(self.provider.url, "Failed to assign source")
-    }
-    
-    func testSetSourceCallsStateOnDelegate() {
-        let expect:XCTestExpectation = self.expectation(description:"Delegate not called")
-        self.delegate.onStatusReady = { expect.fulfill() }
-        self.player.setSource(url:"hello world")
-        self.waitForExpectations(timeout:0.3, handler:nil)
-    }
-    
     func testSeekCallsProviderSeek() {
         let expect:XCTestExpectation = self.expectation(description:"Seek not called")
         self.provider.onSeek = { expect.fulfill() }
