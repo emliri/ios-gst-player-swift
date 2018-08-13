@@ -3,6 +3,7 @@
 #import <Foundation/NSPathUtilities.h>
 #import <gst/gst.h>
 #import "GstreamerConfiguration.h"
+#import "Gstreamer.h"
 
 #if defined(GST_IOS_PLUGIN_NLE) || defined(GST_IOS_PLUGINS_GES)
 GST_PLUGIN_STATIC_DECLARE(nle);
@@ -501,7 +502,7 @@ void GstreamerConfiguration (void)
     GstPluginFeature *plugin;
     GstRegistry *reg;
     
-    NSString *resources = [[NSBundle mainBundle] resourcePath];
+    NSString *resources = [[NSBundle bundleForClass:Gstreamer.class] resourcePath];
     NSString *tmp = NSTemporaryDirectory();
     NSString *cache = [NSHomeDirectory() stringByAppendingPathComponent:@"Library/Caches"];
     NSString *docs = [NSHomeDirectory() stringByAppendingPathComponent:@"Documents"];
@@ -525,10 +526,10 @@ void GstreamerConfiguration (void)
     g_setenv ("XDG_DATA_HOME", resources_dir, TRUE);
     g_setenv ("FONTCONFIG_PATH", resources_dir, TRUE);
     
-//    ca_certificates = g_build_filename (resources_dir, "ssl", "certs", "ca-certifcates.crt", NULL);
-//    g_setenv ("CA_CERTIFICATES", ca_certificates, TRUE);
-//    g_free (ca_certificates);
-    
+    ca_certificates = g_build_filename (resources_dir, "ca-certificates.crt", NULL);
+    g_setenv ("CA_CERTIFICATES", ca_certificates, TRUE);
+    g_free (ca_certificates);
+
     gst_init (NULL, NULL);
     
 #if defined(GST_IOS_PLUGIN_NLE) || defined(GST_IOS_PLUGINS_GES)
@@ -1022,6 +1023,7 @@ void GstreamerConfiguration (void)
     GST_G_IO_MODULE_LOAD(gnutls);
 #endif
     
+#if USE_AVFASSETSRC
     /* Lower the ranks of filesrc and giosrc so iosavassetsrc is
      * tried first in gst_element_make_from_uri() for file:// */
     reg = gst_registry_get();
@@ -1031,4 +1033,5 @@ void GstreamerConfiguration (void)
     plugin = gst_registry_lookup_feature(reg, "giosrc");
     if (plugin)
         gst_plugin_feature_set_rank(plugin, GST_RANK_SECONDARY-1);
+#endif
 }

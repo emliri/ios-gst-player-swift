@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B646212D2119A196009B3693 /* ca-certificates.crt in Resources */ = {isa = PBXBuildFile; fileRef = B646212C2119A196009B3693 /* ca-certificates.crt */; };
 		D427370420E27C0A00B11C31 /* PlayerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D427370320E27C0A00B11C31 /* PlayerDelegate.swift */; };
 		D427370A20E2A1E800B11C31 /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D427370920E2A1E800B11C31 /* CoreAudio.framework */; };
 		D427370C20E2A1ED00B11C31 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D427370B20E2A1ED00B11C31 /* AVFoundation.framework */; };
@@ -69,6 +70,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B646212C2119A196009B3693 /* ca-certificates.crt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "ca-certificates.crt"; sourceTree = "<group>"; };
 		D427370320E27C0A00B11C31 /* PlayerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerDelegate.swift; sourceTree = "<group>"; };
 		D427370920E2A1E800B11C31 /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
 		D427370B20E2A1ED00B11C31 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
@@ -104,7 +106,7 @@
 		DA50C11420F8ABF800E2E12C /* Gstreamer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Gstreamer.m; sourceTree = "<group>"; };
 		DA50C11520F8ABF800E2E12C /* GstreamerConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GstreamerConfiguration.m; sourceTree = "<group>"; };
 		DA53E8F620E2627700CE899D /* libiconv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.tbd; path = usr/lib/libiconv.tbd; sourceTree = SDKROOT; };
-		DA606AFE20E130D2003C6EFB /* GStreamer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GStreamer.framework; path = ../../../../Users/zero/Library/Developer/GStreamer/iPhone.sdk/GStreamer.framework; sourceTree = "<group>"; };
+		DA606AFE20E130D2003C6EFB /* GStreamer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GStreamer.framework; sourceTree = "<group>"; };
 		DAE8F30720F8ACFC00EE1B0C /* StateProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateProtocol.swift; sourceTree = "<group>"; };
 		DAE8F30920F8AD3C00EE1B0C /* State.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
 		DAE8F30B20F8ADE300EE1B0C /* StateStopped.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateStopped.swift; sourceTree = "<group>"; };
@@ -286,6 +288,7 @@
 		DAE8F31120F8B03F00EE1B0C /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				B646212C2119A196009B3693 /* ca-certificates.crt */,
 				DAE8F31220F8B05B00EE1B0C /* Localizable.strings */,
 			);
 			path = Resources;
@@ -398,6 +401,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DAE8F31420F8B05B00EE1B0C /* Localizable.strings in Resources */,
+				B646212D2119A196009B3693 /* ca-certificates.crt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -624,10 +628,10 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				FRAMEWORK_SEARCH_PATHS = (
-					/Users/zero/Library/Developer/GStreamer/iPhone.sdk,
+					"$(SRCROOT)/Frameworks",
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
-				HEADER_SEARCH_PATHS = "\"/Users/zero/Library/Developer/GStreamer/iPhone.sdk/GStreamer.framework/Headers\"";
+				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/Frameworks/GStreamer.framework/Headers\"";
 				INFOPLIST_FILE = Configuration/source.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -655,10 +659,10 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				FRAMEWORK_SEARCH_PATHS = (
-					/Users/zero/Library/Developer/GStreamer/iPhone.sdk,
+					"$(SRCROOT)/Frameworks",
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
-				HEADER_SEARCH_PATHS = "\"/Users/zero/Library/Developer/GStreamer/iPhone.sdk/GStreamer.framework/Headers\"";
+				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/Frameworks/GStreamer.framework/Headers\"";
 				INFOPLIST_FILE = Configuration/source.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
