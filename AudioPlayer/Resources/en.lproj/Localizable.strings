@@ -1,0 +1,8 @@
+PlayerError_sourceNotSet="AudioPlayer error: Playing not possible as a source has not been set.";
+PlayerError_canNotPause="AudioPlayer error: Player cannot be paused.";
+PlayerError_canNotStop="AudioPlayer error: Player cannot be stopped.";
+PlayerError_canNotSeek="AudioPlayer error: Player cannot seek.";
+PlayerError_alreadyPlaying="AudioPlayer error: Player already playing.";
+PlayerError_noList="AudioPlayer error: No playlist defined.";
+PlayerError_noPrevious="AudioPlayer error: No previous item.";
+PlayerError_noNext="AudioPlayer error: No next item.";

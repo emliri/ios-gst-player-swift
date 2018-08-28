@@ -7,12 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		D42736FE20E2705800B11C31 /* GstPlayerWrapper.h in Headers */ = {isa = PBXBuildFile; fileRef = D42736FC20E2705800B11C31 /* GstPlayerWrapper.h */; };
-		D42736FF20E2705800B11C31 /* GstPlayerWrapper.c in Sources */ = {isa = PBXBuildFile; fileRef = D42736FD20E2705800B11C31 /* GstPlayerWrapper.c */; };
-		D427370120E2717E00B11C31 /* BridgingHeader.h in Headers */ = {isa = PBXBuildFile; fileRef = D427370020E2717E00B11C31 /* BridgingHeader.h */; };
+		B646212D2119A196009B3693 /* ca-certificates.crt in Resources */ = {isa = PBXBuildFile; fileRef = B646212C2119A196009B3693 /* ca-certificates.crt */; };
 		D427370420E27C0A00B11C31 /* PlayerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D427370320E27C0A00B11C31 /* PlayerDelegate.swift */; };
-		D427370720E29B2200B11C31 /* GstIosInit.h in Headers */ = {isa = PBXBuildFile; fileRef = D427370520E29B2200B11C31 /* GstIosInit.h */; };
-		D427370820E29B2200B11C31 /* GstIosInit.m in Sources */ = {isa = PBXBuildFile; fileRef = D427370620E29B2200B11C31 /* GstIosInit.m */; };
 		D427370A20E2A1E800B11C31 /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D427370920E2A1E800B11C31 /* CoreAudio.framework */; };
 		D427370C20E2A1ED00B11C31 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D427370B20E2A1ED00B11C31 /* AVFoundation.framework */; };
 		D427370E20E2A1F400B11C31 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D427370D20E2A1F400B11C31 /* CoreVideo.framework */; };
@@ -25,11 +21,42 @@
 		D427371E20E2A49600B11C31 /* VideoToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D427371D20E2A49600B11C31 /* VideoToolbox.framework */; };
 		D427372020E2A4AC00B11C31 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D427371F20E2A4AC00B11C31 /* CoreMedia.framework */; };
 		D427372220E2A4F500B11C31 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D427372120E2A4F500B11C31 /* AssetsLibrary.framework */; };
+		DA0B9607210F241200728800 /* TestPlayer_ProviderDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0B9606210F241200728800 /* TestPlayer_ProviderDelegate.swift */; };
+		DA25675B20EF7A1700C30F34 /* MockProviderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA25675A20EF7A1700C30F34 /* MockProviderProtocol.swift */; };
+		DA25675D20EF7AE100C30F34 /* MockPlayerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA25675C20EF7AE100C30F34 /* MockPlayerDelegate.swift */; };
+		DA25675F20EF7B1600C30F34 /* PlayerDelegate+Default.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA25675E20EF7B1600C30F34 /* PlayerDelegate+Default.swift */; };
+		DA25676520EF7BFC00C30F34 /* TestProviderFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA25676420EF7BFC00C30F34 /* TestProviderFactory.swift */; };
+		DA25676720EF7FDC00C30F34 /* ProviderDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA25676620EF7FDC00C30F34 /* ProviderDelegate.swift */; };
+		DA25676920EF7FF900C30F34 /* Player+ProviderDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA25676820EF7FF900C30F34 /* Player+ProviderDelegate.swift */; };
 		DA3E942C20E1001300F049AD /* AudioPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA138DF120E0FC4100A47DAE /* AudioPlayer.framework */; };
 		DA3E943420E1006300F049AD /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3E943320E1006300F049AD /* Player.swift */; };
-		DA3E943620E1007400F049AD /* TestAudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3E943520E1007400F049AD /* TestAudioPlayer.swift */; };
+		DA3E943620E1007400F049AD /* TestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3E943520E1007400F049AD /* TestFactory.swift */; };
+		DA4C97FA20F7380A00A5FF30 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4C97F920F7380A00A5FF30 /* Constants.swift */; };
+		DA4F929C20FCBB060022EEA9 /* StateReady.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4F929B20FCBB060022EEA9 /* StateReady.swift */; };
+		DA4F929E20FCBBC20022EEA9 /* TestStateReady.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4F929D20FCBBC20022EEA9 /* TestStateReady.swift */; };
+		DA50C11720F8ABF800E2E12C /* BridgingHeader.h in Headers */ = {isa = PBXBuildFile; fileRef = DA50C11020F8ABF800E2E12C /* BridgingHeader.h */; };
+		DA50C11820F8ABF800E2E12C /* Gstreamer.h in Headers */ = {isa = PBXBuildFile; fileRef = DA50C11120F8ABF800E2E12C /* Gstreamer.h */; };
+		DA50C11920F8ABF800E2E12C /* GstreamerConfiguration.h in Headers */ = {isa = PBXBuildFile; fileRef = DA50C11220F8ABF800E2E12C /* GstreamerConfiguration.h */; };
+		DA50C11B20F8ABF800E2E12C /* Gstreamer.m in Sources */ = {isa = PBXBuildFile; fileRef = DA50C11420F8ABF800E2E12C /* Gstreamer.m */; };
+		DA50C11C20F8ABF800E2E12C /* GstreamerConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = DA50C11520F8ABF800E2E12C /* GstreamerConfiguration.m */; };
 		DA53E8F720E2627700CE899D /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = DA53E8F620E2627700CE899D /* libiconv.tbd */; };
 		DA606B0220E1321B003C6EFB /* GStreamer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA606AFE20E130D2003C6EFB /* GStreamer.framework */; };
+		DAE8F30820F8ACFC00EE1B0C /* StateProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE8F30720F8ACFC00EE1B0C /* StateProtocol.swift */; };
+		DAE8F30A20F8AD3C00EE1B0C /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE8F30920F8AD3C00EE1B0C /* State.swift */; };
+		DAE8F30C20F8ADE300EE1B0C /* StateStopped.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE8F30B20F8ADE300EE1B0C /* StateStopped.swift */; };
+		DAE8F30E20F8AF6200EE1B0C /* StatePlaying.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE8F30D20F8AF6200EE1B0C /* StatePlaying.swift */; };
+		DAE8F31020F8AFF000EE1B0C /* PlayerError.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE8F30F20F8AFF000EE1B0C /* PlayerError.swift */; };
+		DAE8F31420F8B05B00EE1B0C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = DAE8F31220F8B05B00EE1B0C /* Localizable.strings */; };
+		DAE8F31620F8BE8200EE1B0C /* TestPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE8F31520F8BE8200EE1B0C /* TestPlayer.swift */; };
+		DAE8F31820F8BEDA00EE1B0C /* MockStateProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE8F31720F8BEDA00EE1B0C /* MockStateProtocol.swift */; };
+		DAE8F32220F8C23C00EE1B0C /* TestStateStopped.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE8F32120F8C23C00EE1B0C /* TestStateStopped.swift */; };
+		DAE8F32520F8C47D00EE1B0C /* States.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE8F32320F8C45200EE1B0C /* States.swift */; };
+		DAE8F32A20F8D88100EE1B0C /* StatePaused.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE8F32820F8D85900EE1B0C /* StatePaused.swift */; };
+		DAE8F32C20F8DFD300EE1B0C /* TestStatePlaying.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE8F32B20F8DFD300EE1B0C /* TestStatePlaying.swift */; };
+		DAE8F32E20F8E60600EE1B0C /* TestStatePaused.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE8F32D20F8E60600EE1B0C /* TestStatePaused.swift */; };
+		DAFB4E7A20EF55FB00BC9851 /* Factory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAFB4E7920EF55FB00BC9851 /* Factory.swift */; };
+		DAFB4E7C20EF561300BC9851 /* PlayerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAFB4E7B20EF561300BC9851 /* PlayerProtocol.swift */; };
+		DAFB4E8420EF6AE300BC9851 /* ProviderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAFB4E8320EF6AE300BC9851 /* ProviderProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,12 +70,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		D42736FC20E2705800B11C31 /* GstPlayerWrapper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GstPlayerWrapper.h; sourceTree = "<group>"; };
-		D42736FD20E2705800B11C31 /* GstPlayerWrapper.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = GstPlayerWrapper.c; sourceTree = "<group>"; };
-		D427370020E2717E00B11C31 /* BridgingHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BridgingHeader.h; sourceTree = "<group>"; };
+		B646212C2119A196009B3693 /* ca-certificates.crt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "ca-certificates.crt"; sourceTree = "<group>"; };
 		D427370320E27C0A00B11C31 /* PlayerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerDelegate.swift; sourceTree = "<group>"; };
-		D427370520E29B2200B11C31 /* GstIosInit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GstIosInit.h; sourceTree = "<group>"; };
-		D427370620E29B2200B11C31 /* GstIosInit.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GstIosInit.m; sourceTree = "<group>"; };
 		D427370920E2A1E800B11C31 /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
 		D427370B20E2A1ED00B11C31 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		D427370D20E2A1F400B11C31 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
@@ -62,13 +85,44 @@
 		D427371D20E2A49600B11C31 /* VideoToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VideoToolbox.framework; path = System/Library/Frameworks/VideoToolbox.framework; sourceTree = SDKROOT; };
 		D427371F20E2A4AC00B11C31 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		D427372120E2A4F500B11C31 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
+		DA0B9606210F241200728800 /* TestPlayer_ProviderDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestPlayer_ProviderDelegate.swift; sourceTree = "<group>"; };
 		DA138DF120E0FC4100A47DAE /* AudioPlayer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AudioPlayer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DA25675A20EF7A1700C30F34 /* MockProviderProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockProviderProtocol.swift; sourceTree = "<group>"; };
+		DA25675C20EF7AE100C30F34 /* MockPlayerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockPlayerDelegate.swift; sourceTree = "<group>"; };
+		DA25675E20EF7B1600C30F34 /* PlayerDelegate+Default.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PlayerDelegate+Default.swift"; sourceTree = "<group>"; };
+		DA25676420EF7BFC00C30F34 /* TestProviderFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestProviderFactory.swift; sourceTree = "<group>"; };
+		DA25676620EF7FDC00C30F34 /* ProviderDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProviderDelegate.swift; sourceTree = "<group>"; };
+		DA25676820EF7FF900C30F34 /* Player+ProviderDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Player+ProviderDelegate.swift"; sourceTree = "<group>"; };
 		DA3E942020E0FFDC00F049AD /* Configuration */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Configuration; sourceTree = "<group>"; };
 		DA3E942720E1001300F049AD /* Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA3E943320E1006300F049AD /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
-		DA3E943520E1007400F049AD /* TestAudioPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestAudioPlayer.swift; sourceTree = "<group>"; };
+		DA3E943520E1007400F049AD /* TestFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestFactory.swift; sourceTree = "<group>"; };
+		DA4C97F920F7380A00A5FF30 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		DA4F929B20FCBB060022EEA9 /* StateReady.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateReady.swift; sourceTree = "<group>"; };
+		DA4F929D20FCBBC20022EEA9 /* TestStateReady.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestStateReady.swift; sourceTree = "<group>"; };
+		DA50C11020F8ABF800E2E12C /* BridgingHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BridgingHeader.h; sourceTree = "<group>"; };
+		DA50C11120F8ABF800E2E12C /* Gstreamer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Gstreamer.h; sourceTree = "<group>"; };
+		DA50C11220F8ABF800E2E12C /* GstreamerConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GstreamerConfiguration.h; sourceTree = "<group>"; };
+		DA50C11420F8ABF800E2E12C /* Gstreamer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Gstreamer.m; sourceTree = "<group>"; };
+		DA50C11520F8ABF800E2E12C /* GstreamerConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GstreamerConfiguration.m; sourceTree = "<group>"; };
 		DA53E8F620E2627700CE899D /* libiconv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.tbd; path = usr/lib/libiconv.tbd; sourceTree = SDKROOT; };
-		DA606AFE20E130D2003C6EFB /* GStreamer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GStreamer.framework; path = ../../../../Users/zero/Library/Developer/GStreamer/iPhone.sdk/GStreamer.framework; sourceTree = "<group>"; };
+		DA606AFE20E130D2003C6EFB /* GStreamer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GStreamer.framework; sourceTree = "<group>"; };
+		DAE8F30720F8ACFC00EE1B0C /* StateProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateProtocol.swift; sourceTree = "<group>"; };
+		DAE8F30920F8AD3C00EE1B0C /* State.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
+		DAE8F30B20F8ADE300EE1B0C /* StateStopped.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateStopped.swift; sourceTree = "<group>"; };
+		DAE8F30D20F8AF6200EE1B0C /* StatePlaying.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatePlaying.swift; sourceTree = "<group>"; };
+		DAE8F30F20F8AFF000EE1B0C /* PlayerError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerError.swift; sourceTree = "<group>"; };
+		DAE8F31320F8B05B00EE1B0C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		DAE8F31520F8BE8200EE1B0C /* TestPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestPlayer.swift; sourceTree = "<group>"; };
+		DAE8F31720F8BEDA00EE1B0C /* MockStateProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockStateProtocol.swift; sourceTree = "<group>"; };
+		DAE8F32120F8C23C00EE1B0C /* TestStateStopped.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestStateStopped.swift; sourceTree = "<group>"; };
+		DAE8F32320F8C45200EE1B0C /* States.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = States.swift; sourceTree = "<group>"; };
+		DAE8F32820F8D85900EE1B0C /* StatePaused.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatePaused.swift; sourceTree = "<group>"; };
+		DAE8F32B20F8DFD300EE1B0C /* TestStatePlaying.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestStatePlaying.swift; sourceTree = "<group>"; };
+		DAE8F32D20F8E60600EE1B0C /* TestStatePaused.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestStatePaused.swift; sourceTree = "<group>"; };
+		DAFB4E7920EF55FB00BC9851 /* Factory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Factory.swift; sourceTree = "<group>"; };
+		DAFB4E7B20EF561300BC9851 /* PlayerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerProtocol.swift; sourceTree = "<group>"; };
+		DAFB4E8320EF6AE300BC9851 /* ProviderProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProviderProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,7 +163,7 @@
 			children = (
 				DA3E942120E0FFE600F049AD /* Source */,
 				DA3E943220E1004D00F049AD /* Tests */,
-				DA3E942220E0FFE600F049AD /* Resources */,
+				DAE8F31120F8B03F00EE1B0C /* Resources */,
 				DA138DF220E0FC4100A47DAE /* Products */,
 				DA5E48CD20E10934003F4619 /* Frameworks */,
 				DA3E942020E0FFDC00F049AD /* Configuration */,
@@ -125,33 +179,74 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		DA2C104920F8A96100EDC0D4 /* Provider */ = {
+			isa = PBXGroup;
+			children = (
+				DAFB4E8320EF6AE300BC9851 /* ProviderProtocol.swift */,
+				DA25676620EF7FDC00C30F34 /* ProviderDelegate.swift */,
+			);
+			path = Provider;
+			sourceTree = "<group>";
+		};
+		DA2C104A20F8A9A400EDC0D4 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				DAFB4E7920EF55FB00BC9851 /* Factory.swift */,
+				DA4C97F920F7380A00A5FF30 /* Constants.swift */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		DA2C104B20F8A9C900EDC0D4 /* Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				D427370320E27C0A00B11C31 /* PlayerDelegate.swift */,
+				DA25675E20EF7B1600C30F34 /* PlayerDelegate+Default.swift */,
+			);
+			path = Delegate;
+			sourceTree = "<group>";
+		};
 		DA3E942120E0FFE600F049AD /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				DA3E943320E1006300F049AD /* Player.swift */,
-				D427370320E27C0A00B11C31 /* PlayerDelegate.swift */,
-				D42736FC20E2705800B11C31 /* GstPlayerWrapper.h */,
-				D42736FD20E2705800B11C31 /* GstPlayerWrapper.c */,
-				D427370020E2717E00B11C31 /* BridgingHeader.h */,
-				D427370520E29B2200B11C31 /* GstIosInit.h */,
-				D427370620E29B2200B11C31 /* GstIosInit.m */,
+				DAFB4E7020EF520100BC9851 /* Player */,
+				DA2C104B20F8A9C900EDC0D4 /* Delegate */,
+				DAE8F30620F8ACEC00EE1B0C /* State */,
+				DA2C104A20F8A9A400EDC0D4 /* Shared */,
+				DA2C104920F8A96100EDC0D4 /* Provider */,
+				DA50C10F20F8ABF800E2E12C /* Gstreamer */,
 			);
 			path = Source;
-			sourceTree = "<group>";
-		};
-		DA3E942220E0FFE600F049AD /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Resources;
 			sourceTree = "<group>";
 		};
 		DA3E943220E1004D00F049AD /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				DA3E943520E1007400F049AD /* TestAudioPlayer.swift */,
+				DAE8F31520F8BE8200EE1B0C /* TestPlayer.swift */,
+				DA0B9606210F241200728800 /* TestPlayer_ProviderDelegate.swift */,
+				DAE8F32120F8C23C00EE1B0C /* TestStateStopped.swift */,
+				DA4F929D20FCBBC20022EEA9 /* TestStateReady.swift */,
+				DAE8F32B20F8DFD300EE1B0C /* TestStatePlaying.swift */,
+				DAE8F32D20F8E60600EE1B0C /* TestStatePaused.swift */,
+				DA3E943520E1007400F049AD /* TestFactory.swift */,
+				DA25676420EF7BFC00C30F34 /* TestProviderFactory.swift */,
+				DA25675A20EF7A1700C30F34 /* MockProviderProtocol.swift */,
+				DA25675C20EF7AE100C30F34 /* MockPlayerDelegate.swift */,
+				DAE8F31720F8BEDA00EE1B0C /* MockStateProtocol.swift */,
 			);
 			path = Tests;
+			sourceTree = "<group>";
+		};
+		DA50C10F20F8ABF800E2E12C /* Gstreamer */ = {
+			isa = PBXGroup;
+			children = (
+				DA50C11020F8ABF800E2E12C /* BridgingHeader.h */,
+				DA50C11120F8ABF800E2E12C /* Gstreamer.h */,
+				DA50C11420F8ABF800E2E12C /* Gstreamer.m */,
+				DA50C11220F8ABF800E2E12C /* GstreamerConfiguration.h */,
+				DA50C11520F8ABF800E2E12C /* GstreamerConfiguration.m */,
+			);
+			path = Gstreamer;
 			sourceTree = "<group>";
 		};
 		DA5E48CD20E10934003F4619 /* Frameworks */ = {
@@ -176,6 +271,40 @@
 			path = Frameworks;
 			sourceTree = "<group>";
 		};
+		DAE8F30620F8ACEC00EE1B0C /* State */ = {
+			isa = PBXGroup;
+			children = (
+				DAE8F30920F8AD3C00EE1B0C /* State.swift */,
+				DAE8F32320F8C45200EE1B0C /* States.swift */,
+				DAE8F30720F8ACFC00EE1B0C /* StateProtocol.swift */,
+				DAE8F30B20F8ADE300EE1B0C /* StateStopped.swift */,
+				DA4F929B20FCBB060022EEA9 /* StateReady.swift */,
+				DAE8F30D20F8AF6200EE1B0C /* StatePlaying.swift */,
+				DAE8F32820F8D85900EE1B0C /* StatePaused.swift */,
+			);
+			path = State;
+			sourceTree = "<group>";
+		};
+		DAE8F31120F8B03F00EE1B0C /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				B646212C2119A196009B3693 /* ca-certificates.crt */,
+				DAE8F31220F8B05B00EE1B0C /* Localizable.strings */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		DAFB4E7020EF520100BC9851 /* Player */ = {
+			isa = PBXGroup;
+			children = (
+				DAFB4E7B20EF561300BC9851 /* PlayerProtocol.swift */,
+				DA3E943320E1006300F049AD /* Player.swift */,
+				DA25676820EF7FF900C30F34 /* Player+ProviderDelegate.swift */,
+				DAE8F30F20F8AFF000EE1B0C /* PlayerError.swift */,
+			);
+			path = Player;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -183,9 +312,9 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D42736FE20E2705800B11C31 /* GstPlayerWrapper.h in Headers */,
-				D427370720E29B2200B11C31 /* GstIosInit.h in Headers */,
-				D427370120E2717E00B11C31 /* BridgingHeader.h in Headers */,
+				DA50C11920F8ABF800E2E12C /* GstreamerConfiguration.h in Headers */,
+				DA50C11720F8ABF800E2E12C /* BridgingHeader.h in Headers */,
+				DA50C11820F8ABF800E2E12C /* Gstreamer.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -271,6 +400,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DAE8F31420F8B05B00EE1B0C /* Localizable.strings in Resources */,
+				B646212D2119A196009B3693 /* ca-certificates.crt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -288,9 +419,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D427370820E29B2200B11C31 /* GstIosInit.m in Sources */,
+				DA25675F20EF7B1600C30F34 /* PlayerDelegate+Default.swift in Sources */,
+				DAE8F30C20F8ADE300EE1B0C /* StateStopped.swift in Sources */,
+				DAE8F30820F8ACFC00EE1B0C /* StateProtocol.swift in Sources */,
+				DAE8F31020F8AFF000EE1B0C /* PlayerError.swift in Sources */,
+				DAFB4E7A20EF55FB00BC9851 /* Factory.swift in Sources */,
+				DA50C11C20F8ABF800E2E12C /* GstreamerConfiguration.m in Sources */,
+				DAFB4E8420EF6AE300BC9851 /* ProviderProtocol.swift in Sources */,
+				DAE8F30A20F8AD3C00EE1B0C /* State.swift in Sources */,
+				DAFB4E7C20EF561300BC9851 /* PlayerProtocol.swift in Sources */,
+				DAE8F32520F8C47D00EE1B0C /* States.swift in Sources */,
+				DAE8F32A20F8D88100EE1B0C /* StatePaused.swift in Sources */,
+				DA50C11B20F8ABF800E2E12C /* Gstreamer.m in Sources */,
+				DA4C97FA20F7380A00A5FF30 /* Constants.swift in Sources */,
+				DA25676920EF7FF900C30F34 /* Player+ProviderDelegate.swift in Sources */,
 				DA3E943420E1006300F049AD /* Player.swift in Sources */,
-				D42736FF20E2705800B11C31 /* GstPlayerWrapper.c in Sources */,
+				DA25676720EF7FDC00C30F34 /* ProviderDelegate.swift in Sources */,
+				DA4F929C20FCBB060022EEA9 /* StateReady.swift in Sources */,
+				DAE8F30E20F8AF6200EE1B0C /* StatePlaying.swift in Sources */,
 				D427370420E27C0A00B11C31 /* PlayerDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -299,7 +445,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DA3E943620E1007400F049AD /* TestAudioPlayer.swift in Sources */,
+				DA25675D20EF7AE100C30F34 /* MockPlayerDelegate.swift in Sources */,
+				DA4F929E20FCBBC20022EEA9 /* TestStateReady.swift in Sources */,
+				DA0B9607210F241200728800 /* TestPlayer_ProviderDelegate.swift in Sources */,
+				DA25675B20EF7A1700C30F34 /* MockProviderProtocol.swift in Sources */,
+				DAE8F32220F8C23C00EE1B0C /* TestStateStopped.swift in Sources */,
+				DA25676520EF7BFC00C30F34 /* TestProviderFactory.swift in Sources */,
+				DA3E943620E1007400F049AD /* TestFactory.swift in Sources */,
+				DAE8F31620F8BE8200EE1B0C /* TestPlayer.swift in Sources */,
+				DAE8F32C20F8DFD300EE1B0C /* TestStatePlaying.swift in Sources */,
+				DAE8F32E20F8E60600EE1B0C /* TestStatePaused.swift in Sources */,
+				DAE8F31820F8BEDA00EE1B0C /* MockStateProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -312,6 +468,17 @@
 			targetProxy = DA3E942D20E1001300F049AD /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		DAE8F31220F8B05B00EE1B0C /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DAE8F31320F8B05B00EE1B0C /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		DA138DF720E0FC4100A47DAE /* Debug */ = {
@@ -350,6 +517,7 @@
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
 				ENABLE_BITCODE = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -375,7 +543,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_INSTALL_OBJC_HEADER = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = Source/BridgingHeader.h;
+				SWIFT_OBJC_BRIDGING_HEADER = Source/GStreamer/BridgingHeader.h;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				USE_HEADERMAP = NO;
@@ -420,6 +588,7 @@
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
 				ENABLE_BITCODE = NO;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -438,7 +607,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_INSTALL_OBJC_HEADER = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = Source/BridgingHeader.h;
+				SWIFT_OBJC_BRIDGING_HEADER = Source/GStreamer/BridgingHeader.h;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 4.0;
 				USE_HEADERMAP = NO;
@@ -454,16 +623,15 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
-				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = Y68M8S5N3Q;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				FRAMEWORK_SEARCH_PATHS = (
-					/Users/zero/Library/Developer/GStreamer/iPhone.sdk,
+					"$(SRCROOT)/Frameworks",
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
-				HEADER_SEARCH_PATHS = "\"/Users/zero/Library/Developer/GStreamer/iPhone.sdk/GStreamer.framework/Headers\"";
+				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/Frameworks/GStreamer.framework/Headers\"";
 				INFOPLIST_FILE = Configuration/source.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -474,9 +642,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.blinkist.AudioPlayer;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = Source/BridgingHeader.h;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_PRECOMPILE_BRIDGING_HEADER = YES;
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -488,16 +654,15 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
-				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = Y68M8S5N3Q;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				FRAMEWORK_SEARCH_PATHS = (
-					/Users/zero/Library/Developer/GStreamer/iPhone.sdk,
+					"$(SRCROOT)/Frameworks",
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
-				HEADER_SEARCH_PATHS = "\"/Users/zero/Library/Developer/GStreamer/iPhone.sdk/GStreamer.framework/Headers\"";
+				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/Frameworks/GStreamer.framework/Headers\"";
 				INFOPLIST_FILE = Configuration/source.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -508,8 +673,6 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.blinkist.AudioPlayer;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = Source/BridgingHeader.h;
-				SWIFT_PRECOMPILE_BRIDGING_HEADER = YES;
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

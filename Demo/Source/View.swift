@@ -2,26 +2,52 @@ import UIKit
 
 class View:UIViewController {
     let presenter:Presenter
+    weak var viewContent:ViewContent!
+    private let toolbar:ViewToolbar
     
     init() {
         self.presenter = Presenter()
+        self.toolbar = ViewToolbar(presenter:self.presenter)
         super.init(nibName:nil, bundle:nil)
         self.configureView()
-        self.makeActions()
+        self.presenter.view = self
+        self.setToolbarItems(self.toolbar.items, animated:false)
     }
     
-    required init?(coder:NSCoder) {
-        return nil
+    required init?(coder:NSCoder) { return nil }
+    
+    func updateViewModel() {
+        self.viewContent.labelPlaying.text = self.presenter.viewModel.playing
+        self.viewContent.labelTime.text = self.presenter.viewModel.currentTime
+        self.viewContent.labelDuration.text = self.presenter.viewModel.currentDuration
+        self.viewContent.slider.isHidden = self.presenter.viewModel.sliderHidden
+        self.viewContent.slider.value = self.presenter.viewModel.sliderValue
+        self.viewContent.slider.maximumValue = self.presenter.viewModel.sliderMaxValue
+        self.toolbar.buttonPlay.isEnabled = self.presenter.viewModel.buttonPlayEnabled
+        self.toolbar.buttonStop.isEnabled = self.presenter.viewModel.buttonStopEnabled
+        self.toolbar.buttonPause.isEnabled = self.presenter.viewModel.buttonPauseEnabled
+        self.toolbar.buttonNext.isEnabled = self.presenter.viewModel.buttonNextEnabled
+        self.toolbar.buttonPrevious.isEnabled = self.presenter.viewModel.buttonPreviousEnabled
     }
     
     override func loadView() {
-        self.view = ViewContent()
+        let view:ViewContent = ViewContent()
+        view.backgroundColor = UIColor.white
+        view.segmented.addTarget(self, action:#selector(self.selector(segmented:)), for:UIControlEvents.valueChanged)
+        view.slider.addTarget(self, action:#selector(self.selector(slider:)), for:UIControlEvents.valueChanged)
+        self.viewContent = view
+        self.view = view
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.setNavigationBarHidden(false, animated:true)
         self.navigationController?.setToolbarHidden(false, animated:true)
+    }
+    
+    override func viewDidAppear(_ animated:Bool) {
+        super.viewDidAppear(animated)
+        self.presenter.viewModel.buttonPlayEnabled = true
     }
     
     private func configureView() {
@@ -31,41 +57,21 @@ class View:UIViewController {
         }
     }
     
-    private func makeActions() {
-        let actionPlay:UIBarButtonItem = UIBarButtonItem(barButtonSystemItem:UIBarButtonSystemItem.play,
-                                                         target:self, action:#selector(self.selectorPlay(button:)))
-        let actionStop:UIBarButtonItem = UIBarButtonItem(barButtonSystemItem:UIBarButtonSystemItem.stop,
-                                                         target:self, action:#selector(self.selectorStop(button:)))
-        let actionPause:UIBarButtonItem = UIBarButtonItem(barButtonSystemItem:UIBarButtonSystemItem.pause,
-                                                          target:self, action:#selector(self.selectorPause(button:)))
-        let actionNext:UIBarButtonItem = UIBarButtonItem(barButtonSystemItem:UIBarButtonSystemItem.fastForward,
-                                                         target:self, action:#selector(self.selectorNext(button:)))
-        let actionPrevious:UIBarButtonItem = UIBarButtonItem(barButtonSystemItem:UIBarButtonSystemItem.rewind,
-                                                             target:self,
-                                                             action:#selector(self.selectorPrevious(button:)))
-        let flexibleSpace:UIBarButtonItem = UIBarButtonItem(barButtonSystemItem:UIBarButtonSystemItem.flexibleSpace,
-                                                            target:nil, action:nil)
-        self.setToolbarItems([actionPrevious, flexibleSpace, actionPause, flexibleSpace, actionStop, flexibleSpace,
-                              actionPlay, flexibleSpace, actionNext], animated:false)
+    @objc private func selector(segmented:UISegmentedControl) {
+        self.presenter.clearPlayList()
+        switch segmented.selectedSegmentIndex {
+        case 1:
+            self.presenter.setPlay(list:Constants.remote)
+        case 2:
+            let list:[String] = Constants.localList.map { (item:String) -> String in
+                return Bundle.main.url(forResource:item, withExtension:nil)!.absoluteString
+            }
+            self.presenter.setPlay(list:list)
+        default:break
+        }
     }
     
-    @objc private func selectorPlay(button:UIBarButtonItem) {
-        self.presenter.interactor.play()
-    }
-    
-    @objc private func selectorStop(button:UIBarButtonItem) {
-        
-    }
-    
-    @objc private func selectorPause(button:UIBarButtonItem) {
-        
-    }
-    
-    @objc private func selectorNext(button:UIBarButtonItem) {
-        
-    }
-    
-    @objc private func selectorPrevious(button:UIBarButtonItem) {
-        
+    @objc private func selector(slider:UISlider) {
+        self.presenter.seek(seconds:slider.value)
     }
 }
